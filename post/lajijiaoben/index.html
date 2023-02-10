@@ -1,0 +1,245 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>我的收藏 | Gridea</title>
+<meta name="description" content="温故而知新">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://mxk-zwh.github.io/favicon.ico?v=1676044867526">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://mxk-zwh.github.io/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://mxk-zwh.github.io">
+        <img class="avatar" src="https://mxk-zwh.github.io/images/avatar.png?v=1676044867526" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://mxk-zwh.github.io">
+        <h1 class="site-title">Gridea</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a class="menu purple-link" href="/" class="menu" target="_blank">
+            首页
+          </a>
+        
+      
+        
+          <a class="menu purple-link" href="/archives" class="menu" target="_blank">
+            归档
+          </a>
+        
+      
+        
+          <a class="menu purple-link" href="/tags" class="menu" target="_blank">
+            标签
+          </a>
+        
+      
+        
+          <a class="menu purple-link" href="/post/about" class="menu" target="_blank">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+          <h2 class="post-title">我的收藏</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2023-02-10</span>
+            
+          </div>
+          <div class="post-content" v-pre>
+            <p>最近的风有没有替我向你说声对不起 如果没有那我替风说<br>
+因为我的过错让你生气，我的心里也自责懊悔，向你保证绝对不会有下次</p>
+<!-- more -->
+<div
+      id="main"
+      style="
+        max-width: 768px;
+        margin: 0 auto;
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+      "
+    >
+      <div class="nav" style="display: flex; justify-content: center">
+        <div
+          class="item"
+          style="
+            display: flex;
+            width: 120px;
+            flex-direction: column;
+            align-items: center;
+          "
+        >
+          <img
+            src="https://img-blog.csdnimg.cn/img_convert/6ee3a5fecbc9fe55ab75c8e001ca01d7.jpeg"
+            width="40px"
+            height="40px"
+          />
+          <p text-align="center">获取b站流地址&amp;去直播水印</p>
+        </div>
+        <div
+          class="item"
+          style="
+            display: flex;
+            width: 120px;
+            flex-direction: column;
+            align-items: center;
+          "
+        >
+          <img
+            src="https://img-blog.csdnimg.cn/img_convert/492a79c25411686daee35fd0d2212779.png"
+            width="40px"
+            height="40px"
+          />
+          <p text-align="center">金仓鼠</p>
+        </div>
+        <div
+          class="item"
+          style="
+            display: flex;
+            width: 120px;
+            flex-direction: column;
+            align-items: center;
+          "
+        >
+          <img
+            src="https://img-blog.csdnimg.cn/img_convert/d5c36cb2505535e4295b9cc6b2295fab.png"
+            width="40px"
+            height="40px"
+          />
+          <p text-align="center">2233 404</p>
+        </div>
+      </div>
+    </div>
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://mxk-zwh.github.io/post/github-hexo/">
+              <h3 class="post-title">
+                下一篇：GitHub + Hexo
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+        
+          <div id="gitalk-container"></div>
+        
+
+        
+      
+
+      <div class="site-footer">
+  <div class="slogan">温故而知新</div>
+  <div class="social-container">
+    
+      
+        <a href="github.com/mxk-zwh" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://mxk-zwh.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: 'c4736e15d54f7c84cfc0',
+        clientSecret: '5b8339b8cf40afbf0015577cb1edd9292615ccb1',
+        repo: 'gitalk-comments',
+        owner: 'mxk-zwh',
+        admin: ['mxk-zwh'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>

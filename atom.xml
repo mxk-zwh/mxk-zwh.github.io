@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://mxk-zwh.github.io</id>
+    <title>Gridea</title>
+    <updated>2023-02-10T16:01:24.698Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://mxk-zwh.github.io"/>
+    <link rel="self" href="https://mxk-zwh.github.io/atom.xml"/>
+    <subtitle>温故而知新</subtitle>
+    <logo>https://mxk-zwh.github.io/images/avatar.png</logo>
+    <icon>https://mxk-zwh.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2023, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[我的收藏]]></title>
+        <id>https://mxk-zwh.github.io/post/lajijiaoben/</id>
+        <link href="https://mxk-zwh.github.io/post/lajijiaoben/">
+        </link>
+        <updated>2023-02-10T12:24:34.000Z</updated>
+        <summary type="html"><![CDATA[<p>最近的风有没有替我向你说声对不起 如果没有那我替风说<br>
+因为我的过错让你生气，我的心里也自责懊悔，向你保证绝对不会有下次</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>最近的风有没有替我向你说声对不起 如果没有那我替风说<br>
+因为我的过错让你生气，我的心里也自责懊悔，向你保证绝对不会有下次</p>
+<!-- more -->
+<div
+      id="main"
+      style="
+        max-width: 768px;
+        margin: 0 auto;
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+      "
+    >
+      <div class="nav" style="display: flex; justify-content: center">
+        <div
+          class="item"
+          style="
+            display: flex;
+            width: 120px;
+            flex-direction: column;
+            align-items: center;
+          "
+        >
+          <img
+            src="https://img-blog.csdnimg.cn/img_convert/6ee3a5fecbc9fe55ab75c8e001ca01d7.jpeg"
+            width="40px"
+            height="40px"
+          />
+          <p text-align="center">获取b站流地址&amp;去直播水印</p>
+        </div>
+        <div
+          class="item"
+          style="
+            display: flex;
+            width: 120px;
+            flex-direction: column;
+            align-items: center;
+          "
+        >
+          <img
+            src="https://img-blog.csdnimg.cn/img_convert/492a79c25411686daee35fd0d2212779.png"
+            width="40px"
+            height="40px"
+          />
+          <p text-align="center">金仓鼠</p>
+        </div>
+        <div
+          class="item"
+          style="
+            display: flex;
+            width: 120px;
+            flex-direction: column;
+            align-items: center;
+          "
+        >
+          <img
+            src="https://img-blog.csdnimg.cn/img_convert/d5c36cb2505535e4295b9cc6b2295fab.png"
+            width="40px"
+            height="40px"
+          />
+          <p text-align="center">2233 404</p>
+        </div>
+      </div>
+    </div>]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[GitHub + Hexo]]></title>
+        <id>https://mxk-zwh.github.io/post/github-hexo/</id>
+        <link href="https://mxk-zwh.github.io/post/github-hexo/">
+        </link>
+        <updated>2023-01-30T12:37:57.000Z</updated>
+        <summary type="html"><![CDATA[<p>注册一个 Github 账号并创建仓库<br>
+注册Github账号<br>
+如果你没有 Github 的账号，那么可以进入 官网 开始注册（注意一下用户名的填写，如果不使用自定义域名，用户名将会是你的 Github 分配给你的域名，例如你的用户名为 xxx，那么你的域名会是 xxx.github,io）。</p>
+<p><strong>新建仓库</strong><br>
+如图所示，点击右上角的 + 号，然后点击 New respository。</p>
+<p><strong>配置仓库</strong><br>
+仓库名填写格式为：你的用户名.github.io。<br>
+然后点击 Add a README file，再点击 Create repository 即可。</p>
+<p><strong>安装Git</strong><br>
+从Git官网下载<br>
+Git - Downloading Package<br>
+选择相应的版本。</p>
+<p><strong>Git与GitHub帐号绑定</strong><br>
+安装成功后，将你的Git与GitHub帐号绑定，鼠标右击打开 Git Bash</p>
+<p>或者在菜单里搜索Git Bash，设置user.name和user.email配置信息：</p>
+<p>git config --global user.name “你的GitHub用户名”<br>
+git config --global user.email “你的GitHub注册邮箱”</p>
+<p><strong>生成ssh密钥文件：</strong><br>
+ssh-keygen -t rsa -C “你的GitHub注册邮箱”</p>
+<p>默认不需要设置密码。<br>
+找到生成的.ssh的文件夹中的id_rsa.pub密钥，将内容全部复制。</p>
+<p><strong>配置ssh密钥</strong><br>
+打开 GitHub_Settings_keys 页面，新建new SSH Key。</p>
+<p>Title任意填即可，将刚刚复制的id_rsa.pub内容粘贴进去，最后点击Add SSH key。<br>
+在Git Bash中检测GitHub公钥设置是否成功，输入 ssh git@github.com ：</p>
+<p><strong>Node.js</strong><br>
+Node.js下载地址：Download | Node.js<br>
+选择相应的版本。</p>
+<p>安装后，检测 Node.js是否安装成功，在命令行中输入 node -v ,安装成功会出现版本号。<br>
+检测npm是否安装成功，在命令行中输入npm -v,安装成功同样会出现版本号。<br>
+安装Hexo<br>
+创建一个名为 blog 的文件，打开，在里面右键启用 Git Bash Here<br>
+输入：<br>
+npm install -g hexo-cli</p>
+<p>安装完成后，初始化我们的博客，输入：<br>
+hexo init blog</p>
+<p>这样你的博客就初始化成功了。</p>
+<p>再搭建一下博客，输入：</p>
+<p>hexo g</p>
+<p>hexo s</p>
+<p>打开它输出的本地连接，一般在 localhost:4000。</p>
+<p>显示的就是你的博客了。</p>
+<p>将博客部署到Github上，使别人可以在 用户名.github.io 上访问到<br>
+blog根目录里的_config.yml文件称为站点配置文件，如下图</p>
+<p>进入根目录里的themes文件夹，里面也有个_config.yml文件，这个称为主题配置文件，如下图</p>
+<p>打开站点的配置文件_config.yml，翻到最后修改为：</p>
+<p>deploy:<br>
+type: git<br>
+repo: https://github.com/用户名/用户名.github.io.git<br>
+branch: master</p>
+<p>参考如下：</p>
+<p>在Git Bash中，输入：</p>
+<p>npm install hexo-deployer-git --save<br>
+hexo clean<br>
+hexo g<br>
+hexo d</p>
+<p>现在，你就可以访问 用户名.github.io来访问你的博客了。</p>
+<p><strong>Hexo 常用命令</strong><br>
+新建文章： hexo n &quot;我的博客&quot; == hexo new &quot;我的博客&quot;<br>
+生成: hexo g == hexo generate<br>
+启动服务预览： hexo s == hexo server<br>
+部署在Github上： hexo d == hexo deploy</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>注册一个 Github 账号并创建仓库<br>
+注册Github账号<br>
+如果你没有 Github 的账号，那么可以进入 官网 开始注册（注意一下用户名的填写，如果不使用自定义域名，用户名将会是你的 Github 分配给你的域名，例如你的用户名为 xxx，那么你的域名会是 xxx.github,io）。</p>
+<p><strong>新建仓库</strong><br>
+如图所示，点击右上角的 + 号，然后点击 New respository。</p>
+<p><strong>配置仓库</strong><br>
+仓库名填写格式为：你的用户名.github.io。<br>
+然后点击 Add a README file，再点击 Create repository 即可。</p>
+<p><strong>安装Git</strong><br>
+从Git官网下载<br>
+Git - Downloading Package<br>
+选择相应的版本。</p>
+<p><strong>Git与GitHub帐号绑定</strong><br>
+安装成功后，将你的Git与GitHub帐号绑定，鼠标右击打开 Git Bash</p>
+<p>或者在菜单里搜索Git Bash，设置user.name和user.email配置信息：</p>
+<p>git config --global user.name “你的GitHub用户名”<br>
+git config --global user.email “你的GitHub注册邮箱”</p>
+<p><strong>生成ssh密钥文件：</strong><br>
+ssh-keygen -t rsa -C “你的GitHub注册邮箱”</p>
+<p>默认不需要设置密码。<br>
+找到生成的.ssh的文件夹中的id_rsa.pub密钥，将内容全部复制。</p>
+<p><strong>配置ssh密钥</strong><br>
+打开 GitHub_Settings_keys 页面，新建new SSH Key。</p>
+<p>Title任意填即可，将刚刚复制的id_rsa.pub内容粘贴进去，最后点击Add SSH key。<br>
+在Git Bash中检测GitHub公钥设置是否成功，输入 ssh git@github.com ：</p>
+<p><strong>Node.js</strong><br>
+Node.js下载地址：Download | Node.js<br>
+选择相应的版本。</p>
+<p>安装后，检测 Node.js是否安装成功，在命令行中输入 node -v ,安装成功会出现版本号。<br>
+检测npm是否安装成功，在命令行中输入npm -v,安装成功同样会出现版本号。<br>
+安装Hexo<br>
+创建一个名为 blog 的文件，打开，在里面右键启用 Git Bash Here<br>
+输入：<br>
+npm install -g hexo-cli</p>
+<p>安装完成后，初始化我们的博客，输入：<br>
+hexo init blog</p>
+<p>这样你的博客就初始化成功了。</p>
+<p>再搭建一下博客，输入：</p>
+<p>hexo g</p>
+<p>hexo s</p>
+<p>打开它输出的本地连接，一般在 localhost:4000。</p>
+<p>显示的就是你的博客了。</p>
+<p>将博客部署到Github上，使别人可以在 用户名.github.io 上访问到<br>
+blog根目录里的_config.yml文件称为站点配置文件，如下图</p>
+<p>进入根目录里的themes文件夹，里面也有个_config.yml文件，这个称为主题配置文件，如下图</p>
+<p>打开站点的配置文件_config.yml，翻到最后修改为：</p>
+<p>deploy:<br>
+type: git<br>
+repo: https://github.com/用户名/用户名.github.io.git<br>
+branch: master</p>
+<p>参考如下：</p>
+<p>在Git Bash中，输入：</p>
+<p>npm install hexo-deployer-git --save<br>
+hexo clean<br>
+hexo g<br>
+hexo d</p>
+<p>现在，你就可以访问 用户名.github.io来访问你的博客了。</p>
+<p><strong>Hexo 常用命令</strong><br>
+新建文章： hexo n &quot;我的博客&quot; == hexo new &quot;我的博客&quot;<br>
+生成: hexo g == hexo generate<br>
+启动服务预览： hexo s == hexo server<br>
+部署在Github上： hexo d == hexo deploy</p>
+<!-- more -->
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Hello Gridea]]></title>
+        <id>https://mxk-zwh.github.io/post/hello-gridea/</id>
+        <link href="https://mxk-zwh.github.io/post/hello-gridea/">
+        </link>
+        <updated>2018-12-11T16:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
+✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
+✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+<!-- more -->
+<p><a href="https://github.com/getgridea/gridea">Github</a><br>
+<a href="https://gridea.dev/">Gridea 主页</a><br>
+<a href="https://fehey.com/">示例网站</a></p>
+<h2 id="特性">特性👇</h2>
+<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
+<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
+<p>🏷️  你可以对文章进行标签分组</p>
+<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
+<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
+<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
+<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
+<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
+<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
+<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
+<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
+<p>未来，它一定会成为你离不开的伙伴</p>
+<p>尽情发挥你的才华吧！</p>
+<p>😘 Enjoy</p>
+]]></content>
+    </entry>
+</feed>

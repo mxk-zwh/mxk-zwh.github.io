@@ -1,0 +1,303 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ts 基础 --函数 | 学而不思</title>
+<link rel="shortcut icon" href="https://mxk-zwh.github.io/favicon.ico?v=1691291449572">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://mxk-zwh.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="ts 基础 --函数 | 学而不思 - Atom Feed" href="https://mxk-zwh.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="npm install -g typescript 下载
+看版本 tsc -v
+app.ts转app.js
+编译一个   tsc app.ts
+编译多个  tsc 文件1.ts 文件2.ts 文件3.ts
+运行 node app.js
+js..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://mxk-zwh.github.io">
+  <img class="avatar" src="https://mxk-zwh.github.io/images/avatar.png?v=1691291449572" alt="">
+  </a>
+  <h1 class="site-title">
+    学而不思
+  </h1>
+  <p class="site-description">
+    卖光老六
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu" target="_blank">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu" target="_blank">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu" target="_blank">
+          标签
+        </a>
+      
+    
+      
+        <a href="/cccccc/src/bg-pc/" class="menu" target="_blank">
+          背景
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="github.com" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+        <a href="twitter.com" target="_blank">
+          <i class="ri-twitter-line"></i>
+        </a>
+      
+    
+      
+        <a href="www.weibo.com" target="_blank">
+          <i class="ri-weibo-line"></i>
+        </a>
+      
+    
+      
+        <a href="www.zhihu.com" target="_blank">
+          <i class="ri-zhihu-line"></i>
+        </a>
+      
+    
+      
+        <a href="www.facebook.com" target="_blank">
+          <i class="ri-facebook-line"></i>
+        </a>
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              ts 基础 --函数
+            </h2>
+            <div class="post-info">
+              <span>
+                2023-05-19
+              </span>
+              <span>
+                3 min read
+              </span>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content" v-pre>
+                <p>npm install -g typescript 下载<br>
+看版本 tsc -v</p>
+<h1 id="appts转appjs">app.ts转app.js</h1>
+<p>编译一个   tsc app.ts<br>
+编译多个  tsc 文件1.ts 文件2.ts 文件3.ts<br>
+运行 node app.js<br>
+js是es来的</p>
+<blockquote>
+<p>vscode右键文件可以打开集成cmd</p>
+</blockquote>
+<h1 id="保留关键字">保留关键字</h1>
+<p>没见过ts<br>
+number string get instanceof   type<br>
+module private enum  any  package   do<br>
+super   extends    implements   static<br>
+interface   yield   export     void new<br>
+js<br>
+abstract  byte   char   debugger   delete<br>
+double   float   finally   final    goto   implements   import<br>
+in   native   protected    synchronized   throws      transient<br>
+volatile   with</p>
+<h1 id="基本类型">基本类型</h1>
+<p>数字类型： 二进制0b1 八进制0o7 十六进制0xf 十进制0<br>
+泛型数组：</p>
+<pre><code>let arr:Array&lt;number&gt;=[1,2]
+</code></pre>
+<p>不明确类型any<br>
+js类型：number、string、boolean、null、undefined、object<br>
+ts指定类型：any、unknown、never、enum、tuple<br>
+指定一种类型<br>
+var [变量名] : [类型] = 值;<br>
+指定多个类型（联合类型 属于高阶）<br>
+var [变量名] : ( [类型] | [类型] )[]<br>
+初始没有赋值，默认<code>any任意类型</code><br>
+var [变量名];<br>
+[变量名]=1;<br>
+初始有赋值 ，指定的类型为 <code>值的类型</code><br>
+var [变量名] = 值;</p>
+<blockquote>
+<p>变量不要使用 name 否则会与 DOM 中的全局 window 对象下的 name 属性出现了重名。</p>
+</blockquote>
+<h1 id="enum">enum</h1>
+<p>可迭代的 数字+1，默认从0开始，可以自定义（字符串。。）<br>
+实战项目大量用到</p>
+<pre><code>//编译效果复杂，编译后的东西不需要懂，代码量会比较大，动态类型
+// 0,1,2
+enum Color {Red,Green,Blue}
+//1,2,3 重置起始值
+enum Color {Red=1,Green,Blue}
+//手动赋值
+enum Color {Red=1,Green=2,Blue=4}
+//编译效果简单，代码量小，静态
+const enum Color {。。。}
+</code></pre>
+<h1 id="switch">switch</h1>
+<p>有大括号</p>
+<pre><code>switch(){
+    case 'A':{
+        console.log('优')
+        break;
+    }
+    default:{
+        console.log('不行')
+        break
+    }
+}
+</code></pre>
+<h1 id="循环">循环</h1>
+<p>for...of （支持遍历 数组  字符串 映射maps 集合sets）</p>
+<p>for (let 变量 of 数组){}<br>
+//当前值,当前index,array<br>
+forEach((val,idx,array)=&gt;{})<br>
+every<br>
+list.every((val,idx,array)=&gt;{<br>
+return true//跳过<br>
+//return false 结束迭代<br>
+})<br>
+some</p>
+<h1 id="tsconfig配置">tsconfig配置</h1>
+<p>tsc --init<br>
+运行ts直接tsc</p>
+<h1 id="调试">调试</h1>
+<p>tsconfig开启sourceMap（编译的时候生成另外一个文件）<br>
+。。.js.map文件（主要是当前js文件和外面的ts文件。。。，连接作用）<br>
+ts打断点  用node.js执行</p>
+<blockquote>
+<p>打断点  先编译 后执行<br>
+<strong>webstorm</strong>里的运行配置添加node.js，<br>
+配置-js文件（路径）-运行之前，添加编译ts（添加配置tsconfig）</p>
+</blockquote>
+<h1 id="函数">函数</h1>
+<p>不知道返回类型写什么，<br>
+可以把鼠标放在函数上面（不是形参上面）<br>
+智能提示返回类型<br>
+没有返回return，就是void类型</p>
+<p>形参必须要有类型</p>
+<p>函数参数没有使用 的智能提示需要开启（标准）<br>
+tsconfig- noUnusedParameters:true<br>
+避免函数undefined被返回，<br>
+tsconfig- noImplicitReturns:true<br>
+函数内部，有参数没用（耗内存）<br>
+tsconfig- noUnusedLocals:true</p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li><a href="#appts%E8%BD%ACappjs">app.ts转app.js</a></li>
+<li><a href="#%E4%BF%9D%E7%95%99%E5%85%B3%E9%94%AE%E5%AD%97">保留关键字</a></li>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B">基本类型</a></li>
+<li><a href="#enum">enum</a></li>
+<li><a href="#switch">switch</a></li>
+<li><a href="#%E5%BE%AA%E7%8E%AF">循环</a></li>
+<li><a href="#tsconfig%E9%85%8D%E7%BD%AE">tsconfig配置</a></li>
+<li><a href="#%E8%B0%83%E8%AF%95">调试</a></li>
+<li><a href="#%E5%87%BD%E6%95%B0">函数</a></li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://mxk-zwh.github.io/post/python-mian-xiang-dui-xiang-greater/">
+              <h3 class="post-title">
+                python面向对象(难)--错误
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://mxk-zwh.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

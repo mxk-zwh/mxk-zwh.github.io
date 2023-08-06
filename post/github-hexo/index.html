@@ -1,0 +1,249 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>GitHub + Hexo | 学而不思</title>
+<link rel="shortcut icon" href="https://mxk-zwh.github.io/favicon.ico?v=1691291449572">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://mxk-zwh.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="GitHub + Hexo | 学而不思 - Atom Feed" href="https://mxk-zwh.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="注册一个 Github 账号并创建仓库
+注册Github账号
+如果你没有 Github 的账号，那么可以进入 官网 开始注册（注意一下用户名的填写，如果不使用自定义域名，用户名将会是你的 Github 分配给你的域名，例如你的用户名为 xx..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://mxk-zwh.github.io">
+  <img class="avatar" src="https://mxk-zwh.github.io/images/avatar.png?v=1691291449572" alt="">
+  </a>
+  <h1 class="site-title">
+    学而不思
+  </h1>
+  <p class="site-description">
+    卖光老六
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu" target="_blank">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu" target="_blank">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu" target="_blank">
+          标签
+        </a>
+      
+    
+      
+        <a href="/cccccc/src/bg-pc/" class="menu" target="_blank">
+          背景
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="github.com" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+        <a href="twitter.com" target="_blank">
+          <i class="ri-twitter-line"></i>
+        </a>
+      
+    
+      
+        <a href="www.weibo.com" target="_blank">
+          <i class="ri-weibo-line"></i>
+        </a>
+      
+    
+      
+        <a href="www.zhihu.com" target="_blank">
+          <i class="ri-zhihu-line"></i>
+        </a>
+      
+    
+      
+        <a href="www.facebook.com" target="_blank">
+          <i class="ri-facebook-line"></i>
+        </a>
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              GitHub + Hexo
+            </h2>
+            <div class="post-info">
+              <span>
+                2023-01-30
+              </span>
+              <span>
+                3 min read
+              </span>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content" v-pre>
+                <p>注册一个 Github 账号并创建仓库<br>
+注册Github账号<br>
+如果你没有 Github 的账号，那么可以进入 官网 开始注册（注意一下用户名的填写，如果不使用自定义域名，用户名将会是你的 Github 分配给你的域名，例如你的用户名为 xxx，那么你的域名会是 xxx.github,io）。</p>
+<p><strong>新建仓库</strong><br>
+如图所示，点击右上角的 + 号，然后点击 New respository。</p>
+<p><strong>配置仓库</strong><br>
+仓库名填写格式为：你的用户名.github.io。<br>
+然后点击 Add a README file，再点击 Create repository 即可。</p>
+<p><strong>安装Git</strong><br>
+从Git官网下载<br>
+Git - Downloading Package<br>
+选择相应的版本。</p>
+<p><strong>Git与GitHub帐号绑定</strong><br>
+安装成功后，将你的Git与GitHub帐号绑定，鼠标右击打开 Git Bash</p>
+<p>或者在菜单里搜索Git Bash，设置user.name和user.email配置信息：</p>
+<p>git config --global user.name “你的GitHub用户名”<br>
+git config --global user.email “你的GitHub注册邮箱”</p>
+<p><strong>生成ssh密钥文件：</strong><br>
+ssh-keygen -t rsa -C “你的GitHub注册邮箱”</p>
+<p>默认不需要设置密码。<br>
+找到生成的.ssh的文件夹中的id_rsa.pub密钥，将内容全部复制。</p>
+<p><strong>配置ssh密钥</strong><br>
+打开 GitHub_Settings_keys 页面，新建new SSH Key。</p>
+<p>Title任意填即可，将刚刚复制的id_rsa.pub内容粘贴进去，最后点击Add SSH key。<br>
+在Git Bash中检测GitHub公钥设置是否成功，输入 ssh git@github.com ：</p>
+<p><strong>Node.js</strong><br>
+Node.js下载地址：Download | Node.js<br>
+选择相应的版本。</p>
+<p>安装后，检测 Node.js是否安装成功，在命令行中输入 node -v ,安装成功会出现版本号。<br>
+检测npm是否安装成功，在命令行中输入npm -v,安装成功同样会出现版本号。<br>
+安装Hexo<br>
+创建一个名为 blog 的文件，打开，在里面右键启用 Git Bash Here<br>
+输入：<br>
+npm install -g hexo-cli</p>
+<p>安装完成后，初始化我们的博客，输入：<br>
+hexo init blog</p>
+<p>这样你的博客就初始化成功了。</p>
+<p>再搭建一下博客，输入：</p>
+<p>hexo g</p>
+<p>hexo s</p>
+<p>打开它输出的本地连接，一般在 localhost:4000。</p>
+<p>显示的就是你的博客了。</p>
+<p>将博客部署到Github上，使别人可以在 用户名.github.io 上访问到<br>
+blog根目录里的_config.yml文件称为站点配置文件，如下图</p>
+<p>进入根目录里的themes文件夹，里面也有个_config.yml文件，这个称为主题配置文件，如下图</p>
+<p>打开站点的配置文件_config.yml，翻到最后修改为：</p>
+<p>deploy:<br>
+type: git<br>
+repo: https://github.com/用户名/用户名.github.io.git<br>
+branch: master</p>
+<p>参考如下：</p>
+<p>在Git Bash中，输入：</p>
+<p>npm install hexo-deployer-git --save<br>
+hexo clean<br>
+hexo g<br>
+hexo d</p>
+<p>现在，你就可以访问 用户名.github.io来访问你的博客了。</p>
+<p><strong>Hexo 常用命令</strong><br>
+新建文章： hexo n &quot;我的博客&quot; == hexo new &quot;我的博客&quot;<br>
+生成: hexo g == hexo generate<br>
+启动服务预览： hexo s == hexo server<br>
+部署在Github上： hexo d == hexo deploy</p>
+<!-- more -->
+
+              </div>
+              <div class="toc-container">
+                
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://mxk-zwh.github.io/post/npm-install-xxx-jia-shang-s-d-g-he-shi-me-du-bu-jia-de-qu-bie/">
+              <h3 class="post-title">
+                npm install XXX 加上-s、-d、-g和什么都不加的区别
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://mxk-zwh.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

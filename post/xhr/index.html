@@ -1,0 +1,227 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>xhr | 学而不思</title>
+<link rel="shortcut icon" href="https://mxk-zwh.github.io/favicon.ico?v=1691291449572">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://mxk-zwh.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="xhr | 学而不思 - Atom Feed" href="https://mxk-zwh.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="xhr
+1.创建对象
+2.初始化：设置请求方法和url
+3.发送
+4.事件绑定：处理服务端返回的结果
+on 当什么时候
+readystate是xhr对象中的属性，
+change 每一次改变就执行一次
+状态：0-未初始化 1-open方法调用..." />
+    <meta name="keywords" content="xhr" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://mxk-zwh.github.io">
+  <img class="avatar" src="https://mxk-zwh.github.io/images/avatar.png?v=1691291449572" alt="">
+  </a>
+  <h1 class="site-title">
+    学而不思
+  </h1>
+  <p class="site-description">
+    卖光老六
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu" target="_blank">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu" target="_blank">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu" target="_blank">
+          标签
+        </a>
+      
+    
+      
+        <a href="/cccccc/src/bg-pc/" class="menu" target="_blank">
+          背景
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="github.com" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+        <a href="twitter.com" target="_blank">
+          <i class="ri-twitter-line"></i>
+        </a>
+      
+    
+      
+        <a href="www.weibo.com" target="_blank">
+          <i class="ri-weibo-line"></i>
+        </a>
+      
+    
+      
+        <a href="www.zhihu.com" target="_blank">
+          <i class="ri-zhihu-line"></i>
+        </a>
+      
+    
+      
+        <a href="www.facebook.com" target="_blank">
+          <i class="ri-facebook-line"></i>
+        </a>
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              xhr
+            </h2>
+            <div class="post-info">
+              <span>
+                2023-02-10
+              </span>
+              <span>
+                1 min read
+              </span>
+              
+                <a href="https://mxk-zwh.github.io/tag/TwpRvhEbq/" class="post-tag">
+                  # xhr
+                </a>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://picx.zhimg.com/v2-ddba709a89b7d0270fc05386790186da_1440w.jpg?source=172ae18b" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content" v-pre>
+                <p>xhr<br>
+1.创建对象<br>
+2.初始化：设置请求方法和url<br>
+3.发送<br>
+4.事件绑定：处理服务端返回的结果<br>
+on 当什么时候<br>
+readystate是xhr对象中的属性，<br>
+change 每一次改变就执行一次<br>
+状态：0-未初始化 1-open方法调用完毕<br>
+2-send方法调用完毕 3-服务端返回的部分结果<br>
+4-服务端返回所有结果</p>
+<p>json<br>
+const data = {<br>
+name:'atguigu'<br>
+}<br>
+let str=JSON.stringify(data)<br>
+// 响应体<br>
+response.send(str);<br>
+手动转换<br>
+let data=JSON.parse(xhr.response)<br>
+自动转化<br>
+xhr.responseType='json'</p>
+<p>nodemon<br>
+文件变了，重启node<br>
+全局安装-g<br>
+nodemon 服务.js 本地ip 端口</p>
+<p>cors跨域请求<br>
+-后端response.setHeader(&quot;Access-Control-Allow-Origin&quot;, &quot;*&quot;);<br>
+-前端jsonp 只支持get，script crossorigin=&quot;anonymous&quot;</p>
+
+              </div>
+              <div class="toc-container">
+                
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://mxk-zwh.github.io/post/github-hexo/">
+              <h3 class="post-title">
+                GitHub + Hexo
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://mxk-zwh.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

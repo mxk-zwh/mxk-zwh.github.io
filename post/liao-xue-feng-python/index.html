@@ -1,0 +1,309 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>廖雪峰python基础-&gt;模块 | 学而不思</title>
+<link rel="shortcut icon" href="https://mxk-zwh.github.io/favicon.ico?v=1691291449572">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://mxk-zwh.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="廖雪峰python基础-&gt;模块 | 学而不思 - Atom Feed" href="https://mxk-zwh.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="Python程序是大小写敏感的，如果写错了大小写，程序会报错。
+这种变量本身类型不固定的语言（不用定类型）称之为动态语言，与之对应的是静态语言。静态语言在定义变量时必须指定变量类型，如果赋值的时候类型不匹配，就会报错。
+编码
+在最新的Pyt..." />
+    <meta name="keywords" content="python" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://mxk-zwh.github.io">
+  <img class="avatar" src="https://mxk-zwh.github.io/images/avatar.png?v=1691291449572" alt="">
+  </a>
+  <h1 class="site-title">
+    学而不思
+  </h1>
+  <p class="site-description">
+    卖光老六
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu" target="_blank">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu" target="_blank">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu" target="_blank">
+          标签
+        </a>
+      
+    
+      
+        <a href="/cccccc/src/bg-pc/" class="menu" target="_blank">
+          背景
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="github.com" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+        <a href="twitter.com" target="_blank">
+          <i class="ri-twitter-line"></i>
+        </a>
+      
+    
+      
+        <a href="www.weibo.com" target="_blank">
+          <i class="ri-weibo-line"></i>
+        </a>
+      
+    
+      
+        <a href="www.zhihu.com" target="_blank">
+          <i class="ri-zhihu-line"></i>
+        </a>
+      
+    
+      
+        <a href="www.facebook.com" target="_blank">
+          <i class="ri-facebook-line"></i>
+        </a>
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              廖雪峰python基础-&gt;模块
+            </h2>
+            <div class="post-info">
+              <span>
+                2023-05-02
+              </span>
+              <span>
+                5 min read
+              </span>
+              
+                <a href="https://mxk-zwh.github.io/tag/1AtASZhuo/" class="post-tag">
+                  # python
+                </a>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content" v-pre>
+                <p>Python程序是<strong>大小写敏感</strong>的，如果写错了大小写，程序会报错。</p>
+<p>这种变量本身类型不固定的语言（不用定类型）称之为<strong>动态语言</strong>，与之对应的是<strong>静态语言</strong>。静态语言在定义变量时必须指定变量类型，如果赋值的时候类型不匹配，就会报错。</p>
+<h2 id="编码">编码</h2>
+<p>在最新的Python 3版本中，字符串是以Unicode编码的，也就是说，Python的字符串<strong>支持多语言</strong></p>
+<p>对于<strong>单个字符</strong>的编码，Python提供了<br>
+<code>ord()</code>函数获取字符的整数表示，<br>
+<code>chr()</code>函数把编码转换为对应的字符</p>
+<p><code>bytes</code>类型的数据用带<code>b</code>前缀的单引号或双引号表示：</p>
+<pre><code>'ABC'.encode('ascii')  
+b'ABC'  
+</code></pre>
+<p><code>str</code>通过<code>encode()</code>方法可以编码为指定的<code>bytes</code></p>
+<pre><code>b'ABC'.decode('ascii')  
+'ABC'  
+</code></pre>
+<p>a=() 空元组<br>
+d=(3,) 元组<br>
+e=(2,3,4) 元组</p>
+<h2 id="if">if</h2>
+<p><code>break</code>和<code>continue</code>这两个语句通常都必须配合<code>if</code>语句使用<br>
+滥用<code>break</code>和<code>continue</code>会造成代码执行逻辑分叉过多，容易出错</p>
+<h2 id="字典">字典</h2>
+<p>要避免key不存在的错误，有两种办法，<br>
+一是通过<code>in</code>判断key是否存在<br>
+二是通过dict提供的<code>get()</code>方法，如果key不存在，可以返回<code>None</code>，或者自己指定的value</p>
+<p>通过<code>add(key)</code>方法可以添加元素到set中，可以重复添加，但不会有效果</p>
+<h2 id="高级函数">高级函数</h2>
+<p><strong>变量可以指向函数</strong>f = abs</p>
+<p>对于abs()这个函数，完全可以把函数名abs看成变量</p>
+<pre><code>abs = 10  
+abs(-10)  
+Traceback (most recent call last):  
+    File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+TypeError: 'int' object is not callable  
+</code></pre>
+<p>一个函数就可以接收另一个函数作为参数，这种函数就称之为高阶函数</p>
+<pre><code>def add(x, y, f):
+    return f(x) + f(y)
+</code></pre>
+<p>map(函数，序列) 序列中的每一个元素代入函数计算<br>
+reduce(函数，序列) 把列表中的第一个和第二个元素代入函数，再把结果和下一个元素代入函数计算</p>
+<p>filter(函数，序列) 过滤序列，删掉False，留下True</p>
+<p>lam<strong>bda</strong> 形参列表：表达式，实参序列 <strong>匿名函数</strong>，返回值就是表达式结果<br>
+变量指向 匿名函数f=lambda ...<br>
+变量调用函数</p>
+<pre><code>lambda x:x*x 实际上就是。=。
+def f(x):
+    return x*x
+</code></pre>
+<h2 id="返回函数">返回函数</h2>
+<p>比如不需要立即求和，返回求和的函数</p>
+<pre><code>def lazy_sum(*args):
+    def sum():
+        ax = 0
+        for n in args:
+            ax = ax + n
+        return ax
+    return sum
+</code></pre>
+<h2 id="装饰器-修饰器-decorator-还不会">装饰器。修饰器。decorator   <strong>还不会</strong></h2>
+<p>我想要加强某函数<code>now()</code>函数的功能，就去加修饰器，动态添加功能</p>
+<p>@log<br>
+def now():<br>
+相当于now=log(now)<br>
+@log('execute')<br>
+def now():<br>
+相当于now = log('execute')(now)</p>
+<p>wrapper()函数可以接受<strong>任意参数</strong>的调用。参数是argument<br>
+def wrapper(*args, **kw):</p>
+<h2 id="args-kwargs"><code>*args,</code> <code>**kwargs</code></h2>
+<p>def test_kwargs(first, <code>*args,</code> <code>**kwargs</code>):<br>
+test_kwargs(1, 2, 3, 4, k1=5, k2=6)<br>
+<code>*args</code>: [1,2,3,4]<br>
+<code>**kwargs</code>:{'k1':5,'k2':6}</p>
+<pre><code>for v in args:
+      print ( v)
+ for k, v in kwargs.items():
+      print (k, v)
+</code></pre>
+<h2 id="偏函数">偏函数</h2>
+<p>int(字符串,base=十进制) 默认是<strong>十进制</strong>，可以做<strong>N进制</strong>转换十进制<br>
+functools.partical（函数，函数的参数=默认值）<br>
+functools.partical 把函数的某些参数固定住（就是重新<strong>设置默认值</strong>），返回<strong>新的函数</strong>，调用更简单<br>
+int2 = functools.partial(int, base=2)<br>
+int2('1000000')</p>
+<h2 id="模块">模块</h2>
+<p>大大提高了代码的<strong>可维护性</strong>，编写代码不必从零开始<br>
+经常引用 其他模块，包括Python<strong>内置</strong>的模块和来自<strong>第三方</strong>的模块。<br>
+把<code>__init__.py</code>看做目录。不是包。</p>
+<p>模块名 不要使用中文、特殊字符<br>
+2 尽量不要与内置函数名字 冲突。1 命名前看看 Python的所有内置函数（import 就能看）。</p>
+<p>函数和变量我们希望给<strong>别人使用</strong>（public） 正常命名  <code>xxxx</code><br>
+函数和变量我们希望给<strong>内部使用</strong> （private） <code>__xxx</code>（两个下划线）<br>
+<strong>特殊变量</strong>，可以被直接引用，有特殊用途  <code>__xxx__</code></p>
+<h2 id="安装第三方模块3rd-party">安装第三方模块3rd party</h2>
+<p>安装anaconda（基于Python的数据处理和科学计算平台）<br>
+添加自己的搜索目录<br>
+一、修改sys.path<br>
+import sys<br>
+sys.path.append('/Users/michael/my_py_scripts')<br>
+二、环境变量<code>PYTHONPATH</code><br>
+该环境变量的内容会被自动添加到模块搜索路径中</p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E7%BC%96%E7%A0%81">编码</a></li>
+<li><a href="#if">if</a></li>
+<li><a href="#%E5%AD%97%E5%85%B8">字典</a></li>
+<li><a href="#%E9%AB%98%E7%BA%A7%E5%87%BD%E6%95%B0">高级函数</a></li>
+<li><a href="#%E8%BF%94%E5%9B%9E%E5%87%BD%E6%95%B0">返回函数</a></li>
+<li><a href="#%E8%A3%85%E9%A5%B0%E5%99%A8-%E4%BF%AE%E9%A5%B0%E5%99%A8-decorator-%E8%BF%98%E4%B8%8D%E4%BC%9A">装饰器。修饰器。decorator   <strong>还不会</strong></a></li>
+<li><a href="#args-kwargs"><code>*args,</code> <code>**kwargs</code></a></li>
+<li><a href="#%E5%81%8F%E5%87%BD%E6%95%B0">偏函数</a></li>
+<li><a href="#%E6%A8%A1%E5%9D%97">模块</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A8%A1%E5%9D%973rd-party">安装第三方模块3rd party</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://mxk-zwh.github.io/post/cai-niao-python/">
+              <h3 class="post-title">
+                菜鸟python
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://mxk-zwh.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

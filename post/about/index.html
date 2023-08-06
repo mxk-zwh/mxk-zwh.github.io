@@ -1,0 +1,407 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>axios | 学而不思</title>
+<link rel="shortcut icon" href="https://mxk-zwh.github.io/favicon.ico?v=1691291449572">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://mxk-zwh.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="axios | 学而不思 - Atom Feed" href="https://mxk-zwh.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="axios是前端流行的请求库
+axios api
+分析目录结构，背着写源码
+{
+// url is 服务器 URL that will be used for （用于）the request
+url: '/user',
+// method ..." />
+    <meta name="keywords" content="axios" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://mxk-zwh.github.io">
+  <img class="avatar" src="https://mxk-zwh.github.io/images/avatar.png?v=1691291449572" alt="">
+  </a>
+  <h1 class="site-title">
+    学而不思
+  </h1>
+  <p class="site-description">
+    卖光老六
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu" target="_blank">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu" target="_blank">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu" target="_blank">
+          标签
+        </a>
+      
+    
+      
+        <a href="/cccccc/src/bg-pc/" class="menu" target="_blank">
+          背景
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="github.com" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+        <a href="twitter.com" target="_blank">
+          <i class="ri-twitter-line"></i>
+        </a>
+      
+    
+      
+        <a href="www.weibo.com" target="_blank">
+          <i class="ri-weibo-line"></i>
+        </a>
+      
+    
+      
+        <a href="www.zhihu.com" target="_blank">
+          <i class="ri-zhihu-line"></i>
+        </a>
+      
+    
+      
+        <a href="www.facebook.com" target="_blank">
+          <i class="ri-facebook-line"></i>
+        </a>
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              axios
+            </h2>
+            <div class="post-info">
+              <span>
+                2019-01-25
+              </span>
+              <span>
+                11 min read
+              </span>
+              
+                <a href="https://mxk-zwh.github.io/tag/4U9pjVdA5/" class="post-tag">
+                  # axios
+                </a>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content" v-pre>
+                <p>axios是前端流行的请求库<br>
+axios api<br>
+分析目录结构，背着写源码</p>
+<p>{<br>
+// <code>url</code> is 服务器 URL that will be used for （用于）the request<br>
+url: '/user',</p>
+<p>// <code>method</code> is 请求方法 to be used when making the request<br>
+method: 'get', // default</p>
+<p>// <code>baseURL</code> + <code>url</code> unless <code>url</code> is absolute.<br>
+// It can be 方便to set <code>baseURL</code> for an 实例 of axios to pass relative URLs<br>
+// to（把什么传给） 实例方法.<br>
+baseURL: 'https://some-domain.com/api/',</p>
+<p>// <code>transformRequest</code> allows changes to the request data（允许对什么做什么） before it is sent to the server（发送给服务端前，允许修改前端数据-预处理）<br>
+// This is only applicable for （只适用于）request methods 'PUT', 'POST', 'PATCH' and 'DELETE'<br>
+// The last function in the array must return a string or an instance of （实例）Buffer, ArrayBuffer,<br>
+// FormData or Stream<br>
+// You may modify（修改） the headers object.<br>
+transformRequest: [function (data, headers) {<br>
+// Do whatever you want to transform the data（你想干嘛转化数据）</p>
+<p>return data;<br>
+}],</p>
+<p>// <code>transformResponse</code> allows changes to the response data （接收服务端前，修改响应数据）to be made before<br>
+// it is passed to（传递给） then/catch<br>
+transformResponse: [function (data) {<br>
+// Do whatever you want to transform the data</p>
+<p>return data;<br>
+}],</p>
+<p>// <code>headers</code> are custom headers to be sent（自定义请求头）满足条件<br>
+headers: {'X-Requested-With': 'XMLHttpRequest'},</p>
+<p>// <code>params</code> are the URL parameters （参数）to be sent with（与请求一起发） the request<br>
+// Must be a plain object（普通对象） or a URLSearchParams （搜索参数）object对象中设置内容<br>
+params: {<br>
+ID: 12345<br>
+},</p>
+<p>// <code>paramsSerializer</code> is an optional config in charge of （负责）serializing <code>params</code>参数序列化<br>
+/post?a=100&amp;b=200<br>
+/post/a/100/b/200<br>
+/post/a.100/b.200<br>
+paramsSerializer: {</p>
+<p>encode?: (param: string): string =&gt; { /* Do custom ops（定制操作Operators） here and return transformed string */ }, // custom encoder（编码）function; sends Key/Values in an iterative fashion（迭代方式）</p>
+<p>serialize?: (params: Record&lt;string, any&gt;, options?: ParamsSerializerOptions ), // mimic （模仿）pre 1.x behavior and send entire（整个） params object to a custom serializer func. Allows consumer to control how params are serialized.</p>
+<p>indexes: false // array indexes format (null - no brackets, false (default) - empty brackets, true - brackets with indexes)<br>
+},</p>
+<p>// <code>data</code> is the data to be sent as the request body（作为请求体发送的数据）<br>
+// Only applicable for request methods 'PUT', 'POST', 'DELETE , and 'PATCH'<br>
+// When no <code>transformRequest</code> is set, must be of one of the following types:<br>
+// - string, plain object, ArrayBuffer, ArrayBufferView, URLSearchParams<br>
+// - Browser only: FormData, File, Blob<br>
+// - Node only: Stream, Buffer, FormData (form-data package)<br>
+data: {<br>
+firstName: 'Fred'<br>
+},</p>
+<p>// syntax alternative to send data into the body（向体发送数据）<br>
+// method post<br>
+// only the value is sent, not the key（只能发送值）<br>
+data: 'Country=Brasil&amp;City=Belo Horizonte',</p>
+<p>// <code>timeout</code> specifies （指定）the number of milliseconds （毫秒数）before the request times out.（请求超时）<br>
+// If the request takes longer than <code>timeout</code>（请求时间超过）, the request will be aborted（被终止）.<br>
+timeout: 1000, // default is <code>0</code> (no timeout)</p>
+<p>// <code>withCredentials</code> indicates whether or not cross-site（跨网站） Access-Control requests<br>
+// should be made using credentials（资格证书）<br>
+withCredentials: false, // default</p>
+<p>// <code>adapter</code> allows custom handling of requests （自定义处理请求）which makes testing easier（测试更简单）<br>
+// Return a promise and supply a valid response （提供有效响应）(see lib/adapters/README.md).<br>
+adapter: function (config) {<br>
+/* ... */<br>
+},</p>
+<p>// <code>auth</code> indicates that HTTP Basic auth（基本授权） should be used, and supplies credentials（提供的凭证）.<br>
+// This will set an <code>Authorization</code> header, overwriting any existing<br>
+// <code>Authorization</code> custom headers you have set using <code>headers</code>.<br>
+// Please note that（请注意） only HTTP Basic auth is configurable through this parameter（通过参数配置什么）.<br>
+// For Bearer tokens and such, use <code>Authorization</code> custom headers instead.<br>
+auth: {<br>
+username: 'janedoe',<br>
+password: 's00pers3cret'<br>
+},</p>
+<p>// <code>responseType</code> indicates the type of data that the server will respond with（服务端返回数据类型）<br>
+// options are: 'arraybuffer', 'document', 'json', 'text', 'stream'<br>
+// browser only: 'blob'<br>
+responseType: 'json', // default默认json</p>
+<p>// <code>responseEncoding</code> indicates encoding to use for（用于） decoding responses (Node.js only)<br>
+// Note: Ignored for <code>responseType</code> of 'stream' or client-side（客户端） requests（忽略xxx返回类型）<br>
+responseEncoding: 'utf8', // default</p>
+<p>// <code>xsrfCookieName</code> is the name of the cookie to use as a value for xsrf token<br>
+xsrfCookieName: 'XSRF-TOKEN', // default</p>
+<p>// <code>xsrfHeaderName</code> is the name of the http header that carries the xsrf token value<br>
+xsrfHeaderName: 'X-XSRF-TOKEN', // default</p>
+<p>// <code>onUploadProgress</code> allows handling of progress events for uploads（处理上传进度事件）<br>
+// browser &amp; node.js<br>
+onUploadProgress: function ({loaded, total, progress, bytes, estimated, rate, upload = true}) {<br>
+// Do whatever you want with the Axios progress event</p>
+<p>},</p>
+<p>// <code>onDownloadProgress</code> allows handling of progress events for downloads（下载进度）<br>
+// browser &amp; node.js<br>
+onDownloadProgress: function ({loaded, total, progress, bytes, estimated, rate, download = true}) {<br>
+// Do whatever you want with the Axios progress event<br>
+},</p>
+<p>// <code>maxContentLength</code> defines the max size of the http response content in bytes （字节为单位）allowed in node.js（返回内容最大）<br>
+maxContentLength: 2000,</p>
+<p>// <code>maxBodyLength</code> (Node only option) defines the max size of the http request content in bytes allowed（请求内容最大）<br>
+maxBodyLength: 2000,</p>
+<p>// <code>validateStatus</code> （批准状态）defines whether to resolve or reject （是解决还是拒绝）the promise for a given<br>
+// HTTP response status code. If <code>validateStatus</code> returns <code>true</code> (or is set to <code>null</code><br>
+// or <code>undefined</code>), the promise will be resolved; otherwise, the promise will be<br>
+// rejected.<br>
+validateStatus: function (status) {<br>
+return status &gt;= 200 &amp;&amp; status &lt; 300; // default<br>
+},</p>
+<p>// <code>maxRedirects</code> defines the maximum number of redirects（最大重定向数） to follow in node.js.<br>
+// If set to 0, no redirects will be followed.<br>
+maxRedirects: 21, // default</p>
+<p>// <code>beforeRedirect</code> defines a function that will be called before redirect.<br>
+// Use this（使用此选项） to adjust the request options upon redirecting（在重定向时）,<br>
+// to inspect（检查） the latest response headers,<br>
+// or to cancel the request by throwing an error<br>
+// If maxRedirects is set to 0, <code>beforeRedirect</code> is not used.<br>
+beforeRedirect: (options, { headers }) =&gt; {<br>
+if (options.hostname === &quot;example.com&quot;) {<br>
+options.auth = &quot;user:password&quot;;<br>
+}<br>
+},</p>
+<p>// <code>socketPath</code> defines a UNIX Socket （插口）to be used in node.js.<br>
+// e.g. '/var/run/docker.sock' to send requests to the docker daemon（docker守护进程）.<br>
+// Only either <code>socketPath</code> or <code>proxy</code> can be specified.<br>
+// If both are specified, <code>socketPath</code> is used.<br>
+socketPath: null, // default</p>
+<p>// <code>transport</code> determines（确定） the transport method that will be used to make the request（发出请求）. If defined, it will be used. Otherwise, if <code>maxRedirects</code> is 0, the default <code>http</code> or <code>https</code> library will be used, depending on the protocol specified in <code>protocol</code>. Otherwise, the <code>httpFollow</code> or <code>httpsFollow</code> library will be used, again depending on the protocol, which can handle redirects.<br>
+transport: undefined, // default</p>
+<p>// <code>httpAgent</code> and <code>httpsAgent</code> define a custom agent （。，）to be used when performing http<br>
+// and https requests, respectively, in node.js. This allows options to be added like<br>
+// <code>keepAlive</code> that are not enabled by default.<br>
+httpAgent: new http.Agent({ keepAlive: true }),<br>
+httpsAgent: new https.Agent({ keepAlive: true }),</p>
+<p>// <code>proxy</code> defines the hostname, port, and protocol of the proxy server（代理服务器）.<br>
+// You can also define your proxy using the conventional <code>http_proxy</code> and<br>
+// <code>https_proxy</code> environment variables. If you are using environment variables<br>
+// for your proxy configuration, you can also define a <code>no_proxy</code> environment<br>
+// variable as a comma-separated （逗号分割）list of domains that should not be proxied.<br>
+// Use <code>false</code> to disable proxies, ignoring environment variables.<br>
+// <code>auth</code> indicates that HTTP Basic auth should be used to connect to the proxy, and<br>
+// supplies credentials.<br>
+// This will set an <code>Proxy-Authorization</code> header, overwriting any existing<br>
+// <code>Proxy-Authorization</code> custom headers you have set using <code>headers</code>.<br>
+// If the proxy server uses HTTPS, then you must set the protocol to <code>https</code>.<br>
+proxy: {<br>
+protocol: 'https',<br>
+host: '127.0.0.1',<br>
+// hostname: '127.0.0.1' // Takes precedence over（优先于） 'host' if both  are defined<br>
+port: 9000,<br>
+auth: {<br>
+username: 'mikeymike',<br>
+password: 'rapunz3l'<br>
+}<br>
+},</p>
+<p>// <code>cancelToken</code> specifies a cancel token that can be used to cancel the request<br>
+// (see Cancellation section below for details)<br>
+cancelToken: new CancelToken(function (cancel) {<br>
+}),</p>
+<p>// an alternative way to cancel Axios requests using AbortController<br>
+signal: new AbortController().signal,</p>
+<p>// <code>decompress</code> indicates whether or not the response body should be decompressed（响应体是否解压缩）<br>
+// automatically. If set to <code>true</code> will also remove the 'content-encoding' header<br>
+// from the responses objects of all decompressed responses<br>
+// - Node only (XHR cannot turn off decompression)<br>
+decompress: true // default</p>
+<p>// <code>insecureHTTPParser</code> 布尔值.<br>
+// 表明 where to use an 不靠谱 HTTP parser that 接受 invalid HTTP headers.<br>
+// This may allow 互用 with 不符合规范 HTTP 执行.<br>
+// Using the insecure parser 应该避免.</p>
+<p>insecureHTTPParser: undefined // default</p>
+<p>// 为了向下兼容，新版本可能会移除<br>
+transitional: {<br>
+// 安静解析JSON<br>
+// <code>true</code> - 忽略JSON解析会报错a nd set response.data to null if 解析失败 (旧的行为)<br>
+// <code>false</code> - 如果JSON解析失败，抛出语法错误(注意:responseType必须设置为' JSON ')<br>
+silentJSONParsing: true, // default value for 当前axios版本</p>
+<p>// 尝试将响应字符串解析为JSON，即使' responseType '不是' JSON '<br>
+forcedJSONParsing: true,</p>
+<p>// 在请求超时时抛出ETIMEDOUT错误，而不是通用的ECONNABORTED<br>
+clarifyTimeoutError: false,<br>
+},</p>
+<p>env: {<br>
+// 用于自动将有效负载序列化为FormData对象的FormData类<br>
+FormData: window?.FormData || global?.FormData<br>
+},<br>
+表单序列化<br>
+formSerializer: {<br>
+visitor: (value, key, path, helpers) =&gt; {}; // 序列化表单值的自定义访问者函数<br>
+dots: boolean; // 使用点代替括号格式<br>
+metaTokens: boolean; // 在参数key中保留特殊的结尾，如{}<br>
+indexes: boolean; // 数组索引格式为：null -没有括号，false -空括号，true -带索引的括号<br>
+},</p>
+<p>// http adapter only (node.js)仅HTTP适配器<br>
+maxRate: [<br>
+100 * 1024, // 100KB/s upload limit,上传限速，下载限速<br>
+100 * 1024 // 100KB/s download limit<br>
+]<br>
+}</p>
+<h1 id="拦截器">拦截器</h1>
+<p>请求拦截器 逆序执行<br>
+响应拦截器 顺序执行</p>
+<p><strong>堆栈</strong>都是临时存放数据的地方<br>
+stack是栈，像一个水桶，后进先出。<br>
+堆heap运行时申请的内存大小。可以添加删除变量，没有顺序。</p>
+<p>栈区：编译器自动释放。函数参数、局部变量等。<br>
+堆区：是程序员释放，或者等结束后由os回收<br>
+堆看做树，栈先进后出的数据结构。</p>
+ <table style="width:400px">
+ <tr><td colspan="2">栈内存(水桶) </td><td>堆内存（树）</td></tr>
+<tr><td>a</td><td align="right">引用指针=</td><td>=>  object</td></tr>
+<table>
+# fn.apply和fn.call
+function f(arg1, arg2) {
+  console.log(arg1, arg2);
+}
+f.apply(null, args);  
+args是数组
+f.call(null, arg1, arg2);
+参数列表
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li><a href="#%E6%8B%A6%E6%88%AA%E5%99%A8">拦截器</a></li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://mxk-zwh.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

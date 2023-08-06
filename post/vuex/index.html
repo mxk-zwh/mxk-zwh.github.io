@@ -1,0 +1,283 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>vuex | 学而不思</title>
+<link rel="shortcut icon" href="https://mxk-zwh.github.io/favicon.ico?v=1691291449572">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://mxk-zwh.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="vuex | 学而不思 - Atom Feed" href="https://mxk-zwh.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="vuex
+实现 集中式 状态（数据） 管理的一个 Vue插件
+也是一种任意组件间通信的方式
+专门解决共享状态（数据）进行集中式管理（读写操作）
+什么时候使用？
+1.多个组件依赖同一个状态（多依赖一）
+2.来自不同组件的行为（不同的修改）需要..." />
+    <meta name="keywords" content="vuex" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://mxk-zwh.github.io">
+  <img class="avatar" src="https://mxk-zwh.github.io/images/avatar.png?v=1691291449572" alt="">
+  </a>
+  <h1 class="site-title">
+    学而不思
+  </h1>
+  <p class="site-description">
+    卖光老六
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu" target="_blank">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu" target="_blank">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu" target="_blank">
+          标签
+        </a>
+      
+    
+      
+        <a href="/cccccc/src/bg-pc/" class="menu" target="_blank">
+          背景
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="github.com" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+        <a href="twitter.com" target="_blank">
+          <i class="ri-twitter-line"></i>
+        </a>
+      
+    
+      
+        <a href="www.weibo.com" target="_blank">
+          <i class="ri-weibo-line"></i>
+        </a>
+      
+    
+      
+        <a href="www.zhihu.com" target="_blank">
+          <i class="ri-zhihu-line"></i>
+        </a>
+      
+    
+      
+        <a href="www.facebook.com" target="_blank">
+          <i class="ri-facebook-line"></i>
+        </a>
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              vuex
+            </h2>
+            <div class="post-info">
+              <span>
+                2023-08-06
+              </span>
+              <span>
+                3 min read
+              </span>
+              
+                <a href="https://mxk-zwh.github.io/tag/n4ZvGfONg/" class="post-tag">
+                  # vuex
+                </a>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content" v-pre>
+                <p>vuex<br>
+实现 集中式 状态（数据） 管理的一个 Vue插件<br>
+也是一种任意组件间通信的方式<br>
+专门解决共享状态（数据）进行集中式管理（读写操作）</p>
+<p>什么时候使用？<br>
+1.多个组件依赖同一个状态（多依赖一）<br>
+2.来自不同组件的行为（不同的修改）需要变更同一状态（多变更一）<br>
+<strong>vuex工作原理图：</strong><br>
+<img src="https://mxk-zwh.github.io/post-images/1691289566915.png" alt="" loading="lazy"></p>
+<p>客人-&gt;服务员、后厨、菜<br>
+<img src="https://mxk-zwh.github.io/post-images/1691289573713.png" alt="" loading="lazy"></p>
+<p>store是仓库 管理这三个<br>
+需要让所有的组件（vc）都能看见store<br>
+actions/mutations/state都是对象类型{}<br>
+dispatch是store里面的 不是window里的:<br>
+store.dispatch-&gt;actions<br>
+store.commit-&gt;mutations</p>
+<p>了解：<br>
+单词怎么写<br>
+都是对象类型<br>
+谁来管理这三个</p>
+<p>npm i vuex<br>
+默认安装只能在vue3中使用 vuex<br>
+(查看版本npm view vuex versions)<br>
+vue2中，要用vuex的3版本<br>
+vue3中，要用vuex的4版本<br>
+vue.use(vuex)<br>
+store<br>
+vc==&gt;store</p>
+<p>vue-resource<br>
+它可以通过XMLHttpRequest或JSONP发起请求并处理响应<br>
+jquery里的ajax能做的事情，这个插件也能做，简化了api<br>
+有好用的interceptor功能：可以在请求前和请求后加一些行为<br>
+比如请求时的loading界面</p>
+<p>vuxex/store</p>
+<p>组件-&gt;actions-&gt;mutations<br>
+this.$store.dispatch<br>
+context.commit<br>
+间接做事情<br>
+（客户告诉服务员，服务员告诉后厨）</p>
+<p>组件-&gt;mutations<br>
+this.$store.commit<br>
+直接做事情<br>
+（客户直接找后厨）</p>
+<p>组件-&gt;actions-&gt;actions-&gt;mutations<br>
+context.dispatch<br>
+处理一些事情<br>
+（客户务员1，1找服务员2，2找服务员3，3找后厨）</p>
+<p>组件-&gt;state<br>
+this.$store.state.x<br>
+（客户找菜）</p>
+<p>mutations-&gt;mutations<br>
+this.commit(&quot;cartAbout/calcTotalmoney&quot;);</p>
+<p>**actions形参 **<br>
+context里面有方法(commit/dsipatch/getters)，value(组件传过来的值)</p>
+<p><strong>mutations形参</strong><br>
+state，value（actions传过来的值）</p>
+<p><strong>getter形参</strong><br>
+state</p>
+<p><strong>mapState,mapGetters</strong><br>
+import { mapGetters, mapState } from &quot;vuex&quot;;<br>
+在computed里面写mapState,mapGetters<br>
+借助mapState生成计算属性，从state中读取数据。<br>
+借助mapGetters生成计算属性，从getters中读取数据。<br>
+有对象写法和数组写法 前面要加上展开运算符（...）<br>
+数组写法：计算属性名和获取的数据名一样</p>
+<p><strong>mapMutations</strong><br>
+借助mapMutations生成对应的方法，调用commit去联系mutations<br>
+写在methods里面<br>
+...mapMutations({ increment: &quot;JIA&quot;, decrement: &quot;JIAN&quot; }),<br>
+不传参value是实践对象<br>
+要去模板里传参<br>
+1.@click=&quot;increment(n)&quot;<br>
+2.写另一个函数传参<br>
+<img src="https://mxk-zwh.github.io/post-images/1691289648653.png" alt="" loading="lazy"></p>
+<p><strong>mapActions</strong><br>
+借助mapActions生成对应的方法，调用dispatch去联系actions<br>
+不传参value是事件对象<br>
+写法同上</p>
+<figure data-type="image" tabindex="1"><img src="https://mxk-zwh.github.io/post-images/1691289655889.png" alt="" loading="lazy"></figure>
+<p><strong>实现模块化+命名空间</strong><br>
+<img src="https://mxk-zwh.github.io/post-images/1691289632989.png" alt="" loading="lazy"></p>
+<p>namespaced:true<br>
+为了让代码更好维护，让多种数据分类更加明确<br>
+修改store.js<br>
+开启命名空间后，组件中读取state数据<br>
+开启命名空间后，组件中读取getters数据<br>
+开启命名空间后，组件中调用dispatch<br>
+开启命名空间后，组件中调用commit</p>
+
+              </div>
+              <div class="toc-container">
+                
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://mxk-zwh.github.io/post/yarn/">
+              <h3 class="post-title">
+                yarn
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://mxk-zwh.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

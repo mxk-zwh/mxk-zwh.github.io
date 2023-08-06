@@ -1,0 +1,467 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>菜鸟python | 学而不思</title>
+<link rel="shortcut icon" href="https://mxk-zwh.github.io/favicon.ico?v=1691291449572">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://mxk-zwh.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="菜鸟python | 学而不思 - Atom Feed" href="https://mxk-zwh.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="pass 在 python 3.x  可写可不写
+def xxx(xxx):  
+    pass
+
+
+
+
+
+整型      int： 正数负数，没有小数点
+长整型long：  无限大小最后是L或者是l
+浮点数float：科学计数法
+复数 ..." />
+    <meta name="keywords" content="python" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://mxk-zwh.github.io">
+  <img class="avatar" src="https://mxk-zwh.github.io/images/avatar.png?v=1691291449572" alt="">
+  </a>
+  <h1 class="site-title">
+    学而不思
+  </h1>
+  <p class="site-description">
+    卖光老六
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu" target="_blank">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu" target="_blank">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu" target="_blank">
+          标签
+        </a>
+      
+    
+      
+        <a href="/cccccc/src/bg-pc/" class="menu" target="_blank">
+          背景
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="github.com" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+        <a href="twitter.com" target="_blank">
+          <i class="ri-twitter-line"></i>
+        </a>
+      
+    
+      
+        <a href="www.weibo.com" target="_blank">
+          <i class="ri-weibo-line"></i>
+        </a>
+      
+    
+      
+        <a href="www.zhihu.com" target="_blank">
+          <i class="ri-zhihu-line"></i>
+        </a>
+      
+    
+      
+        <a href="www.facebook.com" target="_blank">
+          <i class="ri-facebook-line"></i>
+        </a>
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              菜鸟python
+            </h2>
+            <div class="post-info">
+              <span>
+                2023-05-02
+              </span>
+              <span>
+                4 min read
+              </span>
+              
+                <a href="https://mxk-zwh.github.io/tag/1AtASZhuo/" class="post-tag">
+                  # python
+                </a>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://www.runoob.com/wp-content/themes/runoob/assets/img/runoob-logo.png" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content" v-pre>
+                <p>pass 在 python 3.x  <strong>可写可不写</strong></p>
+<pre><code>def xxx(xxx):  
+    pass
+</code></pre>
+<ul>
+<li></li>
+</ul>
+<hr>
+<h2 id="整型-int-正数负数没有小数点长整型long-无限大小最后是l或者是l浮点数float科学计数法复数-abj-或者-complexab-ab都是-flout">整型      int： 正数负数，没有小数点<br>
+长整型long：  <strong>无限大小</strong>最后是L或者是l<br>
+浮点数float：科学计数法<br>
+复数             ： a+bj  或者  complex(a,b)  a,b都是  flout</h2>
+<hr>
+<p>new<br>
+<strong>元组不加括号也可以</strong></p>
+<pre><code>tup3 = &quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot; 
+</code></pre>
+<ul>
+<li></li>
+</ul>
+<h2 id="元组只有一个元素不加逗号会是整型"><strong>元组只有一个元素不加逗号，会是整型</strong></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(50)</td>
+<td>int</td>
+</tr>
+<tr>
+<td>(50,)</td>
+<td>tuple</td>
+</tr>
+</tbody>
+</table>
+<h2 id="下标索引-访问元组tupe00-1"><strong>下标索引 访问元组</strong><br>
+tupe[0]<br>
+0-&gt;<br>
+&lt;--1</h2>
+<h2 id="不可删除元素元组可以拼接tup1tup2"><strong>不可删除元素，元组可以拼接</strong><br>
+tup1+tup2</h2>
+<h2 id="删除整个元组del-tupj"><strong>删除整个元组</strong><br>
+del tupj</h2>
+<h2 id="元组运算符"><strong>元组运算符</strong></h2>
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>描述</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>len</td>
+<td>长度</td>
+<td></td>
+</tr>
+<tr>
+<td>a+b</td>
+<td>拼接</td>
+<td></td>
+</tr>
+<tr>
+<td>(a,)*4</td>
+<td>复制</td>
+<td>(a,a,a,a)</td>
+</tr>
+<tr>
+<td>3 in (0)</td>
+<td>存在吗</td>
+<td>True/False</td>
+</tr>
+<tr>
+<td>for x in (1,2,3):</td>
+<td>迭代</td>
+<td>1 2 3</td>
+</tr>
+</tbody>
+</table>
+<h2 id="元组内置函数min-max-len-tuplelist">元组内置函数<br>
+min max len tuple(list)</h2>
+<hr>
+<h2 id="改字典值xxdictxxxx"><strong>改字典值</strong><br>
+xxdict[xx]=xx</h2>
+<h2 id="用值xxdictxx"><strong>用值</strong><br>
+xxdict[xx]</h2>
+<p><strong>删除</strong></p>
+<pre><code>del tinydict['Name'] # 删除键 'Name'  
+tinydict.clear()     # 清空字典  
+del tinydict         # 删除字典  
+</code></pre>
+<ul>
+<li></li>
+</ul>
+<h2 id="键必须不可变所以可以用数字字符串或元组充当而用列表就不行1xxaaxxbbnnxx">键必须不可变，所以可以<strong>用数字，字符串或元组充当</strong>，而用<strong>列表就不行</strong><br>
+{1:xx,'aa':xx,(bb,nn):xx}</h2>
+<p><strong>函数</strong><br>
+len(dict) str(dict) type(dict)<br>
+<strong>方法</strong></p>
+<pre><code>clear  {}    
+ copy {'user':'root'一级目录深拷贝不随着改变,'a':[1,2,3]二级目录引用会随着改变}  
+</code></pre>
+<ul>
+<li></li>
+</ul>
+<p><strong>推导式</strong><br>
+列表推导式</p>
+<pre><code>[name.upper()for name in names if len(name)&gt;3]  
+</code></pre>
+<p>字典推导式</p>
+<pre><code>{x: x**2 for x in (2, 4, 6)}  
+</code></pre>
+<h2 id="集合推导式">集合推导式</h2>
+<pre><code>{i**2 for i in (1,2,3)}  
+</code></pre>
+<h2 id="元组推导式">元组推导式</h2>
+<pre><code>(x for x in range(1,10))
+</code></pre>
+<hr>
+<p><strong>迭代器</strong></p>
+<!-- 迭代器 -->
+<p>iter(序列) next(迭代对象)</p>
+<p>面向对象 class<br>
+<strong>iter</strong>(self) <strong>next</strong>(self)<br>
+raise StopIteration 暂停<br>
+赋初值   递增 抛出stop迭代</p>
+<p><strong>生成器</strong><br>
+yield 暂停并保存运行的信息 next()迭代</p>
+<hr>
+<h2 id="数据结构"><strong>数据结构</strong></h2>
+<p><strong>列表作为 堆栈</strong>（后进先出）后面进来append()的先出去pop()<br>
+pop()删除最后一个并打印删除的元素<br>
+<strong>列表作为 队列</strong>（先进先出）先进来的append()第一个出去popleft()<br>
+效率不高 删除时需要一个个元素向前移动<br>
+<strong>键值对-&gt;字典</strong></p>
+<pre><code>dict([('sape',4139),('guido',4127),('jack',4098)])  
+</code></pre>
+<p>元组列表构建字典</p>
+<pre><code>{x: x**2 for x in (2, 4, 6)}  
+</code></pre>
+<h2 id="字典推导">字典推导</h2>
+<pre><code>dict(sape=4139,guido=4127,jack=4098)  
+</code></pre>
+<h2 id="遍历for-kv-in-字典items键值for-iv-in-enumerate列表索引列表元素for-q-a-in-zip列表1列表2列表1元素列表2元素for-i-in-reversedrange1-10-2反向序列for-f-in-sortedsetbasket集合去重排序遍历"><strong>遍历</strong><br>
+for k,v in 字典.items():<br>
+键，值<br>
+for i,v in enumerate(列表):<br>
+索引，列表元素<br>
+for q, a in zip(列表1,列表2):<br>
+列表1元素，列表2元素<br>
+for i in reversed(range(1, 10, 2)):<br>
+反向序列<br>
+for f in sorted(set(basket)):<br>
+集合去重，排序遍历</h2>
+<h2 id="python模块import-sys-标准库模块sysargv-命令行参数syspath-自动找模块-路径列表"><strong>Python模块</strong><br>
+import sys  标准库模块<br>
+sys.argv  命令行参数<br>
+sys.path  自动找模块 路径列表</h2>
+<hr>
+<h2 id="importimport-模块模块函数赋给一个本地的名称变量模块函数仅在该模块下运行if-name-maindir模块-模块中的所有-自定义函数名dir-得到一个当前模块中-定义的属性列表"><strong>import</strong><br>
+import 模块<br>
+模块.函数()<br>
+赋给一个本地的名称：<br>
+变量=模块.函数<br>
+仅在该模块下运行：<br>
+if <strong>name</strong> == '<strong>main</strong>':<br>
+dir(模块) 模块中的所有 自定义函数名<br>
+dir() # 得到一个当前模块中 定义的属性列表</h2>
+<hr>
+<h2 id="输入和输出str-读者易读字符串repr-编译器易读字符串"><strong>输入和输出</strong><br>
+str() 读者易读字符串<br>
+repr() 编译器易读字符串</h2>
+<h2 id="rjust位数-位数大于字符串长度-字符串右对齐ljust位数-位数大于字符串长度-字符串左对齐center位数-位数大于字符串长度-字符串居中zfill位数-位数大于字符串长度-填充0-数字">rjust(位数)  位数大于字符串长度 字符串右对齐<br>
+ljust(位数)  位数大于字符串长度 字符串左对齐<br>
+center(位数)  位数大于字符串长度 字符串居中<br>
+zfill(位数)  位数大于字符串长度 （-） 填充0 数字</h2>
+<p>!a (使用 ascii()),<br>
+!s (使用 str()) 和 !r (使用 repr())<br>
+可以用于在格式化某个值之前对其进行转化:</p>
+<pre><code>print('xxx： {!r}。'.format(math.pi))
+</code></pre>
+<ul>
+<li></li>
+</ul>
+<hr>
+<pre><code>print('Runoob: {0[Runoob]:d}; Google: {0[Google]:d}; Taobao: {0[Taobao]:d}'.format(字典))  
+</code></pre>
+<p>字典--&gt;{0[键]:}</p>
+<pre><code>print('Runoob: {Runoob:d}; Google: {Google:d}; Taobao: {Taobao:d}'.format(**字典))  
+</code></pre>
+<p>**字典--&gt;{键:}</p>
+<ul>
+<li></li>
+</ul>
+<hr>
+<hr>
+<style>
+   
+</style>
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E6%95%B4%E5%9E%8B-int-%E6%AD%A3%E6%95%B0%E8%B4%9F%E6%95%B0%E6%B2%A1%E6%9C%89%E5%B0%8F%E6%95%B0%E7%82%B9%E9%95%BF%E6%95%B4%E5%9E%8Blong-%E6%97%A0%E9%99%90%E5%A4%A7%E5%B0%8F%E6%9C%80%E5%90%8E%E6%98%AFl%E6%88%96%E8%80%85%E6%98%AFl%E6%B5%AE%E7%82%B9%E6%95%B0float%E7%A7%91%E5%AD%A6%E8%AE%A1%E6%95%B0%E6%B3%95%E5%A4%8D%E6%95%B0-abj-%E6%88%96%E8%80%85-complexab-ab%E9%83%BD%E6%98%AF-flout">整型      int： 正数负数，没有小数点<br>
+长整型long：  <strong>无限大小</strong>最后是L或者是l<br>
+浮点数float：科学计数法<br>
+复数             ： a+bj  或者  complex(a,b)  a,b都是  flout</a></li>
+<li><a href="#%E5%85%83%E7%BB%84%E5%8F%AA%E6%9C%89%E4%B8%80%E4%B8%AA%E5%85%83%E7%B4%A0%E4%B8%8D%E5%8A%A0%E9%80%97%E5%8F%B7%E4%BC%9A%E6%98%AF%E6%95%B4%E5%9E%8B"><strong>元组只有一个元素不加逗号，会是整型</strong></a></li>
+<li><a href="#%E4%B8%8B%E6%A0%87%E7%B4%A2%E5%BC%95-%E8%AE%BF%E9%97%AE%E5%85%83%E7%BB%84tupe00-1"><strong>下标索引 访问元组</strong><br>
+tupe[0]<br>
+0-&gt;<br>
+&lt;--1</a></li>
+<li><a href="#%E4%B8%8D%E5%8F%AF%E5%88%A0%E9%99%A4%E5%85%83%E7%B4%A0%E5%85%83%E7%BB%84%E5%8F%AF%E4%BB%A5%E6%8B%BC%E6%8E%A5tup1tup2"><strong>不可删除元素，元组可以拼接</strong><br>
+tup1+tup2</a></li>
+<li><a href="#%E5%88%A0%E9%99%A4%E6%95%B4%E4%B8%AA%E5%85%83%E7%BB%84del-tupj"><strong>删除整个元组</strong><br>
+del tupj</a></li>
+<li><a href="#%E5%85%83%E7%BB%84%E8%BF%90%E7%AE%97%E7%AC%A6"><strong>元组运算符</strong></a></li>
+<li><a href="#%E5%85%83%E7%BB%84%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0min-max-len-tuplelist">元组内置函数<br>
+min max len tuple(list)</a></li>
+<li><a href="#%E6%94%B9%E5%AD%97%E5%85%B8%E5%80%BCxxdictxxxx"><strong>改字典值</strong><br>
+xxdict[xx]=xx</a></li>
+<li><a href="#%E7%94%A8%E5%80%BCxxdictxx"><strong>用值</strong><br>
+xxdict[xx]</a></li>
+<li><a href="#%E9%94%AE%E5%BF%85%E9%A1%BB%E4%B8%8D%E5%8F%AF%E5%8F%98%E6%89%80%E4%BB%A5%E5%8F%AF%E4%BB%A5%E7%94%A8%E6%95%B0%E5%AD%97%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%88%96%E5%85%83%E7%BB%84%E5%85%85%E5%BD%93%E8%80%8C%E7%94%A8%E5%88%97%E8%A1%A8%E5%B0%B1%E4%B8%8D%E8%A1%8C1xxaaxxbbnnxx">键必须不可变，所以可以<strong>用数字，字符串或元组充当</strong>，而用<strong>列表就不行</strong><br>
+{1:xx,'aa':xx,(bb,nn):xx}</a></li>
+<li><a href="#%E9%9B%86%E5%90%88%E6%8E%A8%E5%AF%BC%E5%BC%8F">集合推导式</a></li>
+<li><a href="#%E5%85%83%E7%BB%84%E6%8E%A8%E5%AF%BC%E5%BC%8F">元组推导式</a></li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><strong>数据结构</strong></a></li>
+<li><a href="#%E5%AD%97%E5%85%B8%E6%8E%A8%E5%AF%BC">字典推导</a></li>
+<li><a href="#%E9%81%8D%E5%8E%86for-kv-in-%E5%AD%97%E5%85%B8items%E9%94%AE%E5%80%BCfor-iv-in-enumerate%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E5%88%97%E8%A1%A8%E5%85%83%E7%B4%A0for-q-a-in-zip%E5%88%97%E8%A1%A81%E5%88%97%E8%A1%A82%E5%88%97%E8%A1%A81%E5%85%83%E7%B4%A0%E5%88%97%E8%A1%A82%E5%85%83%E7%B4%A0for-i-in-reversedrange1-10-2%E5%8F%8D%E5%90%91%E5%BA%8F%E5%88%97for-f-in-sortedsetbasket%E9%9B%86%E5%90%88%E5%8E%BB%E9%87%8D%E6%8E%92%E5%BA%8F%E9%81%8D%E5%8E%86"><strong>遍历</strong><br>
+for k,v in 字典.items():<br>
+键，值<br>
+for i,v in enumerate(列表):<br>
+索引，列表元素<br>
+for q, a in zip(列表1,列表2):<br>
+列表1元素，列表2元素<br>
+for i in reversed(range(1, 10, 2)):<br>
+反向序列<br>
+for f in sorted(set(basket)):<br>
+集合去重，排序遍历</a></li>
+<li><a href="#python%E6%A8%A1%E5%9D%97import-sys-%E6%A0%87%E5%87%86%E5%BA%93%E6%A8%A1%E5%9D%97sysargv-%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8F%82%E6%95%B0syspath-%E8%87%AA%E5%8A%A8%E6%89%BE%E6%A8%A1%E5%9D%97-%E8%B7%AF%E5%BE%84%E5%88%97%E8%A1%A8"><strong>Python模块</strong><br>
+import sys  标准库模块<br>
+sys.argv  命令行参数<br>
+sys.path  自动找模块 路径列表</a></li>
+<li><a href="#importimport-%E6%A8%A1%E5%9D%97%E6%A8%A1%E5%9D%97%E5%87%BD%E6%95%B0%E8%B5%8B%E7%BB%99%E4%B8%80%E4%B8%AA%E6%9C%AC%E5%9C%B0%E7%9A%84%E5%90%8D%E7%A7%B0%E5%8F%98%E9%87%8F%E6%A8%A1%E5%9D%97%E5%87%BD%E6%95%B0%E4%BB%85%E5%9C%A8%E8%AF%A5%E6%A8%A1%E5%9D%97%E4%B8%8B%E8%BF%90%E8%A1%8Cif-name-maindir%E6%A8%A1%E5%9D%97-%E6%A8%A1%E5%9D%97%E4%B8%AD%E7%9A%84%E6%89%80%E6%9C%89-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0%E5%90%8Ddir-%E5%BE%97%E5%88%B0%E4%B8%80%E4%B8%AA%E5%BD%93%E5%89%8D%E6%A8%A1%E5%9D%97%E4%B8%AD-%E5%AE%9A%E4%B9%89%E7%9A%84%E5%B1%9E%E6%80%A7%E5%88%97%E8%A1%A8"><strong>import</strong><br>
+import 模块<br>
+模块.函数()<br>
+赋给一个本地的名称：<br>
+变量=模块.函数<br>
+仅在该模块下运行：<br>
+if <strong>name</strong> == '<strong>main</strong>':<br>
+dir(模块) 模块中的所有 自定义函数名<br>
+dir() # 得到一个当前模块中 定义的属性列表</a></li>
+<li><a href="#%E8%BE%93%E5%85%A5%E5%92%8C%E8%BE%93%E5%87%BAstr-%E8%AF%BB%E8%80%85%E6%98%93%E8%AF%BB%E5%AD%97%E7%AC%A6%E4%B8%B2repr-%E7%BC%96%E8%AF%91%E5%99%A8%E6%98%93%E8%AF%BB%E5%AD%97%E7%AC%A6%E4%B8%B2"><strong>输入和输出</strong><br>
+str() 读者易读字符串<br>
+repr() 编译器易读字符串</a></li>
+<li><a href="#rjust%E4%BD%8D%E6%95%B0-%E4%BD%8D%E6%95%B0%E5%A4%A7%E4%BA%8E%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%95%BF%E5%BA%A6-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8F%B3%E5%AF%B9%E9%BD%90ljust%E4%BD%8D%E6%95%B0-%E4%BD%8D%E6%95%B0%E5%A4%A7%E4%BA%8E%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%95%BF%E5%BA%A6-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B7%A6%E5%AF%B9%E9%BD%90center%E4%BD%8D%E6%95%B0-%E4%BD%8D%E6%95%B0%E5%A4%A7%E4%BA%8E%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%95%BF%E5%BA%A6-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B1%85%E4%B8%ADzfill%E4%BD%8D%E6%95%B0-%E4%BD%8D%E6%95%B0%E5%A4%A7%E4%BA%8E%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%95%BF%E5%BA%A6-%E5%A1%AB%E5%85%850-%E6%95%B0%E5%AD%97">rjust(位数)  位数大于字符串长度 字符串右对齐<br>
+ljust(位数)  位数大于字符串长度 字符串左对齐<br>
+center(位数)  位数大于字符串长度 字符串居中<br>
+zfill(位数)  位数大于字符串长度 （-） 填充0 数字</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://mxk-zwh.github.io/post/xhr/">
+              <h3 class="post-title">
+                xhr
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://mxk-zwh.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

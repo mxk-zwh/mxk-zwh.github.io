@@ -1,0 +1,282 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>docker22,青龙面板 | 学而不思</title>
+<link rel="shortcut icon" href="https://mxk-zwh.github.io/favicon.ico?v=1691291449572">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://mxk-zwh.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="docker22,青龙面板 | 学而不思 - Atom Feed" href="https://mxk-zwh.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="查询  列出    进入  重启  返回
+查询已有镜像（显示 镜像id  占用）
+docker images -a
+列出所有容器（显示 容器id 端口）
+docker ps
+通过容器id停止镜像
+docker stop  容器id
+一键停止..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://mxk-zwh.github.io">
+  <img class="avatar" src="https://mxk-zwh.github.io/images/avatar.png?v=1691291449572" alt="">
+  </a>
+  <h1 class="site-title">
+    学而不思
+  </h1>
+  <p class="site-description">
+    卖光老六
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu" target="_blank">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu" target="_blank">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu" target="_blank">
+          标签
+        </a>
+      
+    
+      
+        <a href="/cccccc/src/bg-pc/" class="menu" target="_blank">
+          背景
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="github.com" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+        <a href="twitter.com" target="_blank">
+          <i class="ri-twitter-line"></i>
+        </a>
+      
+    
+      
+        <a href="www.weibo.com" target="_blank">
+          <i class="ri-weibo-line"></i>
+        </a>
+      
+    
+      
+        <a href="www.zhihu.com" target="_blank">
+          <i class="ri-zhihu-line"></i>
+        </a>
+      
+    
+      
+        <a href="www.facebook.com" target="_blank">
+          <i class="ri-facebook-line"></i>
+        </a>
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              docker22,青龙面板
+            </h2>
+            <div class="post-info">
+              <span>
+                2023-05-20
+              </span>
+              <span>
+                2 min read
+              </span>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content" v-pre>
+                <h2 id="查询-列出-进入-重启-返回">查询  列出    进入  重启  返回</h2>
+<h3 id="查询已有镜像显示-镜像id-占用">查询已有镜像（显示 镜像id  占用）</h3>
+<p>docker images -a</p>
+<h3 id="列出所有容器显示-容器id-端口">列出所有容器（显示 容器id 端口）</h3>
+<p>docker ps</p>
+<h3 id="通过容器id停止镜像">通过容器id停止镜像</h3>
+<p>docker stop  容器id</p>
+<h3 id="一键停止所有容器">一键停止所有容器</h3>
+<p>docker stop $(docker ps -aq)<br>
+<code>-q</code>只显示所有镜像 容器id</p>
+<h3 id="进入镜像内部">进入镜像内部</h3>
+<p>docker exec -it 容器名字  bash<br>
+docker exec -it 容器名字  /bin/bash</p>
+<h3 id="重启镜像">重启镜像</h3>
+<p>docker  restart  镜像名字</p>
+<h2 id="删除">删除</h2>
+<h3 id="通过镜像id删除镜像">通过镜像id删除镜像</h3>
+<p>docker rmi 镜像Id</p>
+<h3 id="通过容器id删除容器">通过容器id删除容器</h3>
+<p>docker rm 容器id</p>
+<h3 id="一键删除所有容器">一键删除所有容器</h3>
+<p>docker rm $(docker ps -aq)</p>
+<h3 id="一键删除所有镜像">一键删除所有镜像</h3>
+<p>docker rmi $(docker images -q)</p>
+<h3 id="一键删除所有不使用的镜像">一键删除所有不使用的镜像</h3>
+<p>docker image prune -f -a</p>
+<h3 id="删除所有停止的镜像">删除所有停止的镜像</h3>
+<p>docker container prune -f</p>
+<p>*首先推荐打开安装个宝塔面板，宝塔里面里面装个DOCKER，方便放行端口，<br>
+在宝塔里面去安装Docker</p>
+<h1 id="docker">docker</h1>
+<h2 id="docker-run">docker run</h2>
+<p><code>-d </code>后台运行容器返回id<br>
+<code>-i</code>交互操作<br>
+<code>-t</code>终端<br>
+<code>-p </code>主机端口：容器端口<br>
+<code>-e </code> 给容器的环境变量<br>
+<code>-v </code> （绑定卷）  主机文件夹：容器文件夹<br>
+<code>--name</code> 容器叫什么名字<br>
+<code>--hostname</code> 容器的hostname<br>
+<code>whyour/qinglong:2.11.3</code>  github用户名/镜像名字：标签(版本)</p>
+<pre><code>docker run -dit \
+-v /root/ql/config:/ql/config \
+-v /root/ql/log:/ql/log \
+-v /root/ql/db:/ql/db \
+-v /root/ql/scripts:/ql/scripts \
+-v /root/ql/jbot:/ql/jbot \
+-v /root/ql/repo:/ql/repo \
+-p 自定义端口:5700 \
+-e ENABLE_HANGUP=true \
+-e ENABLE_WEB_PANEL=true \
+--name ql \
+--hostname ql \
+--privileged=true \
+--restart always \
+whyour/qinglong:2.11.3
+</code></pre>
+<p>内存<br>
+df -hl<br>
+du -sh *</p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E6%9F%A5%E8%AF%A2-%E5%88%97%E5%87%BA-%E8%BF%9B%E5%85%A5-%E9%87%8D%E5%90%AF-%E8%BF%94%E5%9B%9E">查询  列出    进入  重启  返回</a>
+<ul>
+<li><a href="#%E6%9F%A5%E8%AF%A2%E5%B7%B2%E6%9C%89%E9%95%9C%E5%83%8F%E6%98%BE%E7%A4%BA-%E9%95%9C%E5%83%8Fid-%E5%8D%A0%E7%94%A8">查询已有镜像（显示 镜像id  占用）</a></li>
+<li><a href="#%E5%88%97%E5%87%BA%E6%89%80%E6%9C%89%E5%AE%B9%E5%99%A8%E6%98%BE%E7%A4%BA-%E5%AE%B9%E5%99%A8id-%E7%AB%AF%E5%8F%A3">列出所有容器（显示 容器id 端口）</a></li>
+<li><a href="#%E9%80%9A%E8%BF%87%E5%AE%B9%E5%99%A8id%E5%81%9C%E6%AD%A2%E9%95%9C%E5%83%8F">通过容器id停止镜像</a></li>
+<li><a href="#%E4%B8%80%E9%94%AE%E5%81%9C%E6%AD%A2%E6%89%80%E6%9C%89%E5%AE%B9%E5%99%A8">一键停止所有容器</a></li>
+<li><a href="#%E8%BF%9B%E5%85%A5%E9%95%9C%E5%83%8F%E5%86%85%E9%83%A8">进入镜像内部</a></li>
+<li><a href="#%E9%87%8D%E5%90%AF%E9%95%9C%E5%83%8F">重启镜像</a></li>
+</ul>
+</li>
+<li><a href="#%E5%88%A0%E9%99%A4">删除</a>
+<ul>
+<li><a href="#%E9%80%9A%E8%BF%87%E9%95%9C%E5%83%8Fid%E5%88%A0%E9%99%A4%E9%95%9C%E5%83%8F">通过镜像id删除镜像</a></li>
+<li><a href="#%E9%80%9A%E8%BF%87%E5%AE%B9%E5%99%A8id%E5%88%A0%E9%99%A4%E5%AE%B9%E5%99%A8">通过容器id删除容器</a></li>
+<li><a href="#%E4%B8%80%E9%94%AE%E5%88%A0%E9%99%A4%E6%89%80%E6%9C%89%E5%AE%B9%E5%99%A8">一键删除所有容器</a></li>
+<li><a href="#%E4%B8%80%E9%94%AE%E5%88%A0%E9%99%A4%E6%89%80%E6%9C%89%E9%95%9C%E5%83%8F">一键删除所有镜像</a></li>
+<li><a href="#%E4%B8%80%E9%94%AE%E5%88%A0%E9%99%A4%E6%89%80%E6%9C%89%E4%B8%8D%E4%BD%BF%E7%94%A8%E7%9A%84%E9%95%9C%E5%83%8F">一键删除所有不使用的镜像</a></li>
+<li><a href="#%E5%88%A0%E9%99%A4%E6%89%80%E6%9C%89%E5%81%9C%E6%AD%A2%E7%9A%84%E9%95%9C%E5%83%8F">删除所有停止的镜像</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#docker">docker</a>
+<ul>
+<li><a href="#docker-run">docker run</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://mxk-zwh.github.io/post/qing-long-mian-ban/">
+              <h3 class="post-title">
+                青龙面板11
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://mxk-zwh.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

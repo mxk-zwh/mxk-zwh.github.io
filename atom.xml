@@ -1,0 +1,648 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://mxk-zwh.github.io</id>
+    <title>学而不思</title>
+    <updated>2023-08-06T03:10:52.474Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://mxk-zwh.github.io"/>
+    <link rel="self" href="https://mxk-zwh.github.io/atom.xml"/>
+    <subtitle>卖光老六</subtitle>
+    <logo>https://mxk-zwh.github.io/images/avatar.png</logo>
+    <icon>https://mxk-zwh.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2023, 学而不思</rights>
+    <entry>
+        <title type="html"><![CDATA[自定义事件]]></title>
+        <id>https://mxk-zwh.github.io/post/zi-ding-yi-shi-jian/</id>
+        <link href="https://mxk-zwh.github.io/post/zi-ding-yi-shi-jian/">
+        </link>
+        <updated>2023-08-06T02:54:37.000Z</updated>
+        <content type="html"><![CDATA[<p>v-on给student组件的实例对象vc上<br>
+绑定了一个atguigu事件<br>
+当atguigu事件触发时，会调用demo函数</p>
+<p>找原型上的东西 要所有的组件都看见</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[this]]></title>
+        <id>https://mxk-zwh.github.io/post/this/</id>
+        <link href="https://mxk-zwh.github.io/post/this/">
+        </link>
+        <updated>2023-08-06T02:53:55.000Z</updated>
+        <summary type="html"><![CDATA[<p>箭头函数没有自己的this，用的是外部的this</p>
+<p>use strict严格模式<br>
+让代码更规范、安全，在限定的范围内运行<br>
+可以写在js文件开头<br>
+可以写在script标签开头<br>
+可以写在函数体开头<br>
+规则 否则报错<br>
+必须var声明变量后使用<br>
+函数的参数补鞥呢有同名的属性<br>
+不能使用with语句<br>
+不能对只读属性赋值<br>
+不能使用前缀0表示八进制数<br>
+不能删除不可删除的属性<br>
+不能删除变量delete prop，只能删除属性delete global 【prop】<br>
+eval不会在它的外层作用域引入变量<br>
+eval和arguments不能被重新赋值</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>箭头函数没有自己的this，用的是外部的this</p>
+<p>use strict严格模式<br>
+让代码更规范、安全，在限定的范围内运行<br>
+可以写在js文件开头<br>
+可以写在script标签开头<br>
+可以写在函数体开头<br>
+规则 否则报错<br>
+必须var声明变量后使用<br>
+函数的参数补鞥呢有同名的属性<br>
+不能使用with语句<br>
+不能对只读属性赋值<br>
+不能使用前缀0表示八进制数<br>
+不能删除不可删除的属性<br>
+不能删除变量delete prop，只能删除属性delete global 【prop】<br>
+eval不会在它的外层作用域引入变量<br>
+eval和arguments不能被重新赋值</p>
+<!-- more -->
+<p>arguments不能自动反映函数参数的变化<br>
+不能使用arguments，callee<br>
+不能使用arguments，caller<br>
+禁止this指向全局对象<br>
+不能使用fn.caller和fn.arguments获取函数调用的堆栈<br>
+增加了保留字（比如protected、static和interface）<br>
+其中，尤其需要注意this的限制。es6模块中，顶层的this指向undefined，即不应该在顶层代码使用this</p>
+<p>数组解构 var [foo,bar]=[1,2]<br>
+对象解构<br>
+var {foo:x,bar:y}={foo:'hello',bar:'world'}<br>
+var {foo,bar}={foo:'hello',bar:'world'}</p>
+<p>rest语法<br>
+[a,...rest]=[1,2,3,4]<br>
+clg rest<br>
+[2,3,4]</p>
+<p>交换属性<br>
+[f,b]=[b,f]</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[vue-router-2]]></title>
+        <id>https://mxk-zwh.github.io/post/vue-router-sheng-ming-zhou-qi/</id>
+        <link href="https://mxk-zwh.github.io/post/vue-router-sheng-ming-zhou-qi/">
+        </link>
+        <updated>2023-08-06T02:52:17.000Z</updated>
+        <content type="html"><![CDATA[<p>vue-router<br>
+插件库 专门实现SPA应用</p>
+<p>spa：<br>
+单页web应用<br>
+只有一个完整的页面<br>
+点击导航不会刷新页面，做局部更新<br>
+数据通过ajax获取</p>
+<p>路由：<br>
+key-value映射关系为一个路由<br>
+在这key为路径，value可能是方法或者组件</p>
+<p>路由分类<br>
+后端路由：<br>
+value是function 处理客户端提交的请求<br>
+工作原理：server收到请求，根据请求路径 找到匹配的函数 来处理请求，返回响应数据</p>
+<p>前端路由：<br>
+value是component，用来展示页面内容<br>
+工作原理：浏览器路劲改变，组件随之改变，不刷新页面</p>
+<p>静态页面-&gt;动态页面</p>
+<p>路由插件安装：<br>
+npm i vue-router<br>
+vue-router3给vue2用<br>
+vue-router4给vue3用</p>
+<p>路由使用：<br>
+引入vue-router/用插件<br>
+创建router/index.js<br>
+index引入vue-router/引入组件/配置路由器<br>
+main.js -&gt; 引入路由器 router:router<br>
+router-link标签 active-class=&quot;active&quot; to=&quot;/xxx&quot; （激活样式 跳转属性）<br>
+router-view标签 组件显示位置</p>
+<p>文件夹<br>
+components/放不会切换的一般组件<br>
+pages或者views/放切换的路由组件</p>
+<p>嵌套路由<br>
+routes里面是一级路由<br>
+一级路由里面children是子路由path路径不加斜杆<br>
+Home组件router-link to=&quot;/home/子路由&quot;</p>
+<p>有一堆什么元素 就给什么元素加上v-for</p>
+<p>路由query传参<br>
+有字符串写法和对象写法<br>
+router-link to 短的只有路径就用字符串写法<br>
+长的有多个k=v就用对象写法：<br>
+:to=&quot;{path:'',query:{k:v}}&quot;<br>
+:to=&quot;{name:''.query:{k:v}&quot;<br>
+name路由命名</p>
+<p>路由params传参<br>
+字符串写法 模板<br>
+:to=&quot;<code>/home/message/detail/${m.id}/${m.title}</code><br>
+对象写法<br>
+:to=&quot;{<br>
+name: xiangqing,<br>
+params: {<br>
+id: m.id,<br>
+title: m.title<br>
+}}&quot;<br>
+router/index.js：<br>
+name:'xiangqing',<br>
+占位符<br>
+path: &quot;detail/:id/:title&quot;,</p>
+<p>路由全新配置项props<br>
+简写this.$route.params<br>
+有三种写法 写在router/index.js里的component下方<br>
+第一种props为对象，只能传死数据，基本不用<br>
+第二种为布尔值，只能将params参数通过props传给组件，query不行！<br>
+第三种为函数，router每次调的时候会把 $route 传进来，你想怎么取就怎么取！可以是params或者query，es6解构赋值写法</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[两个生命周期钩子]]></title>
+        <id>https://mxk-zwh.github.io/post/liang-ge-sheng-ming-zhou-qi-gou-zi/</id>
+        <link href="https://mxk-zwh.github.io/post/liang-ge-sheng-ming-zhou-qi-gou-zi/">
+        </link>
+        <updated>2023-08-06T02:51:29.000Z</updated>
+        <content type="html"><![CDATA[<p>新的两个生命周期钩子<br>
+activated<br>
+路由组件激活时触发<br>
+deactivated<br>
+组件失活时触发</p>
+<p>动画过渡<br>
+transition 标签 name=&quot;xxx&quot;属性<br>
+transition appear打开就动画<br>
+transtion 打开没有动画</p>
+<p>样式选择器<br>
+进入的起点和终点<br>
+离开的起点和终点<br>
+.xxx-enter,.xxx-enter-to<br>
+.xxx-leave,.xxx-leave-to<br>
+进入和终点过程<br>
+.xxx-enter-active<br>
+.xxx=leave-active</p>
+<p>进出动画属性<br>
+animation:关键字名字 time mode；<br>
+transform:translateX(-100%)<br>
+transition:.5s linear;</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[vue-router-1]]></title>
+        <id>https://mxk-zwh.github.io/post/vue-router/</id>
+        <link href="https://mxk-zwh.github.io/post/vue-router/">
+        </link>
+        <updated>2023-08-06T02:50:45.000Z</updated>
+        <content type="html"><![CDATA[<p>router link replace<br>
+历史记录就像栈<br>
+默认push 加加加 如何开启：<br>
+:replace=&quot;true&quot;或者replace<br>
+删除一个 添加一个 ： 点了就回不去<br>
+好处：<br>
+防止重要表单 反复提交</p>
+<p>编程式路由导航<br>
+这就是编程式路由导航 脱离router-link 路由跳转更灵活<br>
+this.<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mi>o</mi><mi>u</mi><mi>t</mi><mi>e</mi><mi>r</mi><mi mathvariant="normal">.</mi><mi>p</mi><mi>u</mi><mi>s</mi><mi>h</mi><mi mathvariant="normal">自</mi><mi mathvariant="normal">由</mi><mi mathvariant="normal">跳</mi><mi mathvariant="normal">转</mi><mi>t</mi><mi>h</mi><mi>i</mi><mi>s</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">router.push
+自由跳转
+this.</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">o</span><span class="mord mathdefault">u</span><span class="mord mathdefault">t</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord">.</span><span class="mord mathdefault">p</span><span class="mord mathdefault">u</span><span class="mord mathdefault">s</span><span class="mord mathdefault">h</span><span class="mord cjk_fallback">自</span><span class="mord cjk_fallback">由</span><span class="mord cjk_fallback">跳</span><span class="mord cjk_fallback">转</span><span class="mord mathdefault">t</span><span class="mord mathdefault">h</span><span class="mord mathdefault">i</span><span class="mord mathdefault">s</span><span class="mord">.</span></span></span></span>router.replace<br>
+替换跳转<br>
+this.<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mi>o</mi><mi>u</mi><mi>t</mi><mi>e</mi><mi>r</mi><mi mathvariant="normal">.</mi><mi>b</mi><mi>a</mi><mi>c</mi><mi>k</mi><mo>(</mo><mo>)</mo><mo separator="true">;</mo><mi mathvariant="normal">后</mi><mi mathvariant="normal">退</mi><mi>t</mi><mi>h</mi><mi>i</mi><mi>s</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">router.back();
+后退
+this.</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">o</span><span class="mord mathdefault">u</span><span class="mord mathdefault">t</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord">.</span><span class="mord mathdefault">b</span><span class="mord mathdefault">a</span><span class="mord mathdefault">c</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mopen">(</span><span class="mclose">)</span><span class="mpunct">;</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord cjk_fallback">后</span><span class="mord cjk_fallback">退</span><span class="mord mathdefault">t</span><span class="mord mathdefault">h</span><span class="mord mathdefault">i</span><span class="mord mathdefault">s</span><span class="mord">.</span></span></span></span>router.forward();<br>
+前进<br>
+this.$router.go(n);<br>
+负数是连续后退n步<br>
+整数是连续前进n步</p>
+<p>缓存路由组件<br>
+缓存单个<br>
+keepalive include=组件名<br>
+缓存多个<br>
+:include=&quot;['News','Message']&quot;<br>
+keep-alive抱住router-view</p>
+<p>路由守卫<br>
+用来跳转或者取消的方式的守卫导航。<br>
+路由权限<br>
+就像保安一样，不让陌生人进来。</p>
+<p>执行顺序：</p>
+<p>守卫分为：全局的、单个路由独享的、组件内的三种。</p>
+<p>全局路由守卫有两个：一个是全局前置守卫，一个是全局后置守卫。<br>
+执行的顺序：beforeEach、beforeResolve、afterEach。<br>
+beforeEach：路由跳转前触发，参数有：to、from、next，作用主要在于：登录验证，路由还没跳转前告知，否则就晚了。<br>
+beforeResolve：在组件被解析后，路由跳转前触发，参数同上三个<br>
+afterEach：路由跳转后触发，参数同上三个，发生在：beforeEach和beforeResolve之后，beforeRouteEnter之前。</p>
+<p>组件路由守卫：组件内执行的钩子函数。<br>
+执行顺序：beforeRouteEnter、beforeRouteUpdate、beforeRouteLeave。<br>
+参数：to、from、next。</p>
+<p>beforeRouteEnter：在路由进入之前，组件实例还未渲染，导致无法获取this实例，只能通过vm来访问组件实例。 （该钩子在全局守卫beforeEach和beforeEnter，beforeResolve和afterEach之前调用）<br>
+beforeRouteUpdate：同一页面，刷新不同数据时调用。（可访问this。当前路由query变更时，会被调用）<br>
+beforeRouteLeave：离开当前路由页面时调用。（可访问this）</p>
+<p>使用场景，但不限于：还有别的场景<br>
+1.验证用户权限：在进入某些页面之前检查用户是否已登录或是否有权限访问该页面。<br>
+2.加载数据：在进入页面前加载必要的数据，例如在组件内使用 beforeRouteEnter 钩子函数异步获取数据。<br>
+3.路由重定向：在进入某些页面时需要重定向到另一个页面，例如在全局前置守卫中检查用户是否已登录并将未登录用户重定向到登录页面。<br>
+4.路由拦截：在某些情况下需要取消路由导航，例如在组件内使用 beforeRouteLeave 钩子函数防止用户误操作离开当前页面。</p>
+<p>全局前置路由守卫<br>
+把自己想配置的路由属性放在meta路由元里面<br>
+this.<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mi>o</mi><mi>u</mi><mi>t</mi><mi>e</mi><mi mathvariant="normal">打</mi><mi mathvariant="normal">印</mi><mi mathvariant="normal">当</mi><mi mathvariant="normal">前</mi><mi mathvariant="normal">组</mi><mi mathvariant="normal">件</mi><mi mathvariant="normal">路</mi><mi mathvariant="normal">由</mi><mi mathvariant="normal">配</mi><mi mathvariant="normal">置</mi><mi mathvariant="normal">信</mi><mi mathvariant="normal">息</mi><mi>t</mi><mi>h</mi><mi>i</mi><mi>s</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">route打印当前组件路由配置信息
+this.</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">o</span><span class="mord mathdefault">u</span><span class="mord mathdefault">t</span><span class="mord mathdefault">e</span><span class="mord cjk_fallback">打</span><span class="mord cjk_fallback">印</span><span class="mord cjk_fallback">当</span><span class="mord cjk_fallback">前</span><span class="mord cjk_fallback">组</span><span class="mord cjk_fallback">件</span><span class="mord cjk_fallback">路</span><span class="mord cjk_fallback">由</span><span class="mord cjk_fallback">配</span><span class="mord cjk_fallback">置</span><span class="mord cjk_fallback">信</span><span class="mord cjk_fallback">息</span><span class="mord mathdefault">t</span><span class="mord mathdefault">h</span><span class="mord mathdefault">i</span><span class="mord mathdefault">s</span><span class="mord">.</span></span></span></span>router路由器</p>
+<p>路由器的工作模式<br>
+#到后面 都是hash值<br>
+不会作为路径的一部分发给服务器<br>
+不会随着http请求发给服务器<br>
+hash==&gt;/#/<br>
+地址中永远带#号，不美观<br>
+地址通过第三方分享，app校验严格，改地址标记为不合法<br>
+兼容性较好<br>
+history==&gt;/<br>
+地址干净，美观<br>
+兼容性和hash模式相比略差<br>
+应用部署上线，需要后端人员支持，解决刷新页面服务器404的问题</p>
+<p>不仅仅是兼容性问题，还有项目上线的问题：<br>
+写完的代码--&gt;经过打包--&gt;交给后端上线<br>
+npm run serve是8080服务器<br>
+build才是把public和src进行打包，生成html/css/js（静态资源）</p>
+<p>打包后的文件需要放在服务器上运行（部署）<br>
+node express 现场搭建微型服务器<br>
+es6模块化<br>
+use静态资源 express.static ( __dirname+'/static')<br>
+创建一个实例对象<br>
+配置路由<br>
+监听端口</p>
+<p>history模式：会被当做express的路由，访问不了<br>
+如何解决history模式404？<br>
+第一种方法<br>
+安装模块connect-history-api-fallback<br>
+server.js添加 代码<br>
+重启服务器 成功<br>
+路由刷新没有404<br>
+第二种方法<br>
+熟悉后端nginx<br>
+还有其他方法</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[vue ui组件库]]></title>
+        <id>https://mxk-zwh.github.io/post/vue-ui-zu-jian-ku/</id>
+        <link href="https://mxk-zwh.github.io/post/vue-ui-zu-jian-ku/">
+        </link>
+        <updated>2023-08-06T02:46:10.000Z</updated>
+        <content type="html"><![CDATA[<p>vue ui组件库<br>
+常用的组件库<br>
+移动端：<br>
+vant、cube ui、mint ui<br>
+pc端：<br>
+element ui、iview ui</p>
+<p>vue-cli里面有webpack<br>
+npm install babel-plugin-component -D<br>
+-D是开发环境<br>
+安装插件需要区分 开发和生产版本</p>
+<p>package.json<br>
+name就是项目名字，不能有大写字母，开头不能有点和下划线</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[vuex]]></title>
+        <id>https://mxk-zwh.github.io/post/vuex/</id>
+        <link href="https://mxk-zwh.github.io/post/vuex/">
+        </link>
+        <updated>2023-08-06T02:36:31.000Z</updated>
+        <content type="html"><![CDATA[<p>vuex<br>
+实现 集中式 状态（数据） 管理的一个 Vue插件<br>
+也是一种任意组件间通信的方式<br>
+专门解决共享状态（数据）进行集中式管理（读写操作）</p>
+<p>什么时候使用？<br>
+1.多个组件依赖同一个状态（多依赖一）<br>
+2.来自不同组件的行为（不同的修改）需要变更同一状态（多变更一）<br>
+<strong>vuex工作原理图：</strong><br>
+<img src="https://mxk-zwh.github.io/post-images/1691289566915.png" alt="" loading="lazy"></p>
+<p>客人-&gt;服务员、后厨、菜<br>
+<img src="https://mxk-zwh.github.io/post-images/1691289573713.png" alt="" loading="lazy"></p>
+<p>store是仓库 管理这三个<br>
+需要让所有的组件（vc）都能看见store<br>
+actions/mutations/state都是对象类型{}<br>
+dispatch是store里面的 不是window里的:<br>
+store.dispatch-&gt;actions<br>
+store.commit-&gt;mutations</p>
+<p>了解：<br>
+单词怎么写<br>
+都是对象类型<br>
+谁来管理这三个</p>
+<p>npm i vuex<br>
+默认安装只能在vue3中使用 vuex<br>
+(查看版本npm view vuex versions)<br>
+vue2中，要用vuex的3版本<br>
+vue3中，要用vuex的4版本<br>
+vue.use(vuex)<br>
+store<br>
+vc==&gt;store</p>
+<p>vue-resource<br>
+它可以通过XMLHttpRequest或JSONP发起请求并处理响应<br>
+jquery里的ajax能做的事情，这个插件也能做，简化了api<br>
+有好用的interceptor功能：可以在请求前和请求后加一些行为<br>
+比如请求时的loading界面</p>
+<p>vuxex/store</p>
+<p>组件-&gt;actions-&gt;mutations<br>
+this.$store.dispatch<br>
+context.commit<br>
+间接做事情<br>
+（客户告诉服务员，服务员告诉后厨）</p>
+<p>组件-&gt;mutations<br>
+this.$store.commit<br>
+直接做事情<br>
+（客户直接找后厨）</p>
+<p>组件-&gt;actions-&gt;actions-&gt;mutations<br>
+context.dispatch<br>
+处理一些事情<br>
+（客户务员1，1找服务员2，2找服务员3，3找后厨）</p>
+<p>组件-&gt;state<br>
+this.$store.state.x<br>
+（客户找菜）</p>
+<p>mutations-&gt;mutations<br>
+this.commit(&quot;cartAbout/calcTotalmoney&quot;);</p>
+<p>**actions形参 **<br>
+context里面有方法(commit/dsipatch/getters)，value(组件传过来的值)</p>
+<p><strong>mutations形参</strong><br>
+state，value（actions传过来的值）</p>
+<p><strong>getter形参</strong><br>
+state</p>
+<p><strong>mapState,mapGetters</strong><br>
+import { mapGetters, mapState } from &quot;vuex&quot;;<br>
+在computed里面写mapState,mapGetters<br>
+借助mapState生成计算属性，从state中读取数据。<br>
+借助mapGetters生成计算属性，从getters中读取数据。<br>
+有对象写法和数组写法 前面要加上展开运算符（...）<br>
+数组写法：计算属性名和获取的数据名一样</p>
+<p><strong>mapMutations</strong><br>
+借助mapMutations生成对应的方法，调用commit去联系mutations<br>
+写在methods里面<br>
+...mapMutations({ increment: &quot;JIA&quot;, decrement: &quot;JIAN&quot; }),<br>
+不传参value是实践对象<br>
+要去模板里传参<br>
+1.@click=&quot;increment(n)&quot;<br>
+2.写另一个函数传参<br>
+<img src="https://mxk-zwh.github.io/post-images/1691289648653.png" alt="" loading="lazy"></p>
+<p><strong>mapActions</strong><br>
+借助mapActions生成对应的方法，调用dispatch去联系actions<br>
+不传参value是事件对象<br>
+写法同上</p>
+<figure data-type="image" tabindex="1"><img src="https://mxk-zwh.github.io/post-images/1691289655889.png" alt="" loading="lazy"></figure>
+<p><strong>实现模块化+命名空间</strong><br>
+<img src="https://mxk-zwh.github.io/post-images/1691289632989.png" alt="" loading="lazy"></p>
+<p>namespaced:true<br>
+为了让代码更好维护，让多种数据分类更加明确<br>
+修改store.js<br>
+开启命名空间后，组件中读取state数据<br>
+开启命名空间后，组件中读取getters数据<br>
+开启命名空间后，组件中调用dispatch<br>
+开启命名空间后，组件中调用commit</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[yarn]]></title>
+        <id>https://mxk-zwh.github.io/post/yarn/</id>
+        <link href="https://mxk-zwh.github.io/post/yarn/">
+        </link>
+        <updated>2023-08-06T02:34:42.000Z</updated>
+        <content type="html"><![CDATA[<p>yarn安装包<br>
+yarn add pkg@ver/tag</p>
+<p>更新<br>
+yarn up</p>
+<p>删除<br>
+yarn remove</p>
+<p>安装依赖<br>
+yarn或yarn install</p>
+<p>初始化<br>
+yarn init</p>
+<p>所有命令<br>
+yarn help</p>
+<p>更新yarn<br>
+yarn set version latest</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[ES6-11]]></title>
+        <id>https://mxk-zwh.github.io/post/es6-11/</id>
+        <link href="https://mxk-zwh.github.io/post/es6-11/">
+        </link>
+        <updated>2023-06-12T05:38:35.000Z</updated>
+        <content type="html"><![CDATA[<p>es6-11<br>
+有了es本来要几行代码实现<br>
+现在就有可能就一行代码<br>
+几行边一行</p>
+<p>对象大括号直接写变量名和方法名<br>
+对象里写方法，import:function()<br>
+现在import()，可以简化<br>
+。</p>
+<p>this 指最外层<br>
+var _this=this<br>
+function<br>
+_this.xxx</p>
+<p>()=&gt;{this}</p>
+<p>argument 箭头函数不行，原型是对象<br>
+看似数组，用来接收参数<br>
+function x<br>
+clg( argument)<br>
+x(1,3)<br>
+输出的是对象<br>
+argument(2) [1，3，...]</p>
+<p>解构传参<br>
+function con({name,host='127.0.0.1'})<br>
+con（{<br>
+name：'tom',<br>
+}）</p>
+<p>rest参数<br>
+function x(...args)<br>
+clg(args)<br>
+x(1,2)<br>
+输出的是数组<br>
+[1,2]</p>
+<p>rest参数多个,必须写在最后面<br>
+function fn(a,b,...args)<br>
+clg(args)<br>
+fn(1,2,3,4)<br>
+输出的是数组<br>
+[3,4]</p>
+<p>扩展运算符<br>
+...数组 变成 字符串之间逗号分开<br>
+fn(...数组)<br>
+等价于<br>
+fn.apply(null,数组)</p>
+<p>数组合并<br>
+arr1.concat(arr2)<br>
+[..arr1,...arr2]</p>
+<p>箭头函数应用场景<br>
+适合与this无关的回调，定时器，数组方法回调<br>
+不适合与this有关的问题。事件回调，对象的方法</p>
+<p>symbol<br>
+新的数据类型ES6引入的，第七种数据类型，独一无二的值。<br>
+值唯一解决命名冲突<br>
+不能与其他数据进行计算<br>
+对象属性不能使用for in ，可以使用Reflect.ownKeys 来获取对象的所有健名</p>
+<p>异步生成器<br>
+async function*<br>
+yield &quot;xxx&quot;</p>
+<p>Symbol很多<br>
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/Symbol</p>
+<p>异步编程<br>
+函数——&gt;生成器函数——&gt;调用生成器函数</p>
+<p>迭代器<br>
+function* -- yield -- next/next.value</p>
+<p>[...Set]=array</p>
+<p>模块化<br>
+大文件拆成小文件<br>
+把小文件组合起来<br>
+优势<br>
+命名冲突、代码复用、高维护性</p>
+<p>模块化规范产品<br>
+nodejs、。。。</p>
+<p>模块化语法<br>
+type=&quot;module&quot;<br>
+import 取别名 as 分别导入，解构赋值导入、简化导入（仅默认导入）<br>
+export 分别导出、同一导出、默认导出</p>
+<p>ES9对象扩展<br>
+es6 rest参数和spread扩展运算符 只针对数组<br>
+[...user] user:array<br>
+es9 为对象提供像数组一样的 rest参数和扩展运算符<br>
+{...user} user:object</p>
+<p>正则扩展-命名捕获分组<br>
+const reg=/<a href="(.*)">(.<em>)&lt;/a&gt;/;<br>
+正则匹配顺序 第一个是/xxx/ 第二个是(.</em>)<br>
+const reg = /<a href="(?<url>.*)">(?<text>.*)&lt;/a&gt;/;<br>
+正则匹配 ?<url> 出现 groups<br>
+console.log(result.groups.url);</p>
+<p>正则扩展-反向断言<br>
+const reg = /\d+(?=啦)/;<br>
+正向断言+(?=啦)<br>
+const reg = /(?&lt;=么)\d+/;<br>
+反向断言(?&lt;=么)</p>
+<p>正则扩展-dotAll模式<br>
+\s ：匹配任意空格 。<br>
+(.<em>?)：捕获文本。<br>
+.</em>?：匹配任意字符零次或多次，非贪婪模式。<br>
+.*：/a.*g/ 将匹配整个字符串 abcdefg，贪婪模式。</p>
+<p>g 修饰符：表示全局匹配，即匹配字符串中所有符合条件的部分。<br>
+s 修饰符：即单行模式，表示在这个模式中，. 可以匹配换行符。<br>
+没有 s 修饰符时，. 除换行符以外的任意单个字符。</p>
+<p>result = reg.exec(str);<br>
+console.log(result);<br>
+result = reg.exec(str);<br>
+console.log(result);<br>
+打印匹配结果，然后继续下一次匹配</p>
+<p>Object</p>
+<p>Object.entries(school)<br>
+用于获取给定对象的可枚举属性的键值对数组。<br>
+Object.fromEntries([['name','尚硅谷'],['xueke','Java,前端,大数据,云计算']])<br>
+Object.fromEntries(&lt;<mark>二维数组</mark>&gt;)<br>
+Object.fromEntries(&lt;<mark>map</mark>&gt;)<br>
+用于根据给定的键值对数组，创建一个新的对象。它的作用与 Object.entries() 正好相反。<br>
+Object.entries() 是 ES2017（也称为 ES8）中引入的方法。它是 ECMAScript 标准的一部分，用于操作对象。</p>
+<p>Promise.allSettled()<br>
+Promise.allSettled() 的优点是：<br>
+即使其中的某个 Promise 被拒绝，它依然会等待所有 Promise 对象都 settled 才会返回解决值。<br>
+拒绝成功都可以<br>
+const result = Promise.allSettled([p1, p2]);<br>
+Promise.allSettled(&lt;<mark>多个promise对象的数组</mark>&gt;)<br>
+返回<br>
+0: {status: 'fulfilled', value: '商品数据 - 1'}<br>
+1: {status: 'rejected', reason: '出错了'}</p>
+<p>这与 Promise.all() 方法不同：<br>
+后者在有一个 Promise 被拒绝时会立即返回拒绝原因。<br>
+只能成功，不许失败<br>
+Promise.all(&lt;<mark>多个promise对象的数组</mark>&gt;)<br>
+返回<br>
+0: &quot;商品数据 - 1&quot;<br>
+1: &quot;商品数据 - 2&quot;</p>
+<p>可选链操作符<br>
+&amp;&amp;（逻辑与）：存在继续；否则报错<br>
+const dbHost = config &amp;&amp; config.db &amp;&amp; config.db.host;<br>
+?. （可选链）：存在继续；否则undefined<br>
+const dbHost = config?.db?.host;</p>
+<p>动态import<br>
+import(&quot;./hello.js&quot;).then((modules) =&gt; {<br>
+modules.hello();<br>
+});<br>
+按需加载 就是懒加载-ES11</p>
+<p>BigInt<br>
+// n表示大整形<br>
+let n = 521n<br>
+console.log(n,typeof n);</p>
+<p>// 函数转换 但是浮点数不能转化<br>
+let n = 521;<br>
+console.log(BigInt(n));</p>
+<p>// 大数值运算<br>
+let max = Number.MAX_SAFE_INTEGER;<br>
+// max+max 会出问题<br>
+console.log(max);<br>
+console.log(max + 1);<br>
+// 结果与上面相同<br>
+console.log(max + 2);</p>
+<p>// 必须是BigInt相加<br>
+console.log(BigInt(max));<br>
+console.log(BigInt(max) + BigInt(1));<br>
+console.log(BigInt(max) + BigInt(2));</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[docker22,青龙面板]]></title>
+        <id>https://mxk-zwh.github.io/post/docker/</id>
+        <link href="https://mxk-zwh.github.io/post/docker/">
+        </link>
+        <updated>2023-05-20T14:37:10.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="查询-列出-进入-重启-返回">查询  列出    进入  重启  返回</h2>
+<h3 id="查询已有镜像显示-镜像id-占用">查询已有镜像（显示 镜像id  占用）</h3>
+<p>docker images -a</p>
+<h3 id="列出所有容器显示-容器id-端口">列出所有容器（显示 容器id 端口）</h3>
+<p>docker ps</p>
+<h3 id="通过容器id停止镜像">通过容器id停止镜像</h3>
+<p>docker stop  容器id</p>
+<h3 id="一键停止所有容器">一键停止所有容器</h3>
+<p>docker stop $(docker ps -aq)<br>
+<code>-q</code>只显示所有镜像 容器id</p>
+<h3 id="进入镜像内部">进入镜像内部</h3>
+<p>docker exec -it 容器名字  bash<br>
+docker exec -it 容器名字  /bin/bash</p>
+<h3 id="重启镜像">重启镜像</h3>
+<p>docker  restart  镜像名字</p>
+<h2 id="删除">删除</h2>
+<h3 id="通过镜像id删除镜像">通过镜像id删除镜像</h3>
+<p>docker rmi 镜像Id</p>
+<h3 id="通过容器id删除容器">通过容器id删除容器</h3>
+<p>docker rm 容器id</p>
+<h3 id="一键删除所有容器">一键删除所有容器</h3>
+<p>docker rm $(docker ps -aq)</p>
+<h3 id="一键删除所有镜像">一键删除所有镜像</h3>
+<p>docker rmi $(docker images -q)</p>
+<h3 id="一键删除所有不使用的镜像">一键删除所有不使用的镜像</h3>
+<p>docker image prune -f -a</p>
+<h3 id="删除所有停止的镜像">删除所有停止的镜像</h3>
+<p>docker container prune -f</p>
+<p>*首先推荐打开安装个宝塔面板，宝塔里面里面装个DOCKER，方便放行端口，<br>
+在宝塔里面去安装Docker</p>
+<h1 id="docker">docker</h1>
+<h2 id="docker-run">docker run</h2>
+<p><code>-d </code>后台运行容器返回id<br>
+<code>-i</code>交互操作<br>
+<code>-t</code>终端<br>
+<code>-p </code>主机端口：容器端口<br>
+<code>-e </code> 给容器的环境变量<br>
+<code>-v </code> （绑定卷）  主机文件夹：容器文件夹<br>
+<code>--name</code> 容器叫什么名字<br>
+<code>--hostname</code> 容器的hostname<br>
+<code>whyour/qinglong:2.11.3</code>  github用户名/镜像名字：标签(版本)</p>
+<pre><code>docker run -dit \
+-v /root/ql/config:/ql/config \
+-v /root/ql/log:/ql/log \
+-v /root/ql/db:/ql/db \
+-v /root/ql/scripts:/ql/scripts \
+-v /root/ql/jbot:/ql/jbot \
+-v /root/ql/repo:/ql/repo \
+-p 自定义端口:5700 \
+-e ENABLE_HANGUP=true \
+-e ENABLE_WEB_PANEL=true \
+--name ql \
+--hostname ql \
+--privileged=true \
+--restart always \
+whyour/qinglong:2.11.3
+</code></pre>
+<p>内存<br>
+df -hl<br>
+du -sh *</p>
+]]></content>
+    </entry>
+</feed>

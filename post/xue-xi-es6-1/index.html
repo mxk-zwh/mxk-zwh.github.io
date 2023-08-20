@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>学习ES6-1 | 曙光英雄</title>
+<meta name="description" content="派蒙">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="https://mxk-zwh.github.io/favicon.ico?v=1692504204692">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://mxk-zwh.github.io/styles/main.css">
+
+
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+  </head>
+  <body>
+  
+    <nav class="navbar border fixed split-nav">
+  <div class="nav-brand">
+    <h3><a href="https://mxk-zwh.github.io">曙光英雄</a></h3>
+  </div>
+  <div class="collapsible">
+    <input id="collapsible1" type="checkbox" name="collapsible1">
+    <button>
+      <label for="collapsible1">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </label>
+    </button>
+    <div class="collapsible-body">
+      <ul class="inline">
+        
+          <li>
+            
+              <a href="/" class="menu" target="_blank">
+                首页
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/archives" class="menu" target="_blank">
+                归档
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/tags" class="menu" target="_blank">
+                标签
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/cccccc/src/bg-pc/" class="menu" target="_blank">
+                背景
+              </a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div id="top" class="row site">
+      <div class="sm-12 md-8 col">
+        <div class="paper">
+          <article class="article">
+            <h1>学习ES6-1</h1>
+            <p class="article-meta">
+              2023-08-19
+              
+            </p>
+            
+            <div class="post-content" v-pre>
+              <h2 id="windowisnanabc">window.isNaN(“abc”)</h2>
+<p>window.isNaN函数会把非数值的参数转化成数值再进行判断</p>
+<h2 id="dom事件不属于ecmascript的部分"><code>DOM事件</code>不属于ECMAScript的部分</h2>
+<p>ECMAScript定义的内容：<code>语法、类型、原型和继承、内置对象和函数的标准库</code>。</p>
+<h2 id="解构赋值">解构赋值</h2>
+<p>var [ a,b,c ] = [ 1,2 ]结果中，a、b、c的值分别是：1  2  undefined</p>
+<h2 id="模板字符串">模板字符串</h2>
+<p>模板字符串，<strong>所有的空格和缩进都会被保留在输出中</strong>。</p>
+<h2 id="字符串扩展的新函数">字符串扩展的新函数</h2>
+<p>repeat函数将目标字符串重复N次，目标字符串不能被修改，会返回一个新的字符串。</p>
+<p>B、Number.isInteger(3);结果为：true</p>
+<p>C、Number.isInteger(3.0);结果为：false</p>
+<p>D、Number.isInteger(3.01);结果为：false</p>
+<p>C是错的，整数和浮点数采用一样的存储方式，<strong>小数点后都是0的浮点数，都被视为整数</strong>。</p>
+<h2 id="数组的方法">数组的方法</h2>
+<p>[1,2,3].fill(4)<br>
+把里面所有的元素替换成4</p>
+<h2 id="对象">对象</h2>
+<p>对象的方法名同样可以是表达式，使用[ ]标识。<br>
+Object.is函数判断两个值是否<strong>严格相等</strong>，或者说全等，作用等同于全等符号：===</p>
+<p>#rest参数<br>
+rest参数就是函数的参数，放在最后面，样子是：<code>...自定义的参数名</code>，<strong>获取函数剩下部分的参数</strong>。</p>
+<p>#箭头函数<br>
+函数体内的 this 对象，<strong>绑定定义时所在的对象</strong>，而不是使用时所在的对象。</p>
+<p>#symbol<br>
+symbol是<strong>独一无二</strong>的值。是<strong>ES6新增</strong>的一种数据类型。<br>
+Symbol.for函数会根据参数名，去<strong>全局环境中搜索</strong>是否有以该参数为名的symbol值，<strong>有就返回它</strong>，没有就以该参数名来创建一个新的symbol值，并<strong>登记在全局环境</strong>中，而Symbol每次都会创建一个独一无二的值，不会登记在全局环境中。</p>
+<h1 id="基本类型和包装类">基本类型和包装类</h1>
+<p>基本数据类型是不能new对象的<br>
+int i = 5;和Integer i = new Integer(5);<br>
+后者的i是一个对象 只有对象才可以**调用类中的各种各样的方法 **而基本数据类型就不行。</p>
+<h2 id="基本数据类型-封装类">基本数据类型 封装类</h2>
+<p>byte Byte<br>
+short Short<br>
+int Integer<br>
+long Long<br>
+float Float<br>
+double Double<br>
+char Character<br>
+boolean Boolean</p>
+
+            </div>
+          </article>
+        </div>
+        <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://mxk-zwh.github.io/post/pet-system-github-vue2/">
+                <h3 class="post-title">
+                  pet-system-github-vue2
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+        
+      </div>
+
+      <div class="sm-12 md-4 col sidebar">
+  <div class="paper info-container">
+    <img src="https://mxk-zwh.github.io/images/avatar.png?v=1692504204692" class="no-responsive avatar">
+    <div class="text-muted">派蒙</div>
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      最新文章
+    </div>
+    <div class="row">
+      <ul>
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/xue-xi-es6-1/">学习ES6-1</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/pet-system-github-vue2/">pet-system-github-vue2</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/scssand-tu-biao/">scssand图标</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/npmyarnpnpm/">npm、yarn、pnpm</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/gnvm-ling-huo-qie-huan-node-ban-ben/">gnvm灵活切换node版本</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/zi-ding-yi-shi-jian/">自定义事件</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/this/">this</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/vue-router-sheng-ming-zhou-qi/">vue-router-2</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/liang-ge-sheng-ming-zhou-qi-gou-zi/">两个生命周期钩子</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/vue-router/">vue-router-1</a>
+            </li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </ul>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      标签列表
+    </div>
+    <div class="row">
+      
+        <a href="https://mxk-zwh.github.io/tag/HPuaEWsrs/" class="badge success">
+          gnvm
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/EyMHgjTur/" class="badge secondary">
+          nodejs
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/VA7I629exq/" class="badge secondary">
+          npm
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/1znN5W9Zuz/" class="badge ">
+          javascript
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/tJ-80yUy_/" class="badge warning">
+          生命周期
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/831DcViOP/" class="badge secondary">
+          vue-router
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/B4HIJAG5J/" class="badge warning">
+          vue ui组件库
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/n4ZvGfONg/" class="badge ">
+          vuex
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/Rcm6rzxKD/" class="badge warning">
+          yarn
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/cMmtoNUTP/" class="badge ">
+          es6-11
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/1AtASZhuo/" class="badge ">
+          python
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/wHGeLJSwP/" class="badge warning">
+          markdown
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/TwpRvhEbq/" class="badge warning">
+          xhr
+        </a>
+      
+    </div>
+  </div>
+  <div class="paper">
+    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://mxk-zwh.github.io/atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+
+
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+</script>
+
+
+
+
+  </body>
+</html>

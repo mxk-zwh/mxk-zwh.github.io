@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>npm install XXX 加上-s、-d、-g和什么都不加的区别 | 曙光英雄</title>
+<meta name="description" content="派蒙">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="https://mxk-zwh.github.io/favicon.ico?v=1692504204692">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://mxk-zwh.github.io/styles/main.css">
+
+
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+  </head>
+  <body>
+  
+    <nav class="navbar border fixed split-nav">
+  <div class="nav-brand">
+    <h3><a href="https://mxk-zwh.github.io">曙光英雄</a></h3>
+  </div>
+  <div class="collapsible">
+    <input id="collapsible1" type="checkbox" name="collapsible1">
+    <button>
+      <label for="collapsible1">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </label>
+    </button>
+    <div class="collapsible-body">
+      <ul class="inline">
+        
+          <li>
+            
+              <a href="/" class="menu" target="_blank">
+                首页
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/archives" class="menu" target="_blank">
+                归档
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/tags" class="menu" target="_blank">
+                标签
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/cccccc/src/bg-pc/" class="menu" target="_blank">
+                背景
+              </a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div id="top" class="row site">
+      <div class="sm-12 md-8 col">
+        <div class="paper">
+          <article class="article">
+            <h1>npm install XXX 加上-s、-d、-g和什么都不加的区别</h1>
+            <p class="article-meta">
+              2018-12-12
+              
+                <a href="https://mxk-zwh.github.io/tag/EyMHgjTur/" class="badge ">
+                  nodejs
+                </a>
+              
+                <a href="https://mxk-zwh.github.io/tag/VA7I629exq/" class="badge secondary">
+                  npm
+                </a>
+              
+                <a href="https://mxk-zwh.github.io/tag/1znN5W9Zuz/" class="badge secondary">
+                  javascript
+                </a>
+              
+            </p>
+            
+              <img src="https://mxk-zwh.github.io/post-images/npm-install-xxx-jia-shang-s-d-g-he-shi-me-du-bu-jia-de-qu-bie.png" alt="npm install XXX 加上-s、-d、-g和什么都不加的区别">
+            
+            <div class="post-content" v-pre>
+              <h1 id="1npm-install-xxx-s">1.npm install XXX -s</h1>
+<pre><code>    npm install XXX -s 相当于 npm install -S 相当于 npm install --save
+
+    这样安装是局部安装的，会写进package.json文件中的dependencie里。
+
+    dependencies： 表示生产环境下的依赖管理；
+
+    说白了你安装一个库如果是用来构建你的项目的，比如echarts、element-ui，是实际在项目中起作用，就可以使用 -s 来安装。
+</code></pre>
+<h1 id="2npm-install-xxx-d">2.npm install XXX -d</h1>
+<pre><code>    npm install XXX -d 相当于 npm install -D 相当于 npm install --save-dev
+
+    这样安装是局部安装的，会写进package.json文件中的devDependencies 里。
+
+    devDependencies ：表示开发环境下的依赖管理；
+
+    如果你安装的库是用来打包的、解析代码的，比如webpack、babel，就可以用 -d 来安装，项目上线了，这些库就没用了，不然留这些库给用户自己来打包和解析代码嘛。               
+</code></pre>
+<h1 id="3npm-install-xxx-g">3.npm install XXX -g</h1>
+<pre><code>    npm install XXX -g 表示全局安装，安装一次过后，你就可以在其他直接用啦。
+</code></pre>
+<h1 id="4npm-install-xxx">4.npm install XXX</h1>
+<pre><code>    npm install XXX   什么都不加的时候
+
+    npm 5开始通过npm install 什么都不加 和 npm install --save一样，都是局部安装并会把模块自动写入package.json中的dependencies里。
+</code></pre>
+
+            </div>
+          </article>
+        </div>
+        <div class="paper" data-aos="fade-in">
+          
+        </div>
+        
+      </div>
+
+      <div class="sm-12 md-4 col sidebar">
+  <div class="paper info-container">
+    <img src="https://mxk-zwh.github.io/images/avatar.png?v=1692504204692" class="no-responsive avatar">
+    <div class="text-muted">派蒙</div>
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      最新文章
+    </div>
+    <div class="row">
+      <ul>
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/xue-xi-es6-1/">学习ES6-1</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/pet-system-github-vue2/">pet-system-github-vue2</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/scssand-tu-biao/">scssand图标</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/npmyarnpnpm/">npm、yarn、pnpm</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/gnvm-ling-huo-qie-huan-node-ban-ben/">gnvm灵活切换node版本</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/zi-ding-yi-shi-jian/">自定义事件</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/this/">this</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/vue-router-sheng-ming-zhou-qi/">vue-router-2</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/liang-ge-sheng-ming-zhou-qi-gou-zi/">两个生命周期钩子</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/vue-router/">vue-router-1</a>
+            </li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </ul>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      标签列表
+    </div>
+    <div class="row">
+      
+        <a href="https://mxk-zwh.github.io/tag/HPuaEWsrs/" class="badge warning">
+          gnvm
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/EyMHgjTur/" class="badge success">
+          nodejs
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/VA7I629exq/" class="badge secondary">
+          npm
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/1znN5W9Zuz/" class="badge secondary">
+          javascript
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/tJ-80yUy_/" class="badge warning">
+          生命周期
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/831DcViOP/" class="badge warning">
+          vue-router
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/B4HIJAG5J/" class="badge ">
+          vue ui组件库
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/n4ZvGfONg/" class="badge warning">
+          vuex
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/Rcm6rzxKD/" class="badge warning">
+          yarn
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/cMmtoNUTP/" class="badge warning">
+          es6-11
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/1AtASZhuo/" class="badge secondary">
+          python
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/wHGeLJSwP/" class="badge ">
+          markdown
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/TwpRvhEbq/" class="badge secondary">
+          xhr
+        </a>
+      
+    </div>
+  </div>
+  <div class="paper">
+    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://mxk-zwh.github.io/atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+
+
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+</script>
+
+
+
+
+  </body>
+</html>

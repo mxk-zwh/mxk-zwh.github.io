@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>vue-router-2 | 曙光英雄</title>
+<meta name="description" content="派蒙">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="https://mxk-zwh.github.io/favicon.ico?v=1692504204692">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://mxk-zwh.github.io/styles/main.css">
+
+
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+  </head>
+  <body>
+  
+    <nav class="navbar border fixed split-nav">
+  <div class="nav-brand">
+    <h3><a href="https://mxk-zwh.github.io">曙光英雄</a></h3>
+  </div>
+  <div class="collapsible">
+    <input id="collapsible1" type="checkbox" name="collapsible1">
+    <button>
+      <label for="collapsible1">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </label>
+    </button>
+    <div class="collapsible-body">
+      <ul class="inline">
+        
+          <li>
+            
+              <a href="/" class="menu" target="_blank">
+                首页
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/archives" class="menu" target="_blank">
+                归档
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/tags" class="menu" target="_blank">
+                标签
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/cccccc/src/bg-pc/" class="menu" target="_blank">
+                背景
+              </a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div id="top" class="row site">
+      <div class="sm-12 md-8 col">
+        <div class="paper">
+          <article class="article">
+            <h1>vue-router-2</h1>
+            <p class="article-meta">
+              2023-08-06
+              
+                <a href="https://mxk-zwh.github.io/tag/tJ-80yUy_/" class="badge ">
+                  生命周期
+                </a>
+              
+                <a href="https://mxk-zwh.github.io/tag/831DcViOP/" class="badge warning">
+                  vue-router
+                </a>
+              
+            </p>
+            
+            <div class="post-content" v-pre>
+              <p>vue-router<br>
+插件库 专门实现SPA应用</p>
+<p>spa：<br>
+单页web应用<br>
+只有一个完整的页面<br>
+点击导航不会刷新页面，做局部更新<br>
+数据通过ajax获取</p>
+<p>路由：<br>
+key-value映射关系为一个路由<br>
+在这key为路径，value可能是方法或者组件</p>
+<p>路由分类<br>
+后端路由：<br>
+value是function 处理客户端提交的请求<br>
+工作原理：server收到请求，根据请求路径 找到匹配的函数 来处理请求，返回响应数据</p>
+<p>前端路由：<br>
+value是component，用来展示页面内容<br>
+工作原理：浏览器路劲改变，组件随之改变，不刷新页面</p>
+<p>静态页面-&gt;动态页面</p>
+<p>路由插件安装：<br>
+npm i vue-router<br>
+vue-router3给vue2用<br>
+vue-router4给vue3用</p>
+<p>路由使用：<br>
+引入vue-router/用插件<br>
+创建router/index.js<br>
+index引入vue-router/引入组件/配置路由器<br>
+main.js -&gt; 引入路由器 router:router<br>
+router-link标签 active-class=&quot;active&quot; to=&quot;/xxx&quot; （激活样式 跳转属性）<br>
+router-view标签 组件显示位置</p>
+<p>文件夹<br>
+components/放不会切换的一般组件<br>
+pages或者views/放切换的路由组件</p>
+<p>嵌套路由<br>
+routes里面是一级路由<br>
+一级路由里面children是子路由path路径不加斜杆<br>
+Home组件router-link to=&quot;/home/子路由&quot;</p>
+<p>有一堆什么元素 就给什么元素加上v-for</p>
+<p>路由query传参<br>
+有字符串写法和对象写法<br>
+router-link to 短的只有路径就用字符串写法<br>
+长的有多个k=v就用对象写法：<br>
+:to=&quot;{path:'',query:{k:v}}&quot;<br>
+:to=&quot;{name:''.query:{k:v}&quot;<br>
+name路由命名</p>
+<p>路由params传参<br>
+字符串写法 模板<br>
+:to=&quot;<code>/home/message/detail/${m.id}/${m.title}</code><br>
+对象写法<br>
+:to=&quot;{<br>
+name: xiangqing,<br>
+params: {<br>
+id: m.id,<br>
+title: m.title<br>
+}}&quot;<br>
+router/index.js：<br>
+name:'xiangqing',<br>
+占位符<br>
+path: &quot;detail/:id/:title&quot;,</p>
+<p>路由全新配置项props<br>
+简写this.$route.params<br>
+有三种写法 写在router/index.js里的component下方<br>
+第一种props为对象，只能传死数据，基本不用<br>
+第二种为布尔值，只能将params参数通过props传给组件，query不行！<br>
+第三种为函数，router每次调的时候会把 $route 传进来，你想怎么取就怎么取！可以是params或者query，es6解构赋值写法</p>
+
+            </div>
+          </article>
+        </div>
+        <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://mxk-zwh.github.io/post/liang-ge-sheng-ming-zhou-qi-gou-zi/">
+                <h3 class="post-title">
+                  两个生命周期钩子
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+        
+      </div>
+
+      <div class="sm-12 md-4 col sidebar">
+  <div class="paper info-container">
+    <img src="https://mxk-zwh.github.io/images/avatar.png?v=1692504204692" class="no-responsive avatar">
+    <div class="text-muted">派蒙</div>
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      最新文章
+    </div>
+    <div class="row">
+      <ul>
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/xue-xi-es6-1/">学习ES6-1</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/pet-system-github-vue2/">pet-system-github-vue2</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/scssand-tu-biao/">scssand图标</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/npmyarnpnpm/">npm、yarn、pnpm</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/gnvm-ling-huo-qie-huan-node-ban-ben/">gnvm灵活切换node版本</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/zi-ding-yi-shi-jian/">自定义事件</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/this/">this</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/vue-router-sheng-ming-zhou-qi/">vue-router-2</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/liang-ge-sheng-ming-zhou-qi-gou-zi/">两个生命周期钩子</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/vue-router/">vue-router-1</a>
+            </li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </ul>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      标签列表
+    </div>
+    <div class="row">
+      
+        <a href="https://mxk-zwh.github.io/tag/HPuaEWsrs/" class="badge secondary">
+          gnvm
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/EyMHgjTur/" class="badge secondary">
+          nodejs
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/VA7I629exq/" class="badge secondary">
+          npm
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/1znN5W9Zuz/" class="badge secondary">
+          javascript
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/tJ-80yUy_/" class="badge warning">
+          生命周期
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/831DcViOP/" class="badge secondary">
+          vue-router
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/B4HIJAG5J/" class="badge warning">
+          vue ui组件库
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/n4ZvGfONg/" class="badge success">
+          vuex
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/Rcm6rzxKD/" class="badge ">
+          yarn
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/cMmtoNUTP/" class="badge ">
+          es6-11
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/1AtASZhuo/" class="badge secondary">
+          python
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/wHGeLJSwP/" class="badge success">
+          markdown
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/TwpRvhEbq/" class="badge warning">
+          xhr
+        </a>
+      
+    </div>
+  </div>
+  <div class="paper">
+    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://mxk-zwh.github.io/atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+
+
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+</script>
+
+
+
+
+  </body>
+</html>

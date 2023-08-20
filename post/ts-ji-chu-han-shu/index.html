@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>ts 基础 --函数 | 曙光英雄</title>
+<meta name="description" content="派蒙">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="https://mxk-zwh.github.io/favicon.ico?v=1692504204692">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://mxk-zwh.github.io/styles/main.css">
+
+
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+  </head>
+  <body>
+  
+    <nav class="navbar border fixed split-nav">
+  <div class="nav-brand">
+    <h3><a href="https://mxk-zwh.github.io">曙光英雄</a></h3>
+  </div>
+  <div class="collapsible">
+    <input id="collapsible1" type="checkbox" name="collapsible1">
+    <button>
+      <label for="collapsible1">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </label>
+    </button>
+    <div class="collapsible-body">
+      <ul class="inline">
+        
+          <li>
+            
+              <a href="/" class="menu" target="_blank">
+                首页
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/archives" class="menu" target="_blank">
+                归档
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/tags" class="menu" target="_blank">
+                标签
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/cccccc/src/bg-pc/" class="menu" target="_blank">
+                背景
+              </a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div id="top" class="row site">
+      <div class="sm-12 md-8 col">
+        <div class="paper">
+          <article class="article">
+            <h1>ts 基础 --函数</h1>
+            <p class="article-meta">
+              2023-05-19
+              
+            </p>
+            
+            <div class="post-content" v-pre>
+              <p>npm install -g typescript 下载<br>
+看版本 tsc -v</p>
+<h1 id="appts转appjs">app.ts转app.js</h1>
+<p>编译一个   tsc app.ts<br>
+编译多个  tsc 文件1.ts 文件2.ts 文件3.ts<br>
+运行 node app.js<br>
+js是es来的</p>
+<blockquote>
+<p>vscode右键文件可以打开集成cmd</p>
+</blockquote>
+<h1 id="保留关键字">保留关键字</h1>
+<p>没见过ts<br>
+number string get instanceof   type<br>
+module private enum  any  package   do<br>
+super   extends    implements   static<br>
+interface   yield   export     void new<br>
+js<br>
+abstract  byte   char   debugger   delete<br>
+double   float   finally   final    goto   implements   import<br>
+in   native   protected    synchronized   throws      transient<br>
+volatile   with</p>
+<h1 id="基本类型">基本类型</h1>
+<p>数字类型： 二进制0b1 八进制0o7 十六进制0xf 十进制0<br>
+泛型数组：</p>
+<pre><code>let arr:Array&lt;number&gt;=[1,2]
+</code></pre>
+<p>不明确类型any<br>
+js类型：number、string、boolean、null、undefined、object<br>
+ts指定类型：any、unknown、never、enum、tuple<br>
+指定一种类型<br>
+var [变量名] : [类型] = 值;<br>
+指定多个类型（联合类型 属于高阶）<br>
+var [变量名] : ( [类型] | [类型] )[]<br>
+初始没有赋值，默认<code>any任意类型</code><br>
+var [变量名];<br>
+[变量名]=1;<br>
+初始有赋值 ，指定的类型为 <code>值的类型</code><br>
+var [变量名] = 值;</p>
+<blockquote>
+<p>变量不要使用 name 否则会与 DOM 中的全局 window 对象下的 name 属性出现了重名。</p>
+</blockquote>
+<h1 id="enum">enum</h1>
+<p>可迭代的 数字+1，默认从0开始，可以自定义（字符串。。）<br>
+实战项目大量用到</p>
+<pre><code>//编译效果复杂，编译后的东西不需要懂，代码量会比较大，动态类型
+// 0,1,2
+enum Color {Red,Green,Blue}
+//1,2,3 重置起始值
+enum Color {Red=1,Green,Blue}
+//手动赋值
+enum Color {Red=1,Green=2,Blue=4}
+//编译效果简单，代码量小，静态
+const enum Color {。。。}
+</code></pre>
+<h1 id="switch">switch</h1>
+<p>有大括号</p>
+<pre><code>switch(){
+    case 'A':{
+        console.log('优')
+        break;
+    }
+    default:{
+        console.log('不行')
+        break
+    }
+}
+</code></pre>
+<h1 id="循环">循环</h1>
+<p>for...of （支持遍历 数组  字符串 映射maps 集合sets）</p>
+<p>for (let 变量 of 数组){}<br>
+//当前值,当前index,array<br>
+forEach((val,idx,array)=&gt;{})<br>
+every<br>
+list.every((val,idx,array)=&gt;{<br>
+return true//跳过<br>
+//return false 结束迭代<br>
+})<br>
+some</p>
+<h1 id="tsconfig配置">tsconfig配置</h1>
+<p>tsc --init<br>
+运行ts直接tsc</p>
+<h1 id="调试">调试</h1>
+<p>tsconfig开启sourceMap（编译的时候生成另外一个文件）<br>
+。。.js.map文件（主要是当前js文件和外面的ts文件。。。，连接作用）<br>
+ts打断点  用node.js执行</p>
+<blockquote>
+<p>打断点  先编译 后执行<br>
+<strong>webstorm</strong>里的运行配置添加node.js，<br>
+配置-js文件（路径）-运行之前，添加编译ts（添加配置tsconfig）</p>
+</blockquote>
+<h1 id="函数">函数</h1>
+<p>不知道返回类型写什么，<br>
+可以把鼠标放在函数上面（不是形参上面）<br>
+智能提示返回类型<br>
+没有返回return，就是void类型</p>
+<p>形参必须要有类型</p>
+<p>函数参数没有使用 的智能提示需要开启（标准）<br>
+tsconfig- noUnusedParameters:true<br>
+避免函数undefined被返回，<br>
+tsconfig- noImplicitReturns:true<br>
+函数内部，有参数没用（耗内存）<br>
+tsconfig- noUnusedLocals:true</p>
+
+            </div>
+          </article>
+        </div>
+        <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://mxk-zwh.github.io/post/python-mian-xiang-dui-xiang-greater/">
+                <h3 class="post-title">
+                  python面向对象(难)--错误
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+        
+      </div>
+
+      <div class="sm-12 md-4 col sidebar">
+  <div class="paper info-container">
+    <img src="https://mxk-zwh.github.io/images/avatar.png?v=1692504204692" class="no-responsive avatar">
+    <div class="text-muted">派蒙</div>
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      最新文章
+    </div>
+    <div class="row">
+      <ul>
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/xue-xi-es6-1/">学习ES6-1</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/pet-system-github-vue2/">pet-system-github-vue2</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/scssand-tu-biao/">scssand图标</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/npmyarnpnpm/">npm、yarn、pnpm</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/gnvm-ling-huo-qie-huan-node-ban-ben/">gnvm灵活切换node版本</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/zi-ding-yi-shi-jian/">自定义事件</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/this/">this</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/vue-router-sheng-ming-zhou-qi/">vue-router-2</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/liang-ge-sheng-ming-zhou-qi-gou-zi/">两个生命周期钩子</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/vue-router/">vue-router-1</a>
+            </li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </ul>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      标签列表
+    </div>
+    <div class="row">
+      
+        <a href="https://mxk-zwh.github.io/tag/HPuaEWsrs/" class="badge warning">
+          gnvm
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/EyMHgjTur/" class="badge success">
+          nodejs
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/VA7I629exq/" class="badge success">
+          npm
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/1znN5W9Zuz/" class="badge ">
+          javascript
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/tJ-80yUy_/" class="badge ">
+          生命周期
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/831DcViOP/" class="badge secondary">
+          vue-router
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/B4HIJAG5J/" class="badge secondary">
+          vue ui组件库
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/n4ZvGfONg/" class="badge secondary">
+          vuex
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/Rcm6rzxKD/" class="badge secondary">
+          yarn
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/cMmtoNUTP/" class="badge secondary">
+          es6-11
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/1AtASZhuo/" class="badge secondary">
+          python
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/wHGeLJSwP/" class="badge success">
+          markdown
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/TwpRvhEbq/" class="badge ">
+          xhr
+        </a>
+      
+    </div>
+  </div>
+  <div class="paper">
+    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://mxk-zwh.github.io/atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+
+
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+</script>
+
+
+
+
+  </body>
+</html>

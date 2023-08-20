@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>python面向对象(难)--错误 | 曙光英雄</title>
+<meta name="description" content="派蒙">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="https://mxk-zwh.github.io/favicon.ico?v=1692504204692">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://mxk-zwh.github.io/styles/main.css">
+
+
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+  </head>
+  <body>
+  
+    <nav class="navbar border fixed split-nav">
+  <div class="nav-brand">
+    <h3><a href="https://mxk-zwh.github.io">曙光英雄</a></h3>
+  </div>
+  <div class="collapsible">
+    <input id="collapsible1" type="checkbox" name="collapsible1">
+    <button>
+      <label for="collapsible1">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </label>
+    </button>
+    <div class="collapsible-body">
+      <ul class="inline">
+        
+          <li>
+            
+              <a href="/" class="menu" target="_blank">
+                首页
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/archives" class="menu" target="_blank">
+                归档
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/tags" class="menu" target="_blank">
+                标签
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/cccccc/src/bg-pc/" class="menu" target="_blank">
+                背景
+              </a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div id="top" class="row site">
+      <div class="sm-12 md-8 col">
+        <div class="paper">
+          <article class="article">
+            <h1>python面向对象(难)--错误</h1>
+            <p class="article-meta">
+              2023-05-03
+              
+                <a href="https://mxk-zwh.github.io/tag/1AtASZhuo/" class="badge warning">
+                  python
+                </a>
+              
+            </p>
+            
+            <div class="post-content" v-pre>
+              <p>是类（Class）和实例（Instance）<br>
+类是抽象的模板，比如Student类，而实例是根据类创建出来的一个个具体的“对象”<br>
+根据<strong>抽象学生</strong>class 创建出一个个<strong>具体学生</strong></p>
+<p>变量=抽象类（参数）<br>
+变量.抽象类方法（）</p>
+<p>不能直接访问<code>__name</code>是因为Python解释器对外把<code>__name</code>变量改成了<code>_Student__name</code>，所以，仍然可以通过<code>_Student__name</code>来访问<code>__name</code>变量</p>
+<h1 id="继承多态">继承多态</h1>
+<p>base class,superclass</p>
+<pre><code>class 父类(object):
+      pass
+class 子类(父类):
+     pass
+</code></pre>
+<p>继承关系：object -&gt; Animal -&gt; Dog -&gt; Husky（某品种狗）</p>
+<ul>
+<li>对于静态语言（例如Java）来说，如果需要传入Animal类型，则传入的对象<strong>必须是Animal类型或者它的子类</strong>，否则，将无法调用run()方法。</li>
+<li>对于Python这样的动态语言来说，则不一定需要传入Animal类型。我们只需要<strong>保证传入的对象有一个run()方法</strong>就可以了</li>
+</ul>
+<p>BuiltinFunction 内置函数</p>
+<p><code>isinstance()</code>判断的是一个对象是否是该类型<strong>本身</strong>，或者位于该类型的<strong>父继承</strong>链上。<br>
+判断一个变量是否是某些类型中的一种<br>
+isinstance([1,2,3],(list,tuple))</p>
+<h1 id="测试该对象的属性">测试该对象的属性：</h1>
+<p>hasattr(obj, 'x') # <strong>有属性</strong>'x'吗？<br>
+setattr(obj, 'y', 19) # <strong>设置一个属性</strong>'y' ，obj.y=19<br>
+getattr(obj, 'y') # <strong>获取属性</strong>'y'  ，obj.y<br>
+getattr(obj, 'z', 404) # 获取属性'z'，<strong>如果不存在，返回默认值404</strong></p>
+<p>给实例绑定属性的方法是通过实例变量，或者通过self变量</p>
+<pre><code>class Student(object):
+    def __init__(self, name):
+        self.name = name
+</code></pre>
+<p>可以直接在class中定义属性，这种属性是类属性，归Student类所有</p>
+<pre><code>&gt;&gt;&gt; class Student(object):
+...     name = 'Student'
+...
+&gt;&gt;&gt; s = Student() # 创建实例s
+&gt;&gt;&gt; print(s.name) # 打印name属性，因为实例并没有name属性，所以会继续查找class的name属性
+Student
+&gt;&gt;&gt; print(Student.name) # 打印类的name属性
+Student
+&gt;&gt;&gt; s.name = 'Michael' # 给实例绑定name属性
+&gt;&gt;&gt; print(s.name) # 由于实例属性优先级比类属性高，因此，它会屏蔽掉类的name属性
+Michael
+&gt;&gt;&gt; print(Student.name) # 但是类属性并未消失，用Student.name仍然可以访问
+Student
+&gt;&gt;&gt; del s.name # 如果删除实例的name属性
+&gt;&gt;&gt; print(s.name) # 再次调用s.name，由于实例的name属性没有找到，类的name属性就显示出来了
+Student
+</code></pre>
+<p>s.name先找实例属性 self.x 若无，然后找类属性<br>
+Student.name类属性</p>
+<h1 id="高级">高级</h1>
+<p>给<strong>第一个实例</strong>绑定方法，创建另一个实例 调用方法 不起作用<br>
+from types import MethodType<br>
+s.set_age=MethodType(函数实例方法,实例)<br>
+s.set_age(25) # 调用实例方法<br>
+s.age # 测试结果 来自实例属性</p>
+<p>为了给<strong>所有实例</strong>都绑定方法<br>
+Student.set_age=set_age<br>
+s=Student()<br>
+s.set_age(100)<br>
+s.score</p>
+<h1 id="使用__slots__">使用__slots__</h1>
+<p><strong>限制</strong>实例的属性，class实例能添加的属性，<br>
+<code>__slots__</code>定义的属性仅对<strong>当前</strong>类实例起作用，对继承的子类是不起作用的<br>
+子类实例允许定义的属性就是（自身<code>__slots__</code>属性+父类<code>__slots__</code>属性）。<br>
+只能绑定<code>__slots__</code>定义的属性</p>
+<pre><code>class Student(object):
+    __slots__ = ('name', 'age')
+    def set_score(self,score):
+        self.score = score
+s = Student() #类的实例化
+s.score = 100 #由于__slots__方法，不能给Student类绑定score属性
+AttributeError: 'Student' object has no attribute 'score'
+</code></pre>
+<h2 id="检查参数">检查参数</h2>
+<p><strong>没办法检查</strong>参数（可以把成绩随便改）<br>
+s.score = 9999</p>
+<p>set_score()方法来 1 先检查参数（发现输入的值不对raise ValueError()，后面就不执行）<br>
+， 2 然后设置成绩，再通过一个get_score()来获取成绩，</p>
+<h2 id="property">@property</h2>
+<p>操作实例属性是用了setter/getter，不能直接操作实例属性<br>
+只设置getter是只读，setter是写</p>
+<p>@property 把一个方法变成属性<strong>调用</strong><br>
+@某个属性.setter  负责把一个setter方法变成属性<strong>赋值</strong><br>
+这个能检查参数</p>
+<p>s.birth方法调用转为<code>getter </code>再return self.实例属性<br>
+s.birth=xx 转为 <code>setter </code> 在检查参数 再修改实例属性</p>
+<h2 id="混入">混入</h2>
+<p>混入额外的功能 通过什么实现？多重继承实现。例如，让鸵鸟<code>Ostrich</code>继承<code>Bird</code>，再同时继承<code>Runnable</code>，这种设计称作<code>MixIn</code></p>
+<pre><code>class Ostrich(Bird,...MixIn,...MixIn):
+    pass
+</code></pre>
+<p>TCP传输控制 UDP用户数据 Forking创建子线程 Threading 多线程<br>
+不同的类功能，构建子类，MixIn设计类的继承关系 思想</p>
+<h1 id="定制类">定制类</h1>
+<ul>
+<li><code>__init__(self)</code>：用于初始化</li>
+<li><code>__str__(self)</code>：相当于Java的重写的toString方法</li>
+<li><code>__del__(self)</code>：相当于Java中对象销毁时的回调函数</li>
+<li><code>__mro__()</code>：继承下方法搜索调用的优先级</li>
+<li><code>__new__()</code>：object的<code>__new__(cls)</code>是创建对象的方法</li>
+</ul>
+<p>直接显示变量调用的是<code>__repr__()</code>，返回程序开发者看到的字符串，是为调试服务的。<br>
+<code>__str__()</code>返回用户看到的字符串</p>
+<pre><code>    __repr__ = __str__
+</code></pre>
+<p><code>__iter__()</code>方法，该方法返回一个<strong>迭代对象</strong>self<br>
+<code>__next__()</code>方法拿到循环的<strong>下一个</strong>值return self.a<br>
+直到遇到<code>StopIteration</code>错误时<strong>退出循环</strong>。raise ...()</p>
+<p><code>__getitem__</code>像list那样按照下标<strong>取出元素</strong>f[0]，<br>
+不可以直接切片会报错，需要加上判断：<br>
+1.if 索引是int类型，<br>
+2. if 索引是切片slice类型<br>
+3. 3.还有很多要做，比如step步长，负数</p>
+<p>前提是 在<strong>没有找到</strong>属性的时候 才会调用<code>__getattr__()</code>方法<br>
+Python解释器会试图调用<code>__getattr__(self, 'score')</code>来尝试<strong>获得属性</strong><br>
+这样，我们就有机会返回score的值<br>
+调用别的属性，就会默认返回None，<br>
+在后面要加个<code>AttributeError</code>的错误</p>
+<p>这实际上可以 全部<strong>动态化处理</strong> 一个类的所有属性和方法调用<br>
+作用：可以针对 完全动态的情况 作调用<br>
+例子：现在很多网站都搞REST API，若写SDK，给每个URL对应的API都写一个方法，那得累死，<br>
+而且，API一旦改动，SDK也要改（ 前面动态变化，后面的不变）。<br>
+利用完全动态的<code>__getattr__</code>，我们可以写出一个<strong>链式调用</strong>：<br>
+无论API怎么变，SDK都可以根据URL实现<strong>完全动态的调用</strong>，而且，不随API的增加而改变！</p>
+<p>调用实例的时候，会调用<code>__call__()</code>方法<br>
+s=Student('xxx')<br>
+s()</p>
+<h2 id="特殊参数">特殊参数</h2>
+<p>self：相当于Java中的this关键字<br>
+cls：相当于Java中的class关键字，有点牵强，将就理解<br>
+看不懂</p>
+<h1 id="枚举类-看不懂">枚举类  看不懂</h1>
+<p>大写是用来定义常量的，但还是变量，最好是枚举类型定义<br>
+变量=Enum(什么类型，（名字，名字）)</p>
+<pre><code>for name,member in Month.__members__.items():
+    print(name,member,member.value)
+</code></pre>
+<p>name是<strong>名字</strong>，member是<strong>什么类型.名字</strong>，value是<strong>默认</strong>从1开始自动赋值<br>
+<code>什么类型.__members__</code>字典<br>
+@unique装饰器可以检验没有重复值<br>
+访问枚举类型<br>
+类型.名字<br>
+类型[名字]<mark>类型.名字<br>
+类型.名字.value</mark>value<br>
+类型(value)==类型.名字</p>
+<h1 id="元类-最看不懂">元类  最看不懂</h1>
+<p>Hello = type('Hello', (object,), dict(hello=fn)) # 创建Hello class<br>
+而普通的list没有add()方法：L2 = list()   L2 = list()<br>
+<code>self.__class__.__name__</code>获取类名</p>
+<pre><code>class ModelMetaclass(type):
+    def __new__(cls,name,bases,attrs):
+    ---
+     for k, v in attrs.items():
+     ---
+     for k in mappings.keys():
+    ---
+    return type.__new__(cls, name, bases, attrs)
+</code></pre>
+<h1 id="错误">错误</h1>
+<p>py内置logging容易记录错误，打印错误后继续执行，然后正常退出<br>
+如果<strong>断言</strong>失败，assert语句本身就会抛出AssertionError：<br>
+断言的开关“-O”是英文大写字母O，不是数字0。</p>
+
+            </div>
+          </article>
+        </div>
+        <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://mxk-zwh.github.io/post/markdown-yu-fa/">
+                <h3 class="post-title">
+                  markdown语法
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+        
+      </div>
+
+      <div class="sm-12 md-4 col sidebar">
+  <div class="paper info-container">
+    <img src="https://mxk-zwh.github.io/images/avatar.png?v=1692504204692" class="no-responsive avatar">
+    <div class="text-muted">派蒙</div>
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      最新文章
+    </div>
+    <div class="row">
+      <ul>
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/xue-xi-es6-1/">学习ES6-1</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/pet-system-github-vue2/">pet-system-github-vue2</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/scssand-tu-biao/">scssand图标</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/npmyarnpnpm/">npm、yarn、pnpm</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/gnvm-ling-huo-qie-huan-node-ban-ben/">gnvm灵活切换node版本</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/zi-ding-yi-shi-jian/">自定义事件</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/this/">this</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/vue-router-sheng-ming-zhou-qi/">vue-router-2</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/liang-ge-sheng-ming-zhou-qi-gou-zi/">两个生命周期钩子</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/vue-router/">vue-router-1</a>
+            </li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </ul>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      标签列表
+    </div>
+    <div class="row">
+      
+        <a href="https://mxk-zwh.github.io/tag/HPuaEWsrs/" class="badge ">
+          gnvm
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/EyMHgjTur/" class="badge secondary">
+          nodejs
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/VA7I629exq/" class="badge warning">
+          npm
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/1znN5W9Zuz/" class="badge secondary">
+          javascript
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/tJ-80yUy_/" class="badge ">
+          生命周期
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/831DcViOP/" class="badge ">
+          vue-router
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/B4HIJAG5J/" class="badge ">
+          vue ui组件库
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/n4ZvGfONg/" class="badge secondary">
+          vuex
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/Rcm6rzxKD/" class="badge secondary">
+          yarn
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/cMmtoNUTP/" class="badge warning">
+          es6-11
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/1AtASZhuo/" class="badge success">
+          python
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/wHGeLJSwP/" class="badge warning">
+          markdown
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/TwpRvhEbq/" class="badge secondary">
+          xhr
+        </a>
+      
+    </div>
+  </div>
+  <div class="paper">
+    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://mxk-zwh.github.io/atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+
+
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+</script>
+
+
+
+
+  </body>
+</html>

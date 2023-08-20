@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>vue-router-1 | 曙光英雄</title>
+<meta name="description" content="派蒙">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="https://mxk-zwh.github.io/favicon.ico?v=1692504204692">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://mxk-zwh.github.io/styles/main.css">
+
+
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+  </head>
+  <body>
+  
+    <nav class="navbar border fixed split-nav">
+  <div class="nav-brand">
+    <h3><a href="https://mxk-zwh.github.io">曙光英雄</a></h3>
+  </div>
+  <div class="collapsible">
+    <input id="collapsible1" type="checkbox" name="collapsible1">
+    <button>
+      <label for="collapsible1">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </label>
+    </button>
+    <div class="collapsible-body">
+      <ul class="inline">
+        
+          <li>
+            
+              <a href="/" class="menu" target="_blank">
+                首页
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/archives" class="menu" target="_blank">
+                归档
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/tags" class="menu" target="_blank">
+                标签
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/cccccc/src/bg-pc/" class="menu" target="_blank">
+                背景
+              </a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div id="top" class="row site">
+      <div class="sm-12 md-8 col">
+        <div class="paper">
+          <article class="article">
+            <h1>vue-router-1</h1>
+            <p class="article-meta">
+              2023-08-06
+              
+                <a href="https://mxk-zwh.github.io/tag/831DcViOP/" class="badge warning">
+                  vue-router
+                </a>
+              
+            </p>
+            
+            <div class="post-content" v-pre>
+              <p>router link replace<br>
+历史记录就像栈<br>
+默认push 加加加 如何开启：<br>
+:replace=&quot;true&quot;或者replace<br>
+删除一个 添加一个 ： 点了就回不去<br>
+好处：<br>
+防止重要表单 反复提交</p>
+<p>编程式路由导航<br>
+这就是编程式路由导航 脱离router-link 路由跳转更灵活<br>
+this.<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mi>o</mi><mi>u</mi><mi>t</mi><mi>e</mi><mi>r</mi><mi mathvariant="normal">.</mi><mi>p</mi><mi>u</mi><mi>s</mi><mi>h</mi><mi mathvariant="normal">自</mi><mi mathvariant="normal">由</mi><mi mathvariant="normal">跳</mi><mi mathvariant="normal">转</mi><mi>t</mi><mi>h</mi><mi>i</mi><mi>s</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">router.push
+自由跳转
+this.</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">o</span><span class="mord mathdefault">u</span><span class="mord mathdefault">t</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord">.</span><span class="mord mathdefault">p</span><span class="mord mathdefault">u</span><span class="mord mathdefault">s</span><span class="mord mathdefault">h</span><span class="mord cjk_fallback">自</span><span class="mord cjk_fallback">由</span><span class="mord cjk_fallback">跳</span><span class="mord cjk_fallback">转</span><span class="mord mathdefault">t</span><span class="mord mathdefault">h</span><span class="mord mathdefault">i</span><span class="mord mathdefault">s</span><span class="mord">.</span></span></span></span>router.replace<br>
+替换跳转<br>
+this.<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mi>o</mi><mi>u</mi><mi>t</mi><mi>e</mi><mi>r</mi><mi mathvariant="normal">.</mi><mi>b</mi><mi>a</mi><mi>c</mi><mi>k</mi><mo>(</mo><mo>)</mo><mo separator="true">;</mo><mi mathvariant="normal">后</mi><mi mathvariant="normal">退</mi><mi>t</mi><mi>h</mi><mi>i</mi><mi>s</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">router.back();
+后退
+this.</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">o</span><span class="mord mathdefault">u</span><span class="mord mathdefault">t</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord">.</span><span class="mord mathdefault">b</span><span class="mord mathdefault">a</span><span class="mord mathdefault">c</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mopen">(</span><span class="mclose">)</span><span class="mpunct">;</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord cjk_fallback">后</span><span class="mord cjk_fallback">退</span><span class="mord mathdefault">t</span><span class="mord mathdefault">h</span><span class="mord mathdefault">i</span><span class="mord mathdefault">s</span><span class="mord">.</span></span></span></span>router.forward();<br>
+前进<br>
+this.$router.go(n);<br>
+负数是连续后退n步<br>
+整数是连续前进n步</p>
+<p>缓存路由组件<br>
+缓存单个<br>
+keepalive include=组件名<br>
+缓存多个<br>
+:include=&quot;['News','Message']&quot;<br>
+keep-alive抱住router-view</p>
+<p>路由守卫<br>
+用来跳转或者取消的方式的守卫导航。<br>
+路由权限<br>
+就像保安一样，不让陌生人进来。</p>
+<p>执行顺序：</p>
+<p>守卫分为：全局的、单个路由独享的、组件内的三种。</p>
+<p>全局路由守卫有两个：一个是全局前置守卫，一个是全局后置守卫。<br>
+执行的顺序：beforeEach、beforeResolve、afterEach。<br>
+beforeEach：路由跳转前触发，参数有：to、from、next，作用主要在于：登录验证，路由还没跳转前告知，否则就晚了。<br>
+beforeResolve：在组件被解析后，路由跳转前触发，参数同上三个<br>
+afterEach：路由跳转后触发，参数同上三个，发生在：beforeEach和beforeResolve之后，beforeRouteEnter之前。</p>
+<p>组件路由守卫：组件内执行的钩子函数。<br>
+执行顺序：beforeRouteEnter、beforeRouteUpdate、beforeRouteLeave。<br>
+参数：to、from、next。</p>
+<p>beforeRouteEnter：在路由进入之前，组件实例还未渲染，导致无法获取this实例，只能通过vm来访问组件实例。 （该钩子在全局守卫beforeEach和beforeEnter，beforeResolve和afterEach之前调用）<br>
+beforeRouteUpdate：同一页面，刷新不同数据时调用。（可访问this。当前路由query变更时，会被调用）<br>
+beforeRouteLeave：离开当前路由页面时调用。（可访问this）</p>
+<p>使用场景，但不限于：还有别的场景<br>
+1.验证用户权限：在进入某些页面之前检查用户是否已登录或是否有权限访问该页面。<br>
+2.加载数据：在进入页面前加载必要的数据，例如在组件内使用 beforeRouteEnter 钩子函数异步获取数据。<br>
+3.路由重定向：在进入某些页面时需要重定向到另一个页面，例如在全局前置守卫中检查用户是否已登录并将未登录用户重定向到登录页面。<br>
+4.路由拦截：在某些情况下需要取消路由导航，例如在组件内使用 beforeRouteLeave 钩子函数防止用户误操作离开当前页面。</p>
+<p>全局前置路由守卫<br>
+把自己想配置的路由属性放在meta路由元里面<br>
+this.<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mi>o</mi><mi>u</mi><mi>t</mi><mi>e</mi><mi mathvariant="normal">打</mi><mi mathvariant="normal">印</mi><mi mathvariant="normal">当</mi><mi mathvariant="normal">前</mi><mi mathvariant="normal">组</mi><mi mathvariant="normal">件</mi><mi mathvariant="normal">路</mi><mi mathvariant="normal">由</mi><mi mathvariant="normal">配</mi><mi mathvariant="normal">置</mi><mi mathvariant="normal">信</mi><mi mathvariant="normal">息</mi><mi>t</mi><mi>h</mi><mi>i</mi><mi>s</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">route打印当前组件路由配置信息
+this.</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">o</span><span class="mord mathdefault">u</span><span class="mord mathdefault">t</span><span class="mord mathdefault">e</span><span class="mord cjk_fallback">打</span><span class="mord cjk_fallback">印</span><span class="mord cjk_fallback">当</span><span class="mord cjk_fallback">前</span><span class="mord cjk_fallback">组</span><span class="mord cjk_fallback">件</span><span class="mord cjk_fallback">路</span><span class="mord cjk_fallback">由</span><span class="mord cjk_fallback">配</span><span class="mord cjk_fallback">置</span><span class="mord cjk_fallback">信</span><span class="mord cjk_fallback">息</span><span class="mord mathdefault">t</span><span class="mord mathdefault">h</span><span class="mord mathdefault">i</span><span class="mord mathdefault">s</span><span class="mord">.</span></span></span></span>router路由器</p>
+<p>路由器的工作模式<br>
+#到后面 都是hash值<br>
+不会作为路径的一部分发给服务器<br>
+不会随着http请求发给服务器<br>
+hash==&gt;/#/<br>
+地址中永远带#号，不美观<br>
+地址通过第三方分享，app校验严格，改地址标记为不合法<br>
+兼容性较好<br>
+history==&gt;/<br>
+地址干净，美观<br>
+兼容性和hash模式相比略差<br>
+应用部署上线，需要后端人员支持，解决刷新页面服务器404的问题</p>
+<p>不仅仅是兼容性问题，还有项目上线的问题：<br>
+写完的代码--&gt;经过打包--&gt;交给后端上线<br>
+npm run serve是8080服务器<br>
+build才是把public和src进行打包，生成html/css/js（静态资源）</p>
+<p>打包后的文件需要放在服务器上运行（部署）<br>
+node express 现场搭建微型服务器<br>
+es6模块化<br>
+use静态资源 express.static ( __dirname+'/static')<br>
+创建一个实例对象<br>
+配置路由<br>
+监听端口</p>
+<p>history模式：会被当做express的路由，访问不了<br>
+如何解决history模式404？<br>
+第一种方法<br>
+安装模块connect-history-api-fallback<br>
+server.js添加 代码<br>
+重启服务器 成功<br>
+路由刷新没有404<br>
+第二种方法<br>
+熟悉后端nginx<br>
+还有其他方法</p>
+
+            </div>
+          </article>
+        </div>
+        <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://mxk-zwh.github.io/post/vue-ui-zu-jian-ku/">
+                <h3 class="post-title">
+                  vue ui组件库
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+        
+      </div>
+
+      <div class="sm-12 md-4 col sidebar">
+  <div class="paper info-container">
+    <img src="https://mxk-zwh.github.io/images/avatar.png?v=1692504204692" class="no-responsive avatar">
+    <div class="text-muted">派蒙</div>
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      最新文章
+    </div>
+    <div class="row">
+      <ul>
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/xue-xi-es6-1/">学习ES6-1</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/pet-system-github-vue2/">pet-system-github-vue2</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/scssand-tu-biao/">scssand图标</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/npmyarnpnpm/">npm、yarn、pnpm</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/gnvm-ling-huo-qie-huan-node-ban-ben/">gnvm灵活切换node版本</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/zi-ding-yi-shi-jian/">自定义事件</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/this/">this</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/vue-router-sheng-ming-zhou-qi/">vue-router-2</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/liang-ge-sheng-ming-zhou-qi-gou-zi/">两个生命周期钩子</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/vue-router/">vue-router-1</a>
+            </li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </ul>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      标签列表
+    </div>
+    <div class="row">
+      
+        <a href="https://mxk-zwh.github.io/tag/HPuaEWsrs/" class="badge secondary">
+          gnvm
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/EyMHgjTur/" class="badge ">
+          nodejs
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/VA7I629exq/" class="badge ">
+          npm
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/1znN5W9Zuz/" class="badge secondary">
+          javascript
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/tJ-80yUy_/" class="badge secondary">
+          生命周期
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/831DcViOP/" class="badge success">
+          vue-router
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/B4HIJAG5J/" class="badge success">
+          vue ui组件库
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/n4ZvGfONg/" class="badge success">
+          vuex
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/Rcm6rzxKD/" class="badge success">
+          yarn
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/cMmtoNUTP/" class="badge secondary">
+          es6-11
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/1AtASZhuo/" class="badge warning">
+          python
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/wHGeLJSwP/" class="badge secondary">
+          markdown
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/TwpRvhEbq/" class="badge ">
+          xhr
+        </a>
+      
+    </div>
+  </div>
+  <div class="paper">
+    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://mxk-zwh.github.io/atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+
+
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+</script>
+
+
+
+
+  </body>
+</html>

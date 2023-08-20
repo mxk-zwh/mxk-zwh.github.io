@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>ES6-11 | 曙光英雄</title>
+<meta name="description" content="派蒙">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="https://mxk-zwh.github.io/favicon.ico?v=1692504204692">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://mxk-zwh.github.io/styles/main.css">
+
+
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+  </head>
+  <body>
+  
+    <nav class="navbar border fixed split-nav">
+  <div class="nav-brand">
+    <h3><a href="https://mxk-zwh.github.io">曙光英雄</a></h3>
+  </div>
+  <div class="collapsible">
+    <input id="collapsible1" type="checkbox" name="collapsible1">
+    <button>
+      <label for="collapsible1">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </label>
+    </button>
+    <div class="collapsible-body">
+      <ul class="inline">
+        
+          <li>
+            
+              <a href="/" class="menu" target="_blank">
+                首页
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/archives" class="menu" target="_blank">
+                归档
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/tags" class="menu" target="_blank">
+                标签
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/cccccc/src/bg-pc/" class="menu" target="_blank">
+                背景
+              </a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div id="top" class="row site">
+      <div class="sm-12 md-8 col">
+        <div class="paper">
+          <article class="article">
+            <h1>ES6-11</h1>
+            <p class="article-meta">
+              2023-06-12
+              
+                <a href="https://mxk-zwh.github.io/tag/cMmtoNUTP/" class="badge warning">
+                  es6-11
+                </a>
+              
+                <a href="https://mxk-zwh.github.io/tag/1znN5W9Zuz/" class="badge ">
+                  javascript
+                </a>
+              
+            </p>
+            
+            <div class="post-content" v-pre>
+              <p>es6-11<br>
+有了es本来要几行代码实现<br>
+现在就有可能就一行代码<br>
+几行边一行</p>
+<p>对象大括号直接写变量名和方法名<br>
+对象里写方法，import:function()<br>
+现在import()，可以简化<br>
+。</p>
+<p>this 指最外层<br>
+var _this=this<br>
+function<br>
+_this.xxx</p>
+<p>()=&gt;{this}</p>
+<p>argument 箭头函数不行，原型是对象<br>
+看似数组，用来接收参数<br>
+function x<br>
+clg( argument)<br>
+x(1,3)<br>
+输出的是对象<br>
+argument(2) [1，3，...]</p>
+<p>解构传参<br>
+function con({name,host='127.0.0.1'})<br>
+con（{<br>
+name：'tom',<br>
+}）</p>
+<p>rest参数<br>
+function x(...args)<br>
+clg(args)<br>
+x(1,2)<br>
+输出的是数组<br>
+[1,2]</p>
+<p>rest参数多个,必须写在最后面<br>
+function fn(a,b,...args)<br>
+clg(args)<br>
+fn(1,2,3,4)<br>
+输出的是数组<br>
+[3,4]</p>
+<p>扩展运算符<br>
+...数组 变成 字符串之间逗号分开<br>
+fn(...数组)<br>
+等价于<br>
+fn.apply(null,数组)</p>
+<p>数组合并<br>
+arr1.concat(arr2)<br>
+[..arr1,...arr2]</p>
+<p>箭头函数应用场景<br>
+适合与this无关的回调，定时器，数组方法回调<br>
+不适合与this有关的问题。事件回调，对象的方法</p>
+<p>symbol<br>
+新的数据类型ES6引入的，第七种数据类型，独一无二的值。<br>
+值唯一解决命名冲突<br>
+不能与其他数据进行计算<br>
+对象属性不能使用for in ，可以使用Reflect.ownKeys 来获取对象的所有健名</p>
+<p>异步生成器<br>
+async function*<br>
+yield &quot;xxx&quot;</p>
+<p>Symbol很多<br>
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/Symbol</p>
+<p>异步编程<br>
+函数——&gt;生成器函数——&gt;调用生成器函数</p>
+<p>迭代器<br>
+function* -- yield -- next/next.value</p>
+<p>[...Set]=array</p>
+<p>模块化<br>
+大文件拆成小文件<br>
+把小文件组合起来<br>
+优势<br>
+命名冲突、代码复用、高维护性</p>
+<p>模块化规范产品<br>
+nodejs、。。。</p>
+<p>模块化语法<br>
+type=&quot;module&quot;<br>
+import 取别名 as 分别导入，解构赋值导入、简化导入（仅默认导入）<br>
+export 分别导出、同一导出、默认导出</p>
+<p>ES9对象扩展<br>
+es6 rest参数和spread扩展运算符 只针对数组<br>
+[...user] user:array<br>
+es9 为对象提供像数组一样的 rest参数和扩展运算符<br>
+{...user} user:object</p>
+<p>正则扩展-命名捕获分组<br>
+const reg=/<a href="(.*)">(.<em>)&lt;/a&gt;/;<br>
+正则匹配顺序 第一个是/xxx/ 第二个是(.</em>)<br>
+const reg = /<a href="(?<url>.*)">(?<text>.*)&lt;/a&gt;/;<br>
+正则匹配 ?<url> 出现 groups<br>
+console.log(result.groups.url);</p>
+<p>正则扩展-反向断言<br>
+const reg = /\d+(?=啦)/;<br>
+正向断言+(?=啦)<br>
+const reg = /(?&lt;=么)\d+/;<br>
+反向断言(?&lt;=么)</p>
+<p>正则扩展-dotAll模式<br>
+\s ：匹配任意空格 。<br>
+(.<em>?)：捕获文本。<br>
+.</em>?：匹配任意字符零次或多次，非贪婪模式。<br>
+.*：/a.*g/ 将匹配整个字符串 abcdefg，贪婪模式。</p>
+<p>g 修饰符：表示全局匹配，即匹配字符串中所有符合条件的部分。<br>
+s 修饰符：即单行模式，表示在这个模式中，. 可以匹配换行符。<br>
+没有 s 修饰符时，. 除换行符以外的任意单个字符。</p>
+<p>result = reg.exec(str);<br>
+console.log(result);<br>
+result = reg.exec(str);<br>
+console.log(result);<br>
+打印匹配结果，然后继续下一次匹配</p>
+<p>Object</p>
+<p>Object.entries(school)<br>
+用于获取给定对象的可枚举属性的键值对数组。<br>
+Object.fromEntries([['name','尚硅谷'],['xueke','Java,前端,大数据,云计算']])<br>
+Object.fromEntries(&lt;<mark>二维数组</mark>&gt;)<br>
+Object.fromEntries(&lt;<mark>map</mark>&gt;)<br>
+用于根据给定的键值对数组，创建一个新的对象。它的作用与 Object.entries() 正好相反。<br>
+Object.entries() 是 ES2017（也称为 ES8）中引入的方法。它是 ECMAScript 标准的一部分，用于操作对象。</p>
+<p>Promise.allSettled()<br>
+Promise.allSettled() 的优点是：<br>
+即使其中的某个 Promise 被拒绝，它依然会等待所有 Promise 对象都 settled 才会返回解决值。<br>
+拒绝成功都可以<br>
+const result = Promise.allSettled([p1, p2]);<br>
+Promise.allSettled(&lt;<mark>多个promise对象的数组</mark>&gt;)<br>
+返回<br>
+0: {status: 'fulfilled', value: '商品数据 - 1'}<br>
+1: {status: 'rejected', reason: '出错了'}</p>
+<p>这与 Promise.all() 方法不同：<br>
+后者在有一个 Promise 被拒绝时会立即返回拒绝原因。<br>
+只能成功，不许失败<br>
+Promise.all(&lt;<mark>多个promise对象的数组</mark>&gt;)<br>
+返回<br>
+0: &quot;商品数据 - 1&quot;<br>
+1: &quot;商品数据 - 2&quot;</p>
+<p>可选链操作符<br>
+&amp;&amp;（逻辑与）：存在继续；否则报错<br>
+const dbHost = config &amp;&amp; config.db &amp;&amp; config.db.host;<br>
+?. （可选链）：存在继续；否则undefined<br>
+const dbHost = config?.db?.host;</p>
+<p>动态import<br>
+import(&quot;./hello.js&quot;).then((modules) =&gt; {<br>
+modules.hello();<br>
+});<br>
+按需加载 就是懒加载-ES11</p>
+<p>BigInt<br>
+// n表示大整形<br>
+let n = 521n<br>
+console.log(n,typeof n);</p>
+<p>// 函数转换 但是浮点数不能转化<br>
+let n = 521;<br>
+console.log(BigInt(n));</p>
+<p>// 大数值运算<br>
+let max = Number.MAX_SAFE_INTEGER;<br>
+// max+max 会出问题<br>
+console.log(max);<br>
+console.log(max + 1);<br>
+// 结果与上面相同<br>
+console.log(max + 2);</p>
+<p>// 必须是BigInt相加<br>
+console.log(BigInt(max));<br>
+console.log(BigInt(max) + BigInt(1));<br>
+console.log(BigInt(max) + BigInt(2));</p>
+
+            </div>
+          </article>
+        </div>
+        <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://mxk-zwh.github.io/post/docker/">
+                <h3 class="post-title">
+                  docker22,青龙面板
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+        
+      </div>
+
+      <div class="sm-12 md-4 col sidebar">
+  <div class="paper info-container">
+    <img src="https://mxk-zwh.github.io/images/avatar.png?v=1692504204692" class="no-responsive avatar">
+    <div class="text-muted">派蒙</div>
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      最新文章
+    </div>
+    <div class="row">
+      <ul>
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/xue-xi-es6-1/">学习ES6-1</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/pet-system-github-vue2/">pet-system-github-vue2</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/scssand-tu-biao/">scssand图标</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/npmyarnpnpm/">npm、yarn、pnpm</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/gnvm-ling-huo-qie-huan-node-ban-ben/">gnvm灵活切换node版本</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/zi-ding-yi-shi-jian/">自定义事件</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/this/">this</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/vue-router-sheng-ming-zhou-qi/">vue-router-2</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/liang-ge-sheng-ming-zhou-qi-gou-zi/">两个生命周期钩子</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/vue-router/">vue-router-1</a>
+            </li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </ul>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      标签列表
+    </div>
+    <div class="row">
+      
+        <a href="https://mxk-zwh.github.io/tag/HPuaEWsrs/" class="badge success">
+          gnvm
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/EyMHgjTur/" class="badge success">
+          nodejs
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/VA7I629exq/" class="badge ">
+          npm
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/1znN5W9Zuz/" class="badge warning">
+          javascript
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/tJ-80yUy_/" class="badge secondary">
+          生命周期
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/831DcViOP/" class="badge warning">
+          vue-router
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/B4HIJAG5J/" class="badge secondary">
+          vue ui组件库
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/n4ZvGfONg/" class="badge ">
+          vuex
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/Rcm6rzxKD/" class="badge secondary">
+          yarn
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/cMmtoNUTP/" class="badge ">
+          es6-11
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/1AtASZhuo/" class="badge secondary">
+          python
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/wHGeLJSwP/" class="badge secondary">
+          markdown
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/TwpRvhEbq/" class="badge secondary">
+          xhr
+        </a>
+      
+    </div>
+  </div>
+  <div class="paper">
+    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://mxk-zwh.github.io/atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+
+
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+</script>
+
+
+
+
+  </body>
+</html>

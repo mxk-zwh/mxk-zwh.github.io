@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>gnvm灵活切换node版本 | 曙光英雄</title>
+<meta name="description" content="派蒙">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="https://mxk-zwh.github.io/favicon.ico?v=1692504204692">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://mxk-zwh.github.io/styles/main.css">
+
+
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+  </head>
+  <body>
+  
+    <nav class="navbar border fixed split-nav">
+  <div class="nav-brand">
+    <h3><a href="https://mxk-zwh.github.io">曙光英雄</a></h3>
+  </div>
+  <div class="collapsible">
+    <input id="collapsible1" type="checkbox" name="collapsible1">
+    <button>
+      <label for="collapsible1">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </label>
+    </button>
+    <div class="collapsible-body">
+      <ul class="inline">
+        
+          <li>
+            
+              <a href="/" class="menu" target="_blank">
+                首页
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/archives" class="menu" target="_blank">
+                归档
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/tags" class="menu" target="_blank">
+                标签
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/cccccc/src/bg-pc/" class="menu" target="_blank">
+                背景
+              </a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div id="top" class="row site">
+      <div class="sm-12 md-8 col">
+        <div class="paper">
+          <article class="article">
+            <h1>gnvm灵活切换node版本</h1>
+            <p class="article-meta">
+              2023-08-07
+              
+                <a href="https://mxk-zwh.github.io/tag/HPuaEWsrs/" class="badge success">
+                  gnvm
+                </a>
+              
+                <a href="https://mxk-zwh.github.io/tag/EyMHgjTur/" class="badge secondary">
+                  nodejs
+                </a>
+              
+                <a href="https://mxk-zwh.github.io/tag/VA7I629exq/" class="badge secondary">
+                  npm
+                </a>
+              
+            </p>
+            
+            <div class="post-content" v-pre>
+              <p>解决方法：</p>
+<p>1、卸载现有node，重新安装12.0.0以下（不含）版本的node，这个方法不够灵活，这里采用下面这种方法</p>
+<p>2、通过gnvm进行node版本的切换</p>
+<p>2.1、下载gnvm：</p>
+<p>gnvm的git地址</p>
+<p>gnvm下载地址:32-bit | <a href="https://gitcode.net/mirrors/Kenshin/gnvm-bin/-/archive/master/gnvm-bin.zip">64-bit</a> Github</p>
+<p>2.2、将gnvm.exe文件放到node的安装目录下（我这里是装在D盘nodejs目录下）</p>
+<p>然后查看gnvm是否可用</p>
+<pre><code>gnvm version     
+</code></pre>
+<p>上面信息显示gvnm已经可以被识别，即存在。</p>
+<p>3、安装淘宝镜像（加快node的下载）</p>
+<pre><code>gnvm config registry TAOBAO
+</code></pre>
+<p>接下来就可以进行node指定版本的下载（如果版本号后不指定64位或32位，即x64或x86，默认两个版本都会下载）</p>
+<pre><code>gnvm install 版本号[-x64/x86]  // eg：gnvm install 8.11.3-x64 
+</code></pre>
+<p>然后可以在nodejs目录下看到，node安装目录下可以看到我们所有下载过的node版本</p>
+<p>或是通过gnvm的ls命令查看虽有的版本列表</p>
+<pre><code>gnvm ls
+</code></pre>
+<p>最后通过gnvm的use命令进行node版本的切换（需要停止本地已运行的node服务）</p>
+<pre><code>gnvm use 8.11.3
+</code></pre>
+<p>查看node版本，可以看到node版本已经处于8.11.3了</p>
+<p>gnvm相关命令<br>
+1、安装指定 node 版本</p>
+<pre><code>gnvm install latest     // 安装最新版本的 node
+gnvm install 8.11.3     // 安装指定版本，也可以指定安装32位或64位，eg: gnvm install 8.11.3-x64
+gnvm update latest      // 更新本地 latest 的 node 版本
+</code></pre>
+<p>2、卸载任意版本的 node</p>
+<pre><code>gnvm uninstall latest     // 卸载最新版本的 node
+gnvm uninstall 8.11.3     // 卸载指定版本
+</code></pre>
+<p>3、查看本地所有安装的 node 版本</p>
+<pre><code>gnvm ls
+</code></pre>
+<p>4、切换任意版本的 node</p>
+<pre><code>gnvm use xx.xx.xx
+</code></pre>
+<p>5、安装 npm</p>
+<p>gnvm npm latest<br>
+6、安装淘宝镜像</p>
+<pre><code>gnvm config registry TAOBAO
+</code></pre>
+
+            </div>
+          </article>
+        </div>
+        <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://mxk-zwh.github.io/post/zi-ding-yi-shi-jian/">
+                <h3 class="post-title">
+                  自定义事件
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+        
+      </div>
+
+      <div class="sm-12 md-4 col sidebar">
+  <div class="paper info-container">
+    <img src="https://mxk-zwh.github.io/images/avatar.png?v=1692504204692" class="no-responsive avatar">
+    <div class="text-muted">派蒙</div>
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      最新文章
+    </div>
+    <div class="row">
+      <ul>
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/xue-xi-es6-1/">学习ES6-1</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/pet-system-github-vue2/">pet-system-github-vue2</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/scssand-tu-biao/">scssand图标</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/npmyarnpnpm/">npm、yarn、pnpm</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/gnvm-ling-huo-qie-huan-node-ban-ben/">gnvm灵活切换node版本</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/zi-ding-yi-shi-jian/">自定义事件</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/this/">this</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/vue-router-sheng-ming-zhou-qi/">vue-router-2</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/liang-ge-sheng-ming-zhou-qi-gou-zi/">两个生命周期钩子</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/vue-router/">vue-router-1</a>
+            </li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </ul>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      标签列表
+    </div>
+    <div class="row">
+      
+        <a href="https://mxk-zwh.github.io/tag/HPuaEWsrs/" class="badge secondary">
+          gnvm
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/EyMHgjTur/" class="badge ">
+          nodejs
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/VA7I629exq/" class="badge ">
+          npm
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/1znN5W9Zuz/" class="badge success">
+          javascript
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/tJ-80yUy_/" class="badge secondary">
+          生命周期
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/831DcViOP/" class="badge secondary">
+          vue-router
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/B4HIJAG5J/" class="badge warning">
+          vue ui组件库
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/n4ZvGfONg/" class="badge secondary">
+          vuex
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/Rcm6rzxKD/" class="badge secondary">
+          yarn
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/cMmtoNUTP/" class="badge ">
+          es6-11
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/1AtASZhuo/" class="badge secondary">
+          python
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/wHGeLJSwP/" class="badge secondary">
+          markdown
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/TwpRvhEbq/" class="badge success">
+          xhr
+        </a>
+      
+    </div>
+  </div>
+  <div class="paper">
+    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://mxk-zwh.github.io/atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+
+
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+</script>
+
+
+
+
+  </body>
+</html>

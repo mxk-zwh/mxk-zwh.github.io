@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://mxk-zwh.github.io</id>
+    <title>曙光英雄</title>
+    <updated>2023-08-20T04:20:04.072Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://mxk-zwh.github.io"/>
+    <link rel="self" href="https://mxk-zwh.github.io/atom.xml"/>
+    <subtitle>派蒙</subtitle>
+    <logo>https://mxk-zwh.github.io/images/avatar.png</logo>
+    <icon>https://mxk-zwh.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2023, 曙光英雄</rights>
+    <entry>
+        <title type="html"><![CDATA[学习ES6-1]]></title>
+        <id>https://mxk-zwh.github.io/post/xue-xi-es6-1/</id>
+        <link href="https://mxk-zwh.github.io/post/xue-xi-es6-1/">
+        </link>
+        <updated>2023-08-19T14:00:41.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="windowisnanabc">window.isNaN(“abc”)</h2>
+<p>window.isNaN函数会把非数值的参数转化成数值再进行判断</p>
+<h2 id="dom事件不属于ecmascript的部分"><code>DOM事件</code>不属于ECMAScript的部分</h2>
+<p>ECMAScript定义的内容：<code>语法、类型、原型和继承、内置对象和函数的标准库</code>。</p>
+<h2 id="解构赋值">解构赋值</h2>
+<p>var [ a,b,c ] = [ 1,2 ]结果中，a、b、c的值分别是：1  2  undefined</p>
+<h2 id="模板字符串">模板字符串</h2>
+<p>模板字符串，<strong>所有的空格和缩进都会被保留在输出中</strong>。</p>
+<h2 id="字符串扩展的新函数">字符串扩展的新函数</h2>
+<p>repeat函数将目标字符串重复N次，目标字符串不能被修改，会返回一个新的字符串。</p>
+<p>B、Number.isInteger(3);结果为：true</p>
+<p>C、Number.isInteger(3.0);结果为：false</p>
+<p>D、Number.isInteger(3.01);结果为：false</p>
+<p>C是错的，整数和浮点数采用一样的存储方式，<strong>小数点后都是0的浮点数，都被视为整数</strong>。</p>
+<h2 id="数组的方法">数组的方法</h2>
+<p>[1,2,3].fill(4)<br>
+把里面所有的元素替换成4</p>
+<h2 id="对象">对象</h2>
+<p>对象的方法名同样可以是表达式，使用[ ]标识。<br>
+Object.is函数判断两个值是否<strong>严格相等</strong>，或者说全等，作用等同于全等符号：===</p>
+<p>#rest参数<br>
+rest参数就是函数的参数，放在最后面，样子是：<code>...自定义的参数名</code>，<strong>获取函数剩下部分的参数</strong>。</p>
+<p>#箭头函数<br>
+函数体内的 this 对象，<strong>绑定定义时所在的对象</strong>，而不是使用时所在的对象。</p>
+<p>#symbol<br>
+symbol是<strong>独一无二</strong>的值。是<strong>ES6新增</strong>的一种数据类型。<br>
+Symbol.for函数会根据参数名，去<strong>全局环境中搜索</strong>是否有以该参数为名的symbol值，<strong>有就返回它</strong>，没有就以该参数名来创建一个新的symbol值，并<strong>登记在全局环境</strong>中，而Symbol每次都会创建一个独一无二的值，不会登记在全局环境中。</p>
+<h1 id="基本类型和包装类">基本类型和包装类</h1>
+<p>基本数据类型是不能new对象的<br>
+int i = 5;和Integer i = new Integer(5);<br>
+后者的i是一个对象 只有对象才可以**调用类中的各种各样的方法 **而基本数据类型就不行。</p>
+<h2 id="基本数据类型-封装类">基本数据类型 封装类</h2>
+<p>byte Byte<br>
+short Short<br>
+int Integer<br>
+long Long<br>
+float Float<br>
+double Double<br>
+char Character<br>
+boolean Boolean</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[pet-system-github-vue2]]></title>
+        <id>https://mxk-zwh.github.io/post/pet-system-github-vue2/</id>
+        <link href="https://mxk-zwh.github.io/post/pet-system-github-vue2/">
+        </link>
+        <updated>2023-08-18T09:58:29.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="utilsrequest-封装">utils/request 封装</h2>
+<p>在项目中，所有请求都是走统一封装过的axios，统一设置了超时时间<code>timeout</code></p>
+<p>封装要做什么？<br>
+设置了基本的请求url 和 超时时间<br>
+请求拦截器，在发送请求之前做些什么，在请求失败做什么<br>
+响应拦截器，响应数据做什么，响应失败做什么</p>
+<p>常量http是axios实例在这基础至上设置拦截器<br>
+设置完后导出，给请求用。这就封装好了。</p>
+<hr>
+<h2 id="mock生成虚拟的数据">mock生成虚拟的数据</h2>
+<ol>
+<li>给前端生成图表随机数据</li>
+<li>给前端生成表格随机数据</li>
+</ol>
+<p>导入mockjs模块，不需要在main.js引入，<strong>需要按需引入</strong>。<br>
+import Mock from &quot;mockjs&quot;;</p>
+<p>花里胡哨的类型，按需看<br>
+<a href="http://mockjs.com/">mock官网</a> - 有实例可以控制台运行，没有解释<br>
+<a href="http://lavyun.gitee.io/better-mock/document/random/name.html#random-clast">更好的mock</a> - 有解释</p>
+<h3 id="mockrandomfloat100800000">Mock.Random.float(100,8000,0,0)</h3>
+<p>产生随机数100到8000之间，<u>保留小数，最小0位，最大0位</u><br>
+折线图可以随机生成假数据push</p>
+<blockquote>
+<p>tips:mock后面有加<code>Random</code>是具有随机性的</p>
+</blockquote>
+<h3 id="数字类型number随机生成">数字类型Number随机生成</h3>
+<p>这里的1没有用，18-69中随机生成整数。</p>
+<pre><code class="language-js">Mock.mock({
+    'age|18-69': 1
+})
+</code></pre>
+<p>1-100的随机整数，点后面的1-10是随机小数位</p>
+<pre><code class="language-js">Mock.mock({
+  &quot;number|1-100.1-10&quot;: 1
+})
+</code></pre>
+<p>结果是</p>
+<pre><code class="language-json">{
+  &quot;number&quot;: 29.1303385987
+}
+</code></pre>
+<h3 id="mockrandomguid">Mock.Random.guid()</h3>
+<p>随机生成uuid是唯一标识，网上有解释。</p>
+<h3 id="mockrandomcname">Mock.Random.cname()</h3>
+<p>随机生成中文名</p>
+<h3 id="mockmockcitytrue">Mock.mock('@city(true)')</h3>
+<hr>
+<h2 id="search参数">search参数</h2>
+<p>search是url？后面的参数<br>
+split('?')[1]可以获取到参数<br>
+然后解析成json：需要先解码，替换字符<br>
+原本是a=1&amp;b=&quot;xxx&quot;解析成 {a:1,b:\&quot;xxx\&quot;}</p>
+<pre><code class="language-js">JSON.parse(
+'{&quot;' +
+    decodeURIComponent(search)
+    .replace(/&quot;/g, '\\&quot;')
+    .replace(/&amp;/g, '&quot;,&quot;')
+    .replace(/=/g, '&quot;:&quot;') +
+    '&quot;}'
+)
+
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[scssand图标]]></title>
+        <id>https://mxk-zwh.github.io/post/scssand-tu-biao/</id>
+        <link href="https://mxk-zwh.github.io/post/scssand-tu-biao/">
+        </link>
+        <updated>2023-08-08T06:16:02.000Z</updated>
+        <content type="html"><![CDATA[<p>mixin.scss<br>
+声明函数 <strong>一定要加分号</strong><br>
+@mixin 函数名(参数列表)；</p>
+<style lang="scss" ></style>
+<p><strong>没有@会报错</strong><br>
+@import &quot;~@/assets/mixin.scss&quot;;<br>
+调用函数 <strong>一定要加分号</strong></p>
+<h2 id="scss函数">scss函数</h2>
+<p>@include 函数名(参数列表)；<br>
+参数字符串不需要引号</p>
+<p>methods getdata<br>
+在创建的时候获取数据<br>
+created getdata</p>
+<p>图片垂直居中img<br>
+vertical-align: middle;</p>
+<h2 id="div-content上下撑开">div content上下撑开</h2>
+<pre><code>    // 横向
+    display: flex;
+    // 纵向
+    flex-direction: column;
+    // 两行文字之间撑开
+    justify-content: space-between;
+    // 顶部的文字向上顶
+    height: 64px;
+</code></pre>
+<h2 id="margin外边框-padding内边框">margin外边框 padding内边框</h2>
+<p>// 上右下左 内边距<br>
+padding: 0 20px 0 12px;<br>
+// 省略多余文字<br>
+overflow: hidden;<br>
+text-overflow: ellipsis;<br>
+white-space: nowrap;<br>
+每个元素之间的间隔相等<br>
+display: flex;<br>
+justify-content: space-evenly;</p>
+<h2 id="分支">分支</h2>
+<p><code>components/content</code>组成<code>components/common</code><br>
+<code>components/common</code>组合成views，<code>components+views</code>组合成app<br>
+几个小块合成大块，app实现切换views页面，不切换的直接用components<br>
+app应用基本样式，</p>
+<p>样式里的图片 通过长路径找 资源 ，多张图片存在一样的文件夹下img，<br>
+函数(组件名字,图片名字) 传参</p>
+<p>img也要分类存放图片，重名的图片<br>
+<code>图片命名_1@图片大小x.图片格式</code></p>
+<h2 id="数据获取到数据存在才渲染dom">数据获取到，数据存在才渲染dom</h2>
+<p>v-if=&quot;seller.supports&quot;存在才渲染 防止报错</p>
+<h2 id="图标不显示">图标不显示</h2>
+<p>模板类名写错<br>
+样式类名写错<code>-</code>和<code>_</code>分不清<br>
+icon-keyboard_arrow_right</p>
+<p>app的视图是router给的，router懒加载views的组件<br>
+views里的子组件是component组合起来的，再把子组件再组合起来<br>
+views的组件用来导航切换的router-view，随着router-link。。变化<br>
+把页面拆分成头部、导航、菜单。从上到下的结构，从左到右，从外到内</p>
+<h2 id="better-scroll">better-scroll</h2>
+<p>当 probeType 为 1 的时候，会<strong>非实时</strong>（屏幕滑动超过一定时间后）派发scroll 事件；<br>
+当 probeType 为 2 的时候，会在<strong>屏幕滑动</strong>的过程中实时的派发 scroll 事件；<br>
+当 probeType 为 3 的时候，不仅在<strong>屏幕滑动</strong>的过程中，而且在 momentum <strong>滚动动画</strong>运行过程中实时派发 scroll 事件。<br>
+如果没有设置该值，其默认值为 0，即**不派发 **scroll 事件。</p>
+<p>this.<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi><mi>u</mi><mi>s</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">bus.</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span><span class="mord mathdefault">u</span><span class="mord mathdefault">s</span><span class="mord">.</span></span></span></span>on<br>
+this.<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi><mi>u</mi><mi>s</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">bus.</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span><span class="mord mathdefault">u</span><span class="mord mathdefault">s</span><span class="mord">.</span></span></span></span>emit<br>
+父级节点绑定事件，给子节点用</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[npm、yarn、pnpm]]></title>
+        <id>https://mxk-zwh.github.io/post/npmyarnpnpm/</id>
+        <link href="https://mxk-zwh.github.io/post/npmyarnpnpm/">
+        </link>
+        <updated>2023-08-07T10:38:07.000Z</updated>
+        <content type="html"><![CDATA[<p>npm会产生幽灵依赖<br>
+开发环境能用，生产环境不能用<br>
+依赖包已升级就出问题</p>
+<h2 id="依赖图">依赖图：</h2>
+<p>=A<br>
+/---\<br>
+B---C<br>
+\---/<br>
+=D</p>
+<h2 id="node_modules是文件树结构">node_modules是文件树结构：</h2>
+<p>=A<br>
+/---\<br>
+b---c<br>
+d---d</p>
+<h2 id="npm处理方式">npm处理方式</h2>
+<p>/=/=\=\<br>
+A B C D<br>
+npm和yarn使用扁平化结构<br>
+pnpm非扁平化结构</p>
+<h2 id="淘宝园">淘宝园</h2>
+<p>pnpm config set registry https://registry.npm.taobao.org<br>
+yarn config set registry https://registry.npm.taobao.org/<br>
+npm config set registry https://registry.npm.taobao.org</p>
+<h2 id="packagejson">package.json</h2>
+<p>--save是吧依赖包安装在生产环境的依赖下，js，css，html<br>
+--save-dev把依赖安装在开发环境下，用来方便写代码打包后不使用</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[gnvm灵活切换node版本]]></title>
+        <id>https://mxk-zwh.github.io/post/gnvm-ling-huo-qie-huan-node-ban-ben/</id>
+        <link href="https://mxk-zwh.github.io/post/gnvm-ling-huo-qie-huan-node-ban-ben/">
+        </link>
+        <updated>2023-08-06T16:44:49.000Z</updated>
+        <content type="html"><![CDATA[<p>解决方法：</p>
+<p>1、卸载现有node，重新安装12.0.0以下（不含）版本的node，这个方法不够灵活，这里采用下面这种方法</p>
+<p>2、通过gnvm进行node版本的切换</p>
+<p>2.1、下载gnvm：</p>
+<p>gnvm的git地址</p>
+<p>gnvm下载地址:32-bit | <a href="https://gitcode.net/mirrors/Kenshin/gnvm-bin/-/archive/master/gnvm-bin.zip">64-bit</a> Github</p>
+<p>2.2、将gnvm.exe文件放到node的安装目录下（我这里是装在D盘nodejs目录下）</p>
+<p>然后查看gnvm是否可用</p>
+<pre><code>gnvm version     
+</code></pre>
+<p>上面信息显示gvnm已经可以被识别，即存在。</p>
+<p>3、安装淘宝镜像（加快node的下载）</p>
+<pre><code>gnvm config registry TAOBAO
+</code></pre>
+<p>接下来就可以进行node指定版本的下载（如果版本号后不指定64位或32位，即x64或x86，默认两个版本都会下载）</p>
+<pre><code>gnvm install 版本号[-x64/x86]  // eg：gnvm install 8.11.3-x64 
+</code></pre>
+<p>然后可以在nodejs目录下看到，node安装目录下可以看到我们所有下载过的node版本</p>
+<p>或是通过gnvm的ls命令查看虽有的版本列表</p>
+<pre><code>gnvm ls
+</code></pre>
+<p>最后通过gnvm的use命令进行node版本的切换（需要停止本地已运行的node服务）</p>
+<pre><code>gnvm use 8.11.3
+</code></pre>
+<p>查看node版本，可以看到node版本已经处于8.11.3了</p>
+<p>gnvm相关命令<br>
+1、安装指定 node 版本</p>
+<pre><code>gnvm install latest     // 安装最新版本的 node
+gnvm install 8.11.3     // 安装指定版本，也可以指定安装32位或64位，eg: gnvm install 8.11.3-x64
+gnvm update latest      // 更新本地 latest 的 node 版本
+</code></pre>
+<p>2、卸载任意版本的 node</p>
+<pre><code>gnvm uninstall latest     // 卸载最新版本的 node
+gnvm uninstall 8.11.3     // 卸载指定版本
+</code></pre>
+<p>3、查看本地所有安装的 node 版本</p>
+<pre><code>gnvm ls
+</code></pre>
+<p>4、切换任意版本的 node</p>
+<pre><code>gnvm use xx.xx.xx
+</code></pre>
+<p>5、安装 npm</p>
+<p>gnvm npm latest<br>
+6、安装淘宝镜像</p>
+<pre><code>gnvm config registry TAOBAO
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[自定义事件]]></title>
+        <id>https://mxk-zwh.github.io/post/zi-ding-yi-shi-jian/</id>
+        <link href="https://mxk-zwh.github.io/post/zi-ding-yi-shi-jian/">
+        </link>
+        <updated>2023-08-06T02:54:37.000Z</updated>
+        <content type="html"><![CDATA[<p>v-on给student组件的实例对象vc上<br>
+绑定了一个atguigu事件<br>
+当atguigu事件触发时，会调用demo函数</p>
+<p>找原型上的东西 要所有的组件都看见</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[this]]></title>
+        <id>https://mxk-zwh.github.io/post/this/</id>
+        <link href="https://mxk-zwh.github.io/post/this/">
+        </link>
+        <updated>2023-08-06T02:53:55.000Z</updated>
+        <summary type="html"><![CDATA[<p>箭头函数没有自己的this，用的是外部的this</p>
+<p>use strict严格模式<br>
+让代码更规范、安全，在限定的范围内运行<br>
+可以写在js文件开头<br>
+可以写在script标签开头<br>
+可以写在函数体开头<br>
+规则 否则报错<br>
+必须var声明变量后使用<br>
+函数的参数补鞥呢有同名的属性<br>
+不能使用with语句<br>
+不能对只读属性赋值<br>
+不能使用前缀0表示八进制数<br>
+不能删除不可删除的属性<br>
+不能删除变量delete prop，只能删除属性delete global 【prop】<br>
+eval不会在它的外层作用域引入变量<br>
+eval和arguments不能被重新赋值</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>箭头函数没有自己的this，用的是外部的this</p>
+<p>use strict严格模式<br>
+让代码更规范、安全，在限定的范围内运行<br>
+可以写在js文件开头<br>
+可以写在script标签开头<br>
+可以写在函数体开头<br>
+规则 否则报错<br>
+必须var声明变量后使用<br>
+函数的参数补鞥呢有同名的属性<br>
+不能使用with语句<br>
+不能对只读属性赋值<br>
+不能使用前缀0表示八进制数<br>
+不能删除不可删除的属性<br>
+不能删除变量delete prop，只能删除属性delete global 【prop】<br>
+eval不会在它的外层作用域引入变量<br>
+eval和arguments不能被重新赋值</p>
+<!-- more -->
+<p>arguments不能自动反映函数参数的变化<br>
+不能使用arguments，callee<br>
+不能使用arguments，caller<br>
+禁止this指向全局对象<br>
+不能使用fn.caller和fn.arguments获取函数调用的堆栈<br>
+增加了保留字（比如protected、static和interface）<br>
+其中，尤其需要注意this的限制。es6模块中，顶层的this指向undefined，即不应该在顶层代码使用this</p>
+<p>数组解构 var [foo,bar]=[1,2]<br>
+对象解构<br>
+var {foo:x,bar:y}={foo:'hello',bar:'world'}<br>
+var {foo,bar}={foo:'hello',bar:'world'}</p>
+<p>rest语法<br>
+[a,...rest]=[1,2,3,4]<br>
+clg rest<br>
+[2,3,4]</p>
+<p>交换属性<br>
+[f,b]=[b,f]</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[vue-router-2]]></title>
+        <id>https://mxk-zwh.github.io/post/vue-router-sheng-ming-zhou-qi/</id>
+        <link href="https://mxk-zwh.github.io/post/vue-router-sheng-ming-zhou-qi/">
+        </link>
+        <updated>2023-08-06T02:52:17.000Z</updated>
+        <content type="html"><![CDATA[<p>vue-router<br>
+插件库 专门实现SPA应用</p>
+<p>spa：<br>
+单页web应用<br>
+只有一个完整的页面<br>
+点击导航不会刷新页面，做局部更新<br>
+数据通过ajax获取</p>
+<p>路由：<br>
+key-value映射关系为一个路由<br>
+在这key为路径，value可能是方法或者组件</p>
+<p>路由分类<br>
+后端路由：<br>
+value是function 处理客户端提交的请求<br>
+工作原理：server收到请求，根据请求路径 找到匹配的函数 来处理请求，返回响应数据</p>
+<p>前端路由：<br>
+value是component，用来展示页面内容<br>
+工作原理：浏览器路劲改变，组件随之改变，不刷新页面</p>
+<p>静态页面-&gt;动态页面</p>
+<p>路由插件安装：<br>
+npm i vue-router<br>
+vue-router3给vue2用<br>
+vue-router4给vue3用</p>
+<p>路由使用：<br>
+引入vue-router/用插件<br>
+创建router/index.js<br>
+index引入vue-router/引入组件/配置路由器<br>
+main.js -&gt; 引入路由器 router:router<br>
+router-link标签 active-class=&quot;active&quot; to=&quot;/xxx&quot; （激活样式 跳转属性）<br>
+router-view标签 组件显示位置</p>
+<p>文件夹<br>
+components/放不会切换的一般组件<br>
+pages或者views/放切换的路由组件</p>
+<p>嵌套路由<br>
+routes里面是一级路由<br>
+一级路由里面children是子路由path路径不加斜杆<br>
+Home组件router-link to=&quot;/home/子路由&quot;</p>
+<p>有一堆什么元素 就给什么元素加上v-for</p>
+<p>路由query传参<br>
+有字符串写法和对象写法<br>
+router-link to 短的只有路径就用字符串写法<br>
+长的有多个k=v就用对象写法：<br>
+:to=&quot;{path:'',query:{k:v}}&quot;<br>
+:to=&quot;{name:''.query:{k:v}&quot;<br>
+name路由命名</p>
+<p>路由params传参<br>
+字符串写法 模板<br>
+:to=&quot;<code>/home/message/detail/${m.id}/${m.title}</code><br>
+对象写法<br>
+:to=&quot;{<br>
+name: xiangqing,<br>
+params: {<br>
+id: m.id,<br>
+title: m.title<br>
+}}&quot;<br>
+router/index.js：<br>
+name:'xiangqing',<br>
+占位符<br>
+path: &quot;detail/:id/:title&quot;,</p>
+<p>路由全新配置项props<br>
+简写this.$route.params<br>
+有三种写法 写在router/index.js里的component下方<br>
+第一种props为对象，只能传死数据，基本不用<br>
+第二种为布尔值，只能将params参数通过props传给组件，query不行！<br>
+第三种为函数，router每次调的时候会把 $route 传进来，你想怎么取就怎么取！可以是params或者query，es6解构赋值写法</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[两个生命周期钩子]]></title>
+        <id>https://mxk-zwh.github.io/post/liang-ge-sheng-ming-zhou-qi-gou-zi/</id>
+        <link href="https://mxk-zwh.github.io/post/liang-ge-sheng-ming-zhou-qi-gou-zi/">
+        </link>
+        <updated>2023-08-06T02:51:29.000Z</updated>
+        <content type="html"><![CDATA[<p>新的两个生命周期钩子<br>
+activated<br>
+路由组件激活时触发<br>
+deactivated<br>
+组件失活时触发</p>
+<p>动画过渡<br>
+transition 标签 name=&quot;xxx&quot;属性<br>
+transition appear打开就动画<br>
+transtion 打开没有动画</p>
+<p>样式选择器<br>
+进入的起点和终点<br>
+离开的起点和终点<br>
+.xxx-enter,.xxx-enter-to<br>
+.xxx-leave,.xxx-leave-to<br>
+进入和终点过程<br>
+.xxx-enter-active<br>
+.xxx=leave-active</p>
+<p>进出动画属性<br>
+animation:关键字名字 time mode；<br>
+transform:translateX(-100%)<br>
+transition:.5s linear;</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[vue-router-1]]></title>
+        <id>https://mxk-zwh.github.io/post/vue-router/</id>
+        <link href="https://mxk-zwh.github.io/post/vue-router/">
+        </link>
+        <updated>2023-08-06T02:50:45.000Z</updated>
+        <content type="html"><![CDATA[<p>router link replace<br>
+历史记录就像栈<br>
+默认push 加加加 如何开启：<br>
+:replace=&quot;true&quot;或者replace<br>
+删除一个 添加一个 ： 点了就回不去<br>
+好处：<br>
+防止重要表单 反复提交</p>
+<p>编程式路由导航<br>
+这就是编程式路由导航 脱离router-link 路由跳转更灵活<br>
+this.<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mi>o</mi><mi>u</mi><mi>t</mi><mi>e</mi><mi>r</mi><mi mathvariant="normal">.</mi><mi>p</mi><mi>u</mi><mi>s</mi><mi>h</mi><mi mathvariant="normal">自</mi><mi mathvariant="normal">由</mi><mi mathvariant="normal">跳</mi><mi mathvariant="normal">转</mi><mi>t</mi><mi>h</mi><mi>i</mi><mi>s</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">router.push
+自由跳转
+this.</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">o</span><span class="mord mathdefault">u</span><span class="mord mathdefault">t</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord">.</span><span class="mord mathdefault">p</span><span class="mord mathdefault">u</span><span class="mord mathdefault">s</span><span class="mord mathdefault">h</span><span class="mord cjk_fallback">自</span><span class="mord cjk_fallback">由</span><span class="mord cjk_fallback">跳</span><span class="mord cjk_fallback">转</span><span class="mord mathdefault">t</span><span class="mord mathdefault">h</span><span class="mord mathdefault">i</span><span class="mord mathdefault">s</span><span class="mord">.</span></span></span></span>router.replace<br>
+替换跳转<br>
+this.<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mi>o</mi><mi>u</mi><mi>t</mi><mi>e</mi><mi>r</mi><mi mathvariant="normal">.</mi><mi>b</mi><mi>a</mi><mi>c</mi><mi>k</mi><mo>(</mo><mo>)</mo><mo separator="true">;</mo><mi mathvariant="normal">后</mi><mi mathvariant="normal">退</mi><mi>t</mi><mi>h</mi><mi>i</mi><mi>s</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">router.back();
+后退
+this.</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">o</span><span class="mord mathdefault">u</span><span class="mord mathdefault">t</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord">.</span><span class="mord mathdefault">b</span><span class="mord mathdefault">a</span><span class="mord mathdefault">c</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mopen">(</span><span class="mclose">)</span><span class="mpunct">;</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord cjk_fallback">后</span><span class="mord cjk_fallback">退</span><span class="mord mathdefault">t</span><span class="mord mathdefault">h</span><span class="mord mathdefault">i</span><span class="mord mathdefault">s</span><span class="mord">.</span></span></span></span>router.forward();<br>
+前进<br>
+this.$router.go(n);<br>
+负数是连续后退n步<br>
+整数是连续前进n步</p>
+<p>缓存路由组件<br>
+缓存单个<br>
+keepalive include=组件名<br>
+缓存多个<br>
+:include=&quot;['News','Message']&quot;<br>
+keep-alive抱住router-view</p>
+<p>路由守卫<br>
+用来跳转或者取消的方式的守卫导航。<br>
+路由权限<br>
+就像保安一样，不让陌生人进来。</p>
+<p>执行顺序：</p>
+<p>守卫分为：全局的、单个路由独享的、组件内的三种。</p>
+<p>全局路由守卫有两个：一个是全局前置守卫，一个是全局后置守卫。<br>
+执行的顺序：beforeEach、beforeResolve、afterEach。<br>
+beforeEach：路由跳转前触发，参数有：to、from、next，作用主要在于：登录验证，路由还没跳转前告知，否则就晚了。<br>
+beforeResolve：在组件被解析后，路由跳转前触发，参数同上三个<br>
+afterEach：路由跳转后触发，参数同上三个，发生在：beforeEach和beforeResolve之后，beforeRouteEnter之前。</p>
+<p>组件路由守卫：组件内执行的钩子函数。<br>
+执行顺序：beforeRouteEnter、beforeRouteUpdate、beforeRouteLeave。<br>
+参数：to、from、next。</p>
+<p>beforeRouteEnter：在路由进入之前，组件实例还未渲染，导致无法获取this实例，只能通过vm来访问组件实例。 （该钩子在全局守卫beforeEach和beforeEnter，beforeResolve和afterEach之前调用）<br>
+beforeRouteUpdate：同一页面，刷新不同数据时调用。（可访问this。当前路由query变更时，会被调用）<br>
+beforeRouteLeave：离开当前路由页面时调用。（可访问this）</p>
+<p>使用场景，但不限于：还有别的场景<br>
+1.验证用户权限：在进入某些页面之前检查用户是否已登录或是否有权限访问该页面。<br>
+2.加载数据：在进入页面前加载必要的数据，例如在组件内使用 beforeRouteEnter 钩子函数异步获取数据。<br>
+3.路由重定向：在进入某些页面时需要重定向到另一个页面，例如在全局前置守卫中检查用户是否已登录并将未登录用户重定向到登录页面。<br>
+4.路由拦截：在某些情况下需要取消路由导航，例如在组件内使用 beforeRouteLeave 钩子函数防止用户误操作离开当前页面。</p>
+<p>全局前置路由守卫<br>
+把自己想配置的路由属性放在meta路由元里面<br>
+this.<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mi>o</mi><mi>u</mi><mi>t</mi><mi>e</mi><mi mathvariant="normal">打</mi><mi mathvariant="normal">印</mi><mi mathvariant="normal">当</mi><mi mathvariant="normal">前</mi><mi mathvariant="normal">组</mi><mi mathvariant="normal">件</mi><mi mathvariant="normal">路</mi><mi mathvariant="normal">由</mi><mi mathvariant="normal">配</mi><mi mathvariant="normal">置</mi><mi mathvariant="normal">信</mi><mi mathvariant="normal">息</mi><mi>t</mi><mi>h</mi><mi>i</mi><mi>s</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">route打印当前组件路由配置信息
+this.</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">o</span><span class="mord mathdefault">u</span><span class="mord mathdefault">t</span><span class="mord mathdefault">e</span><span class="mord cjk_fallback">打</span><span class="mord cjk_fallback">印</span><span class="mord cjk_fallback">当</span><span class="mord cjk_fallback">前</span><span class="mord cjk_fallback">组</span><span class="mord cjk_fallback">件</span><span class="mord cjk_fallback">路</span><span class="mord cjk_fallback">由</span><span class="mord cjk_fallback">配</span><span class="mord cjk_fallback">置</span><span class="mord cjk_fallback">信</span><span class="mord cjk_fallback">息</span><span class="mord mathdefault">t</span><span class="mord mathdefault">h</span><span class="mord mathdefault">i</span><span class="mord mathdefault">s</span><span class="mord">.</span></span></span></span>router路由器</p>
+<p>路由器的工作模式<br>
+#到后面 都是hash值<br>
+不会作为路径的一部分发给服务器<br>
+不会随着http请求发给服务器<br>
+hash==&gt;/#/<br>
+地址中永远带#号，不美观<br>
+地址通过第三方分享，app校验严格，改地址标记为不合法<br>
+兼容性较好<br>
+history==&gt;/<br>
+地址干净，美观<br>
+兼容性和hash模式相比略差<br>
+应用部署上线，需要后端人员支持，解决刷新页面服务器404的问题</p>
+<p>不仅仅是兼容性问题，还有项目上线的问题：<br>
+写完的代码--&gt;经过打包--&gt;交给后端上线<br>
+npm run serve是8080服务器<br>
+build才是把public和src进行打包，生成html/css/js（静态资源）</p>
+<p>打包后的文件需要放在服务器上运行（部署）<br>
+node express 现场搭建微型服务器<br>
+es6模块化<br>
+use静态资源 express.static ( __dirname+'/static')<br>
+创建一个实例对象<br>
+配置路由<br>
+监听端口</p>
+<p>history模式：会被当做express的路由，访问不了<br>
+如何解决history模式404？<br>
+第一种方法<br>
+安装模块connect-history-api-fallback<br>
+server.js添加 代码<br>
+重启服务器 成功<br>
+路由刷新没有404<br>
+第二种方法<br>
+熟悉后端nginx<br>
+还有其他方法</p>
+]]></content>
+    </entry>
+</feed>

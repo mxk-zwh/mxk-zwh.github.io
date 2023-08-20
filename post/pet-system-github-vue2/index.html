@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>pet-system-github-vue2 | 曙光英雄</title>
+<meta name="description" content="派蒙">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="https://mxk-zwh.github.io/favicon.ico?v=1692504204692">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://mxk-zwh.github.io/styles/main.css">
+
+
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+  </head>
+  <body>
+  
+    <nav class="navbar border fixed split-nav">
+  <div class="nav-brand">
+    <h3><a href="https://mxk-zwh.github.io">曙光英雄</a></h3>
+  </div>
+  <div class="collapsible">
+    <input id="collapsible1" type="checkbox" name="collapsible1">
+    <button>
+      <label for="collapsible1">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </label>
+    </button>
+    <div class="collapsible-body">
+      <ul class="inline">
+        
+          <li>
+            
+              <a href="/" class="menu" target="_blank">
+                首页
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/archives" class="menu" target="_blank">
+                归档
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/tags" class="menu" target="_blank">
+                标签
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/cccccc/src/bg-pc/" class="menu" target="_blank">
+                背景
+              </a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div id="top" class="row site">
+      <div class="sm-12 md-8 col">
+        <div class="paper">
+          <article class="article">
+            <h1>pet-system-github-vue2</h1>
+            <p class="article-meta">
+              2023-08-18
+              
+            </p>
+            
+            <div class="post-content" v-pre>
+              <h2 id="utilsrequest-封装">utils/request 封装</h2>
+<p>在项目中，所有请求都是走统一封装过的axios，统一设置了超时时间<code>timeout</code></p>
+<p>封装要做什么？<br>
+设置了基本的请求url 和 超时时间<br>
+请求拦截器，在发送请求之前做些什么，在请求失败做什么<br>
+响应拦截器，响应数据做什么，响应失败做什么</p>
+<p>常量http是axios实例在这基础至上设置拦截器<br>
+设置完后导出，给请求用。这就封装好了。</p>
+<hr>
+<h2 id="mock生成虚拟的数据">mock生成虚拟的数据</h2>
+<ol>
+<li>给前端生成图表随机数据</li>
+<li>给前端生成表格随机数据</li>
+</ol>
+<p>导入mockjs模块，不需要在main.js引入，<strong>需要按需引入</strong>。<br>
+import Mock from &quot;mockjs&quot;;</p>
+<p>花里胡哨的类型，按需看<br>
+<a href="http://mockjs.com/">mock官网</a> - 有实例可以控制台运行，没有解释<br>
+<a href="http://lavyun.gitee.io/better-mock/document/random/name.html#random-clast">更好的mock</a> - 有解释</p>
+<h3 id="mockrandomfloat100800000">Mock.Random.float(100,8000,0,0)</h3>
+<p>产生随机数100到8000之间，<u>保留小数，最小0位，最大0位</u><br>
+折线图可以随机生成假数据push</p>
+<blockquote>
+<p>tips:mock后面有加<code>Random</code>是具有随机性的</p>
+</blockquote>
+<h3 id="数字类型number随机生成">数字类型Number随机生成</h3>
+<p>这里的1没有用，18-69中随机生成整数。</p>
+<pre><code class="language-js">Mock.mock({
+    'age|18-69': 1
+})
+</code></pre>
+<p>1-100的随机整数，点后面的1-10是随机小数位</p>
+<pre><code class="language-js">Mock.mock({
+  &quot;number|1-100.1-10&quot;: 1
+})
+</code></pre>
+<p>结果是</p>
+<pre><code class="language-json">{
+  &quot;number&quot;: 29.1303385987
+}
+</code></pre>
+<h3 id="mockrandomguid">Mock.Random.guid()</h3>
+<p>随机生成uuid是唯一标识，网上有解释。</p>
+<h3 id="mockrandomcname">Mock.Random.cname()</h3>
+<p>随机生成中文名</p>
+<h3 id="mockmockcitytrue">Mock.mock('@city(true)')</h3>
+<hr>
+<h2 id="search参数">search参数</h2>
+<p>search是url？后面的参数<br>
+split('?')[1]可以获取到参数<br>
+然后解析成json：需要先解码，替换字符<br>
+原本是a=1&amp;b=&quot;xxx&quot;解析成 {a:1,b:\&quot;xxx\&quot;}</p>
+<pre><code class="language-js">JSON.parse(
+'{&quot;' +
+    decodeURIComponent(search)
+    .replace(/&quot;/g, '\\&quot;')
+    .replace(/&amp;/g, '&quot;,&quot;')
+    .replace(/=/g, '&quot;:&quot;') +
+    '&quot;}'
+)
+
+</code></pre>
+
+            </div>
+          </article>
+        </div>
+        <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://mxk-zwh.github.io/post/scssand-tu-biao/">
+                <h3 class="post-title">
+                  scssand图标
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+        
+      </div>
+
+      <div class="sm-12 md-4 col sidebar">
+  <div class="paper info-container">
+    <img src="https://mxk-zwh.github.io/images/avatar.png?v=1692504204692" class="no-responsive avatar">
+    <div class="text-muted">派蒙</div>
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      最新文章
+    </div>
+    <div class="row">
+      <ul>
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/xue-xi-es6-1/">学习ES6-1</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/pet-system-github-vue2/">pet-system-github-vue2</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/scssand-tu-biao/">scssand图标</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/npmyarnpnpm/">npm、yarn、pnpm</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/gnvm-ling-huo-qie-huan-node-ban-ben/">gnvm灵活切换node版本</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/zi-ding-yi-shi-jian/">自定义事件</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/this/">this</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/vue-router-sheng-ming-zhou-qi/">vue-router-2</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/liang-ge-sheng-ming-zhou-qi-gou-zi/">两个生命周期钩子</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/vue-router/">vue-router-1</a>
+            </li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </ul>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      标签列表
+    </div>
+    <div class="row">
+      
+        <a href="https://mxk-zwh.github.io/tag/HPuaEWsrs/" class="badge ">
+          gnvm
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/EyMHgjTur/" class="badge secondary">
+          nodejs
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/VA7I629exq/" class="badge success">
+          npm
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/1znN5W9Zuz/" class="badge ">
+          javascript
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/tJ-80yUy_/" class="badge success">
+          生命周期
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/831DcViOP/" class="badge secondary">
+          vue-router
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/B4HIJAG5J/" class="badge secondary">
+          vue ui组件库
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/n4ZvGfONg/" class="badge success">
+          vuex
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/Rcm6rzxKD/" class="badge secondary">
+          yarn
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/cMmtoNUTP/" class="badge warning">
+          es6-11
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/1AtASZhuo/" class="badge success">
+          python
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/wHGeLJSwP/" class="badge warning">
+          markdown
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/TwpRvhEbq/" class="badge secondary">
+          xhr
+        </a>
+      
+    </div>
+  </div>
+  <div class="paper">
+    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://mxk-zwh.github.io/atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+
+
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+</script>
+
+
+
+
+  </body>
+</html>

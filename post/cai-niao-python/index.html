@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>菜鸟python | 曙光英雄</title>
+<meta name="description" content="派蒙">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="https://mxk-zwh.github.io/favicon.ico?v=1692504204692">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://mxk-zwh.github.io/styles/main.css">
+
+
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+  </head>
+  <body>
+  
+    <nav class="navbar border fixed split-nav">
+  <div class="nav-brand">
+    <h3><a href="https://mxk-zwh.github.io">曙光英雄</a></h3>
+  </div>
+  <div class="collapsible">
+    <input id="collapsible1" type="checkbox" name="collapsible1">
+    <button>
+      <label for="collapsible1">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </label>
+    </button>
+    <div class="collapsible-body">
+      <ul class="inline">
+        
+          <li>
+            
+              <a href="/" class="menu" target="_blank">
+                首页
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/archives" class="menu" target="_blank">
+                归档
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/tags" class="menu" target="_blank">
+                标签
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/cccccc/src/bg-pc/" class="menu" target="_blank">
+                背景
+              </a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div id="top" class="row site">
+      <div class="sm-12 md-8 col">
+        <div class="paper">
+          <article class="article">
+            <h1>菜鸟python</h1>
+            <p class="article-meta">
+              2023-05-02
+              
+                <a href="https://mxk-zwh.github.io/tag/1AtASZhuo/" class="badge secondary">
+                  python
+                </a>
+              
+            </p>
+            
+              <img src="https://www.runoob.com/wp-content/themes/runoob/assets/img/runoob-logo.png" alt="菜鸟python">
+            
+            <div class="post-content" v-pre>
+              <p>pass 在 python 3.x  <strong>可写可不写</strong></p>
+<pre><code>def xxx(xxx):  
+    pass
+</code></pre>
+<ul>
+<li></li>
+</ul>
+<hr>
+<h2 id="整型-int-正数负数没有小数点长整型long-无限大小最后是l或者是l浮点数float科学计数法复数-abj-或者-complexab-ab都是-flout">整型      int： 正数负数，没有小数点<br>
+长整型long：  <strong>无限大小</strong>最后是L或者是l<br>
+浮点数float：科学计数法<br>
+复数             ： a+bj  或者  complex(a,b)  a,b都是  flout</h2>
+<hr>
+<p>new<br>
+<strong>元组不加括号也可以</strong></p>
+<pre><code>tup3 = &quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot; 
+</code></pre>
+<ul>
+<li></li>
+</ul>
+<h2 id="元组只有一个元素不加逗号会是整型"><strong>元组只有一个元素不加逗号，会是整型</strong></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(50)</td>
+<td>int</td>
+</tr>
+<tr>
+<td>(50,)</td>
+<td>tuple</td>
+</tr>
+</tbody>
+</table>
+<h2 id="下标索引-访问元组tupe00-1"><strong>下标索引 访问元组</strong><br>
+tupe[0]<br>
+0-&gt;<br>
+&lt;--1</h2>
+<h2 id="不可删除元素元组可以拼接tup1tup2"><strong>不可删除元素，元组可以拼接</strong><br>
+tup1+tup2</h2>
+<h2 id="删除整个元组del-tupj"><strong>删除整个元组</strong><br>
+del tupj</h2>
+<h2 id="元组运算符"><strong>元组运算符</strong></h2>
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>描述</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>len</td>
+<td>长度</td>
+<td></td>
+</tr>
+<tr>
+<td>a+b</td>
+<td>拼接</td>
+<td></td>
+</tr>
+<tr>
+<td>(a,)*4</td>
+<td>复制</td>
+<td>(a,a,a,a)</td>
+</tr>
+<tr>
+<td>3 in (0)</td>
+<td>存在吗</td>
+<td>True/False</td>
+</tr>
+<tr>
+<td>for x in (1,2,3):</td>
+<td>迭代</td>
+<td>1 2 3</td>
+</tr>
+</tbody>
+</table>
+<h2 id="元组内置函数min-max-len-tuplelist">元组内置函数<br>
+min max len tuple(list)</h2>
+<hr>
+<h2 id="改字典值xxdictxxxx"><strong>改字典值</strong><br>
+xxdict[xx]=xx</h2>
+<h2 id="用值xxdictxx"><strong>用值</strong><br>
+xxdict[xx]</h2>
+<p><strong>删除</strong></p>
+<pre><code>del tinydict['Name'] # 删除键 'Name'  
+tinydict.clear()     # 清空字典  
+del tinydict         # 删除字典  
+</code></pre>
+<ul>
+<li></li>
+</ul>
+<h2 id="键必须不可变所以可以用数字字符串或元组充当而用列表就不行1xxaaxxbbnnxx">键必须不可变，所以可以<strong>用数字，字符串或元组充当</strong>，而用<strong>列表就不行</strong><br>
+{1:xx,'aa':xx,(bb,nn):xx}</h2>
+<p><strong>函数</strong><br>
+len(dict) str(dict) type(dict)<br>
+<strong>方法</strong></p>
+<pre><code>clear  {}    
+ copy {'user':'root'一级目录深拷贝不随着改变,'a':[1,2,3]二级目录引用会随着改变}  
+</code></pre>
+<ul>
+<li></li>
+</ul>
+<p><strong>推导式</strong><br>
+列表推导式</p>
+<pre><code>[name.upper()for name in names if len(name)&gt;3]  
+</code></pre>
+<p>字典推导式</p>
+<pre><code>{x: x**2 for x in (2, 4, 6)}  
+</code></pre>
+<h2 id="集合推导式">集合推导式</h2>
+<pre><code>{i**2 for i in (1,2,3)}  
+</code></pre>
+<h2 id="元组推导式">元组推导式</h2>
+<pre><code>(x for x in range(1,10))
+</code></pre>
+<hr>
+<p><strong>迭代器</strong></p>
+<!-- 迭代器 -->
+<p>iter(序列) next(迭代对象)</p>
+<p>面向对象 class<br>
+<strong>iter</strong>(self) <strong>next</strong>(self)<br>
+raise StopIteration 暂停<br>
+赋初值   递增 抛出stop迭代</p>
+<p><strong>生成器</strong><br>
+yield 暂停并保存运行的信息 next()迭代</p>
+<hr>
+<h2 id="数据结构"><strong>数据结构</strong></h2>
+<p><strong>列表作为 堆栈</strong>（后进先出）后面进来append()的先出去pop()<br>
+pop()删除最后一个并打印删除的元素<br>
+<strong>列表作为 队列</strong>（先进先出）先进来的append()第一个出去popleft()<br>
+效率不高 删除时需要一个个元素向前移动<br>
+<strong>键值对-&gt;字典</strong></p>
+<pre><code>dict([('sape',4139),('guido',4127),('jack',4098)])  
+</code></pre>
+<p>元组列表构建字典</p>
+<pre><code>{x: x**2 for x in (2, 4, 6)}  
+</code></pre>
+<h2 id="字典推导">字典推导</h2>
+<pre><code>dict(sape=4139,guido=4127,jack=4098)  
+</code></pre>
+<h2 id="遍历for-kv-in-字典items键值for-iv-in-enumerate列表索引列表元素for-q-a-in-zip列表1列表2列表1元素列表2元素for-i-in-reversedrange1-10-2反向序列for-f-in-sortedsetbasket集合去重排序遍历"><strong>遍历</strong><br>
+for k,v in 字典.items():<br>
+键，值<br>
+for i,v in enumerate(列表):<br>
+索引，列表元素<br>
+for q, a in zip(列表1,列表2):<br>
+列表1元素，列表2元素<br>
+for i in reversed(range(1, 10, 2)):<br>
+反向序列<br>
+for f in sorted(set(basket)):<br>
+集合去重，排序遍历</h2>
+<h2 id="python模块import-sys-标准库模块sysargv-命令行参数syspath-自动找模块-路径列表"><strong>Python模块</strong><br>
+import sys  标准库模块<br>
+sys.argv  命令行参数<br>
+sys.path  自动找模块 路径列表</h2>
+<hr>
+<h2 id="importimport-模块模块函数赋给一个本地的名称变量模块函数仅在该模块下运行if-name-maindir模块-模块中的所有-自定义函数名dir-得到一个当前模块中-定义的属性列表"><strong>import</strong><br>
+import 模块<br>
+模块.函数()<br>
+赋给一个本地的名称：<br>
+变量=模块.函数<br>
+仅在该模块下运行：<br>
+if <strong>name</strong> == '<strong>main</strong>':<br>
+dir(模块) 模块中的所有 自定义函数名<br>
+dir() # 得到一个当前模块中 定义的属性列表</h2>
+<hr>
+<h2 id="输入和输出str-读者易读字符串repr-编译器易读字符串"><strong>输入和输出</strong><br>
+str() 读者易读字符串<br>
+repr() 编译器易读字符串</h2>
+<h2 id="rjust位数-位数大于字符串长度-字符串右对齐ljust位数-位数大于字符串长度-字符串左对齐center位数-位数大于字符串长度-字符串居中zfill位数-位数大于字符串长度-填充0-数字">rjust(位数)  位数大于字符串长度 字符串右对齐<br>
+ljust(位数)  位数大于字符串长度 字符串左对齐<br>
+center(位数)  位数大于字符串长度 字符串居中<br>
+zfill(位数)  位数大于字符串长度 （-） 填充0 数字</h2>
+<p>!a (使用 ascii()),<br>
+!s (使用 str()) 和 !r (使用 repr())<br>
+可以用于在格式化某个值之前对其进行转化:</p>
+<pre><code>print('xxx： {!r}。'.format(math.pi))
+</code></pre>
+<ul>
+<li></li>
+</ul>
+<hr>
+<pre><code>print('Runoob: {0[Runoob]:d}; Google: {0[Google]:d}; Taobao: {0[Taobao]:d}'.format(字典))  
+</code></pre>
+<p>字典--&gt;{0[键]:}</p>
+<pre><code>print('Runoob: {Runoob:d}; Google: {Google:d}; Taobao: {Taobao:d}'.format(**字典))  
+</code></pre>
+<p>**字典--&gt;{键:}</p>
+<ul>
+<li></li>
+</ul>
+<hr>
+<hr>
+<style>
+   
+</style>
+            </div>
+          </article>
+        </div>
+        <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://mxk-zwh.github.io/post/xhr/">
+                <h3 class="post-title">
+                  xhr
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+        
+      </div>
+
+      <div class="sm-12 md-4 col sidebar">
+  <div class="paper info-container">
+    <img src="https://mxk-zwh.github.io/images/avatar.png?v=1692504204692" class="no-responsive avatar">
+    <div class="text-muted">派蒙</div>
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      最新文章
+    </div>
+    <div class="row">
+      <ul>
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/xue-xi-es6-1/">学习ES6-1</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/pet-system-github-vue2/">pet-system-github-vue2</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/scssand-tu-biao/">scssand图标</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/npmyarnpnpm/">npm、yarn、pnpm</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/gnvm-ling-huo-qie-huan-node-ban-ben/">gnvm灵活切换node版本</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/zi-ding-yi-shi-jian/">自定义事件</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/this/">this</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/vue-router-sheng-ming-zhou-qi/">vue-router-2</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/liang-ge-sheng-ming-zhou-qi-gou-zi/">两个生命周期钩子</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://mxk-zwh.github.io/post/vue-router/">vue-router-1</a>
+            </li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </ul>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      标签列表
+    </div>
+    <div class="row">
+      
+        <a href="https://mxk-zwh.github.io/tag/HPuaEWsrs/" class="badge success">
+          gnvm
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/EyMHgjTur/" class="badge ">
+          nodejs
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/VA7I629exq/" class="badge secondary">
+          npm
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/1znN5W9Zuz/" class="badge secondary">
+          javascript
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/tJ-80yUy_/" class="badge warning">
+          生命周期
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/831DcViOP/" class="badge success">
+          vue-router
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/B4HIJAG5J/" class="badge secondary">
+          vue ui组件库
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/n4ZvGfONg/" class="badge success">
+          vuex
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/Rcm6rzxKD/" class="badge secondary">
+          yarn
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/cMmtoNUTP/" class="badge secondary">
+          es6-11
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/1AtASZhuo/" class="badge secondary">
+          python
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/wHGeLJSwP/" class="badge secondary">
+          markdown
+        </a>
+      
+        <a href="https://mxk-zwh.github.io/tag/TwpRvhEbq/" class="badge success">
+          xhr
+        </a>
+      
+    </div>
+  </div>
+  <div class="paper">
+    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://mxk-zwh.github.io/atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+
+
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+</script>
+
+
+
+
+  </body>
+</html>
